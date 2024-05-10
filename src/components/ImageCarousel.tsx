@@ -78,8 +78,8 @@ export function ImageCarousel({
         <div className='flex flex-row gap-2'>
           {new Array(total).fill(null).map((_, i) => {
             return (
-              // TODO: maybe add dots here instead
               <Circle
+                key={i}
                 className={cn(
                   "cursor-pointer w-2 h-2 transition-all fill-[#ccc7] stroke-none",
                   {
