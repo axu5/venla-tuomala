@@ -2,3 +2,8 @@
 
 [ ] fix site for big screens
 [ ] fix site for small screens
+[ ] i18n
+[ ] SEO
+[ ] Typing animation front page
+[ ] Smooth scroll
+[ ] Events
