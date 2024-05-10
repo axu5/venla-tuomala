@@ -13,12 +13,7 @@ export default function ShowcaseLayout({
   children,
 }: PropsWithChildren) {
   const heads = headers();
-  const domain = heads.get("host") ?? "";
-  const fullUrl = heads.get("referer") ?? "";
-  const pathname = fullUrl.replace(
-    new RegExp(`https?://${domain}`),
-    ""
-  );
+  const pathname = heads.get("x-pathname") ?? "";
   const splitPathname = pathname
     .split("/")
     .reduce((a: string[], c) => (c.length > 0 ? a.concat(c) : a), []);
