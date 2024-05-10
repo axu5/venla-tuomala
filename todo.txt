@@ -8,3 +8,5 @@
 [ ] Smooth scroll
 [ ] Events
 [ ] Better loading strategy
+[ ] 404 page
+[x] fix everything being dynamic server rendered
