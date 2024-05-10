@@ -119,7 +119,7 @@ export default function LandingPage() {
                 her”
               </div>
               <a
-                href='/events/graduations'
+                href='/events/graduation'
                 className='pt-serif-regular-italic hover:underline text-blue-600'>
                 see more...
               </a>
