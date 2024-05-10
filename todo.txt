@@ -7,3 +7,4 @@
 [ ] Typing animation front page
 [ ] Smooth scroll
 [ ] Events
+[ ] Better loading strategy
