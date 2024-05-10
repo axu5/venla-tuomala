@@ -1,14 +1,8 @@
+import { ImageCarousel } from "@/components/ImageCarousel";
 import { BACKGROUND } from "@/icons/background";
 import { cn } from "@/lib/utils";
+import { ArrowRight, Dot } from "lucide-react";
 import Image from "next/image";
-import { ArrowRight, SquareArrowOutUpRight } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 export default function LandingPage() {
   return (
@@ -26,7 +20,7 @@ export default function LandingPage() {
         </nav>
       </div>
       {/* TODO scroll bar animation thing */}
-      <div className='max-w-7xl'>
+      <main className='max-w-7xl'>
         {/* Hero */}
         <div className='flex flex-col justify-center items-center py-10 px-40 h-screen lg:h-[66vh]'>
           <BACKGROUND.GOLDEN_RATIO className='absolute -z-10 top-[225px] rotate-90 w-screen h-screen lg:rotate-0 lg:w-[calc(60vh*1.618)] lg:h-[60vh]' />
@@ -54,50 +48,108 @@ export default function LandingPage() {
         {/* Accordion */}
         <AccordionList />
 
-        {/* Said about me
-          <div className='flex flex-col items-center'>
-            <h2 className='text-3xl font-bold w-full text-center uppercase font-sans border border-transparent border-y-black my-10 py-2'>
-              Said about me
-            </h2>
-
-            <div className='grid grid-cols-3 grid-flow-row'>
-              <div className='flex flex-col'>
-                <Carousel>
-                  <CarouselContent>
-                    <CarouselItem>
-                      <Image
-                        className='w-full max-h-96'
-                        src='/images/couples/couple1/VEN11.jpg'
-                        alt=''
-                        fill={true}
-                      />
-                    </CarouselItem>
-                    <CarouselItem>
-                      <Image
-                        className='w-full'
-                        src='/images/couples/couple1/VEN02299.jpg'
-                        alt=''
-                        width={400}
-                        height={600}
-                      />
-                    </CarouselItem>
-                    <CarouselItem>
-                      <Image
-                        className='w-full'
-                        src='/images/couples/couple1/VEN02523.jpg'
-                        alt=''
-                        width={400}
-                        height={600}
-                      />
-                    </CarouselItem>
-                  </CarouselContent>
-                  <CarouselPrevious />
-                  <CarouselNext />
-                </Carousel>
-              </div>
+        {/* Said about me */}
+        <div className='flex flex-col items-center'>
+          <h2 className='text-3xl font-bold w-full text-center uppercase font-sans border border-transparent border-y-black my-10 py-2'>
+            Testimonials
+          </h2>
+        </div>
+        <div className='grid grid-cols-3 px-20 gap-8 grid-rows-[max-content_1fr]'>
+          {/* Events */}
+          <div className='grid grid-cols-subgrid col-span-2 row-span-1'>
+            <div className='col-span-1 row-span-1'>
+              <ImageCarousel
+                images={[
+                  { url: "/images/events/sitsit/FC5A5428.jpg" },
+                  { url: "/images/events/sitsit/FC5A5714.jpg" },
+                  { url: "/images/events/sitsit/FC5A5787.jpg" },
+                  { url: "/images/events/sitsit/FC5A5789.jpg" },
+                  { url: "/images/events/sitsit/FC5A5932.jpg" },
+                ]}
+              />
             </div>
-          </div> */}
-      </div>
+            <div>
+              <h3 className='pt-serif-bold text-2xl'>Events</h3>
+              <div className='pt-serif-regular-italic flex flex-row'>
+                18.03.2024 <Dot /> Helsinki, Finland
+              </div>
+              <div>
+                “Venla is amazing hire her hire her hire her hire her
+                hire her hire her hire her hire her hire her hire her
+                hire her hire her hire her hire her hire her hire her
+                hire her”
+              </div>
+              <a
+                href='/events'
+                className='pt-serif-regular-italic hover:underline text-blue-600'>
+                see more...
+              </a>
+            </div>
+          </div>
+
+          {/* Graduations */}
+          <div className='grid grid-rows-subgrid col-span-1 row-span-3'>
+            <div className='col-span-1 row-span-2 grid grid-rows-subgrid'>
+              <ImageCarousel
+                className='row-span-2'
+                images={[
+                  { url: "/images/portraits/HNRI4240.jpg" },
+                  { url: "/images/events/graduation/HNRI4251.jpg" },
+                  { url: "/images/events/graduation/HNRI4565.jpg" },
+                  { url: "/images/events/graduation/HNRI4573.jpg" },
+                ]}
+              />
+            </div>
+            <div>
+              <h3 className='pt-serif-bold text-2xl'>Graduations</h3>
+              <div className='pt-serif-regular-italic flex flex-row'>
+                18.03.2024 <Dot /> Lahti, Finland
+              </div>
+              <div>
+                “Venla is a baddie. If I didn’t have a bf I would date
+                her”
+              </div>
+              <a
+                href='/events'
+                className='pt-serif-regular-italic hover:underline text-blue-600'>
+                see more...
+              </a>
+            </div>
+          </div>
+
+          {/* Couples Photography */}
+          <div className='grid grid-cols-subgrid col-span-2 row-span-5'>
+            <div className='col-span-1 row-span-2 grid grid-rows-subgrid'>
+              <ImageCarousel
+                images={[
+                  { url: "/images/couples/couple1/VEN11.jpg" },
+                  { url: "/images/couples/couple1/VEN02299.jpg" },
+                ]}
+              />
+            </div>
+            <div className='col-span-1'>
+              <h3 className='pt-serif-bold text-2xl'>
+                Couple's Photography
+              </h3>
+              <div className='pt-serif-regular-italic flex flex-row'>
+                18.03.2024 <Dot /> Mikkeli, Finland
+              </div>
+              <div>
+                “Hello this is a very good and skilled and talented
+                photographer, Venla is also very fun to hang out with
+                she’s cool like that” - Axu
+              </div>
+              <a
+                href='/couples'
+                className='pt-serif-regular-italic hover:underline text-blue-600'>
+                see more...
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+      {/* Footer */}
+      <div className='p-12 m-12'>FOOTER GOES HERE</div>
     </>
   );
 }

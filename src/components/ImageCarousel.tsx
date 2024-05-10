@@ -15,9 +15,13 @@ type ImageCarouselProps = {
   images: {
     url: string;
   }[];
+  className?: string;
 };
 
-export function ImageCarousel({ images }: ImageCarouselProps) {
+export function ImageCarousel({
+  images,
+  className,
+}: ImageCarouselProps) {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [total, setTotal] = useState(0);
@@ -31,18 +35,23 @@ export function ImageCarousel({ images }: ImageCarouselProps) {
     setTotal(api.scrollSnapList().length);
 
     api.on("select", () => {
-      // Do something on select.
       setCurrent(api.selectedScrollSnap());
     });
   }, [api]);
 
   return (
     <Carousel
+      className={cn(className)}
+      // TODO: add trackpad scrolling for laptops
       opts={{
         loop: true,
       }}
       setApi={setApi}>
-      <CarouselContent className='content-center rounded'>
+      <CarouselContent
+        className={cn(
+          "content-center rounded shadow-sm hover:shadow-2xl",
+          className
+        )}>
         {images.map(image => {
           return (
             <CarouselItem key={image.url}>
@@ -58,22 +67,23 @@ export function ImageCarousel({ images }: ImageCarouselProps) {
         })}
       </CarouselContent>
       {/* Controls */}
-      <div className='flex flex-row items-center gap-16 justify-center -translate-y-20'>
-        <div
+      <div className='flex flex-row items-center gap-16 justify-center -translate-y-10 h-0'>
+        <button
           className='group cursor-pointer w-10 h-10 flex items-center justify-center'
           onClick={() => {
             api?.scrollPrev();
           }}>
           <ArrowLeft className='w-8 h-8 rounded-full p-1 bg-gray-300 bg-opacity-70 group-hover:bg-opacity-100 transition-all group-hover:-translate-x-2' />
-        </div>
+        </button>
         <div className='flex flex-row gap-2'>
           {new Array(total).fill(null).map((_, i) => {
             return (
+              // TODO: maybe add dots here instead
               <Circle
                 className={cn(
-                  "cursor-pointer w-4 h-4 transition-all fill-[#ccc5]",
+                  "cursor-pointer w-2 h-2 transition-all fill-[#ccc7] stroke-none",
                   {
-                    "fill-black": i === current,
+                    "fill-white": i === current,
                     "hover:fill-[#fff5]": i !== current,
                   }
                 )}
@@ -84,13 +94,13 @@ export function ImageCarousel({ images }: ImageCarouselProps) {
             );
           })}
         </div>
-        <div
-          className='group cursor-pointer w-10 h-10 flex items-center justify-center'
+        <button
+          className='group w-10 h-10 flex items-center justify-center'
           onClick={() => {
             api?.scrollNext();
           }}>
           <ArrowRight className='w-8 h-8 rounded-full p-1 bg-gray-300 bg-opacity-70 group-hover:bg-opacity-100 transition-all group-hover:translate-x-2' />
-        </div>
+        </button>
       </div>
     </Carousel>
   );
