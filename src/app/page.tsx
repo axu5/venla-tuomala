@@ -22,10 +22,10 @@ export default function LandingPage() {
       {/* TODO scroll bar animation thing */}
       <main className='max-w-7xl'>
         {/* Hero */}
-        <div className='flex flex-col justify-center items-center py-10 px-40 h-screen lg:h-[66vh]'>
-          <BACKGROUND.GOLDEN_RATIO className='absolute -z-10 top-[225px] rotate-90 w-screen h-screen lg:rotate-0 lg:w-[calc(60vh*1.618)] lg:h-[60vh]' />
+        <div className='flex flex-col justify-center items-center py-10 px-40 h-screen md:h-[66vh]'>
+          <BACKGROUND.GOLDEN_RATIO className='invisible sm:visible md:absolute -z-10 top-[225px] rotate-0 w-[calc(60vh*1.618)] h-[60vh]' />
           <div className='absolute top-[225px] lg:w-[calc(60vh*1.618)] lg:h-[60vh] grid grid-rows-11 lg:grid-rows-1 grid-cols-1 lg:grid-cols-11 px-6 py-4 lg:rotate-0'>
-            <div className='col-span-7 p-5'>
+            <div className='md:col-span-7 p-5'>
               <h1 className='font-semibold uppercase tracking-tight text-6xl'>
                 Venla Tuomala
               </h1>
@@ -33,9 +33,9 @@ export default function LandingPage() {
                 Photographer
               </h2>
             </div>
-            <div className='col-span-4'>
+            <div className='md:col-span-4'>
               <Image
-                src='/venla.png'
+                src='/images/venla.png'
                 alt='venla'
                 className='p-10'
                 width={420}
@@ -46,6 +46,11 @@ export default function LandingPage() {
         </div>
 
         {/* Accordion */}
+        <div className='flex flex-col items-center'>
+          <h2 className='text-3xl font-bold w-full text-center uppercase font-sans border border-transparent border-y-black my-10 py-2'>
+            Portfolio
+          </h2>
+        </div>
         <AccordionList />
 
         {/* Said about me */}
@@ -54,10 +59,10 @@ export default function LandingPage() {
             Testimonials
           </h2>
         </div>
-        <div className='grid grid-cols-3 px-20 gap-8 grid-rows-[max-content_1fr]'>
+        <div className='flex flex-col md:grid md:grid-cols-3 px-10 md:px-20 gap-8 grid-rows-[max-content_1fr]'>
           {/* Events */}
-          <div className='grid grid-cols-subgrid col-span-2 row-span-1'>
-            <div className='col-span-1 row-span-1'>
+          <div className='grid grid-cols-subgrid col-span-2'>
+            <div className='col-span-1'>
               <ImageCarousel
                 images={[
                   { url: "/images/events/sitsit/FC5A5428.jpg" },
@@ -69,7 +74,9 @@ export default function LandingPage() {
               />
             </div>
             <div>
-              <h3 className='pt-serif-bold text-2xl'>Events</h3>
+              <h3 className='pt-serif-bold text-2xl pt-5 pb-1 md:py-1'>
+                Events
+              </h3>
               <div className='pt-serif-regular-italic flex flex-row'>
                 18.03.2024 <Dot /> Helsinki, Finland
               </div>
@@ -101,7 +108,9 @@ export default function LandingPage() {
               />
             </div>
             <div>
-              <h3 className='pt-serif-bold text-2xl'>Graduations</h3>
+              <h3 className='pt-serif-bold text-2xl pt-5 pb-1 md:py-1'>
+                Graduations
+              </h3>
               <div className='pt-serif-regular-italic flex flex-row'>
                 18.03.2024 <Dot /> Lahti, Finland
               </div>
@@ -110,7 +119,7 @@ export default function LandingPage() {
                 her”
               </div>
               <a
-                href='/events'
+                href='/events/graduations'
                 className='pt-serif-regular-italic hover:underline text-blue-600'>
                 see more...
               </a>
@@ -128,7 +137,7 @@ export default function LandingPage() {
               />
             </div>
             <div className='col-span-1'>
-              <h3 className='pt-serif-bold text-2xl'>
+              <h3 className='pt-serif-bold text-2xl pt-5 pb-1 md:py-1'>
                 Couple's Photography
               </h3>
               <div className='pt-serif-regular-italic flex flex-row'>
@@ -189,7 +198,7 @@ function AccordionList() {
         return (
           <AccordionItem
             className={cn(
-              "transition-all border border-black hover:bg-goldenisher hover:shadow-xl from-60% hover:to-goldenish motion-reduce:transition-none motion-reduce:hover:transform-none",
+              "transition-all border border-x-0 md:border-x-2 border-black hover:bg-goldenisher hover:shadow-xl from-60% hover:to-goldenish motion-reduce:transition-none motion-reduce:hover:transform-none",
               {
                 "border-t-transparent": i !== 0,
               }

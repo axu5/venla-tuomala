@@ -54,7 +54,7 @@ export function ImageCarousel({
         )}>
         {images.map(image => {
           return (
-            <CarouselItem key={image.url}>
+            <CarouselItem key={image.url} className='rounded'>
               <Image
                 className='h-full object-cover object-center rounded'
                 src={image.url}
