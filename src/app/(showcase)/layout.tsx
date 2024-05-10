@@ -1,0 +1,65 @@
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import { Fragment, PropsWithChildren } from "react";
+import { headers } from "next/headers";
+
+export default function ShowcaseLayout({
+  children,
+}: PropsWithChildren) {
+  const heads = headers();
+  const domain = heads.get("host") ?? "";
+  const fullUrl = heads.get("referer") ?? "";
+  const pathname = fullUrl.replace(
+    new RegExp(`https?://${domain}`),
+    ""
+  );
+  const splitPathname = pathname
+    .split("/")
+    .reduce((a: string[], c) => (c.length > 0 ? a.concat(c) : a), []);
+
+  return (
+    <>
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href='/'>Home</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          {splitPathname.map((x, i) => {
+            // if it's the last item then don't make a url for it
+            if (i === splitPathname.length - 1) {
+              return (
+                <BreadcrumbItem key={x}>
+                  <BreadcrumbPage className='capitalize'>
+                    {x}
+                  </BreadcrumbPage>
+                </BreadcrumbItem>
+              );
+            }
+            const currURL =
+              "/" + splitPathname.splice(0, i).join("/");
+            return (
+              <Fragment key={x}>
+                <BreadcrumbItem>
+                  <BreadcrumbLink
+                    className='capitalize'
+                    href={currURL}>
+                    {x}
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+              </Fragment>
+            );
+          })}
+        </BreadcrumbList>
+      </Breadcrumb>
+      {children}
+    </>
+  );
+}
