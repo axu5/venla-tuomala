@@ -1,7 +1,14 @@
 import { BACKGROUND } from "@/icons/background";
 import { cn } from "@/lib/utils";
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { ArrowRight, SquareArrowOutUpRight } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function LandingPage() {
   return (
@@ -103,8 +110,8 @@ type AccordionItemType = {
 function AccordionList() {
   const links: AccordionItemType[] = [
     {
-      text: "Weddings",
-      link: "/weddings",
+      text: "Couples",
+      link: "/couples",
     },
     {
       text: "Events",
@@ -115,8 +122,8 @@ function AccordionList() {
       link: "/portraits",
     },
     {
-      text: "Couples",
-      link: "/couples",
+      text: "Weddings",
+      link: "/weddings",
     },
     {
       text: "Other work",
