@@ -1,70 +1,53 @@
 import { BACKGROUND } from "@/icons/background";
 import { cn } from "@/lib/utils";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { ArrowRight, SquareArrowOutUpRight } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 export default function LandingPage() {
   return (
     <>
-      {/* Container so on larger screens there is always padding on the sides */}
-      <div className='flex flex-col max-w-screen-xl mx-auto'>
-        {/* Venlas big ass name */}
-        <div className='flex items-center justify-center min-h-36'>
-          <h1 className='pt-serif-bold uppercase tracking-widest text-3xl'>
-            Venla Tuomala
-          </h1>
-        </div>
-        {/* Nav */}
-        <div className='sticky top-5 bg-goldenish z-10'>
-          <nav className='border-t-2 border-b-2 py-2 border-black'>
-            <ul className='flex flex-row justify-around'>
-              <li className='uppercase text-2xl font-bold'>About</li>
-              <li className='uppercase text-2xl font-bold'>
-                Portfolio
-              </li>
-              <li className='uppercase text-2xl font-bold'>
-                Contact
-              </li>
-            </ul>
-          </nav>
-        </div>
-        {/* TODO scroll bar animation thing */}
-        <div className='max-w-7xl'>
-          {/* Hero */}
-          <div className='flex flex-col justify-center items-center py-10 px-40 h-screen lg:h-[66vh]'>
-            <BACKGROUND.GOLDEN_RATIO className='absolute -z-10 top-[225px] rotate-90 w-screen h-screen lg:rotate-0 lg:w-[calc(60vh*1.618)] lg:h-[60vh]' />
-            <div className='absolute top-[225px] lg:w-[calc(60vh*1.618)] lg:h-[60vh] grid grid-rows-11 lg:grid-rows-1 grid-cols-1 lg:grid-cols-11 px-6 py-4 lg:rotate-0'>
-              <div className='col-span-7 p-5'>
-                <h1 className='font-semibold uppercase tracking-tight text-6xl'>
-                  Venla Tuomala
-                </h1>
-                <h2 className='pt-serif-regular-italic text-5xl'>
-                  Photographer
-                </h2>
-              </div>
-              <div className='col-span-4'>
-                <Image
-                  src='/venla.png'
-                  alt='venla'
-                  className='p-10'
-                  width={420}
-                  height={420}
-                />
-              </div>
+      {/* Nav */}
+      <div className='sticky top-5 bg-goldenish z-10'>
+        <nav className='border-t-2 border-b-2 py-2 border-black'>
+          <ul className='flex flex-row justify-around'>
+            <li className='uppercase text-2xl font-bold'>About</li>
+            <li className='uppercase text-2xl font-bold'>
+              Portfolio
+            </li>
+            <li className='uppercase text-2xl font-bold'>Contact</li>
+          </ul>
+        </nav>
+      </div>
+      {/* TODO scroll bar animation thing */}
+      <div className='max-w-7xl'>
+        {/* Hero */}
+        <div className='flex flex-col justify-center items-center py-10 px-40 h-screen lg:h-[66vh]'>
+          <BACKGROUND.GOLDEN_RATIO className='absolute -z-10 top-[225px] rotate-90 w-screen h-screen lg:rotate-0 lg:w-[calc(60vh*1.618)] lg:h-[60vh]' />
+          <div className='absolute top-[225px] lg:w-[calc(60vh*1.618)] lg:h-[60vh] grid grid-rows-11 lg:grid-rows-1 grid-cols-1 lg:grid-cols-11 px-6 py-4 lg:rotate-0'>
+            <div className='col-span-7 p-5'>
+              <h1 className='font-semibold uppercase tracking-tight text-6xl'>
+                Venla Tuomala
+              </h1>
+              <h2 className='pt-serif-regular-italic text-5xl'>
+                Photographer
+              </h2>
+            </div>
+            <div className='col-span-4'>
+              <Image
+                src='/venla.png'
+                alt='venla'
+                className='p-10'
+                width={420}
+                height={420}
+              />
             </div>
           </div>
+        </div>
 
-          {/* Accordion */}
-          <AccordionList />
+        {/* Accordion */}
+        <AccordionList />
 
-          {/* Said about me
+        {/* Said about me
           <div className='flex flex-col items-center'>
             <h2 className='text-3xl font-bold w-full text-center uppercase font-sans border border-transparent border-y-black my-10 py-2'>
               Said about me
@@ -107,7 +90,6 @@ export default function LandingPage() {
               </div>
             </div>
           </div> */}
-        </div>
       </div>
     </>
   );
