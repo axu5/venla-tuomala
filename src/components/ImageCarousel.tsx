@@ -64,7 +64,7 @@ export function ImageCarousel({ images }: ImageCarouselProps) {
           onClick={() => {
             api?.scrollPrev();
           }}>
-          <ArrowLeft className='w-8 h-8 rounded-full p-1 bg-gray-300 bg-opacity-70 group-hover:bg-opacity-100 transition-all group-hover:translate-x-2' />
+          <ArrowLeft className='w-8 h-8 rounded-full p-1 bg-gray-300 bg-opacity-70 group-hover:bg-opacity-100 transition-all group-hover:-translate-x-2' />
         </div>
         <div className='flex flex-row gap-2'>
           {new Array(total).fill(null).map((_, i) => {
