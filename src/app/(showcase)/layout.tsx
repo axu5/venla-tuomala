@@ -20,7 +20,7 @@ export default function ShowcaseLayout({
 
   return (
     <>
-      <Breadcrumb className='border border-black px-5 py-2 rounded shadow-sm'>
+      <Breadcrumb className='border-y md:border-x border-black px-5 py-2 shadow-sm'>
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink href='/'>Home</BreadcrumbLink>
@@ -39,14 +39,14 @@ export default function ShowcaseLayout({
                 </BreadcrumbItem>
               );
             }
-            const currURL =
-              "/" + splitPathname.splice(0, i).join("/");
+            const currUrl =
+              "/" + splitPathname.slice(0, i + 1).join("/");
             return (
               <Fragment key={x}>
                 <BreadcrumbItem>
                   <BreadcrumbLink
                     className='capitalize'
-                    href={currURL}>
+                    href={currUrl}>
                     {displayText}
                   </BreadcrumbLink>
                 </BreadcrumbItem>
