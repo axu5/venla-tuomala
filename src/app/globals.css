@@ -35,6 +35,9 @@
     --ring: 0 0% 3.9%;
 
     --radius: 0.5rem;
+
+    --goldenish: #e4dbcc;
+    --goldenisher: #dcc599;
   }
 
   .dark {
@@ -102,5 +105,5 @@
 }
 
 body {
-  background-color: #e4dbcc;
+  background-color: var(--goldenish);
 }
