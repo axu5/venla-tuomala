@@ -10,54 +10,56 @@ import { ArrowRight, Circle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
-const events = [
-  {
-    name: "Birthday",
-    slug: "birthday",
-    thumbnail: "/images/events/birthday/IMG_0931.JPG",
-  },
-  {
-    name: "Graduation",
-    slug: "graduation",
-    thumbnail: "/images/events/graduation/HNRI4251.jpg",
-  },
-  {
-    name: "MRT",
-    slug: "mrt",
-    thumbnail: "/images/events/mrt/FC5A4397.jpg",
-  },
-  {
-    name: "Sillis",
-    slug: "sillis",
-    thumbnail: "/images/events/sillis/IMG_2714.jpg",
-  },
-  {
-    name: "Sitsit",
-    slug: "sitsit",
-    thumbnail: "/images/events/sitsit/FC5A5428.jpg",
-  },
-  {
-    name: "Summer Festival",
-    slug: "summer-festival",
-    thumbnail: "/images/events/summer-festival/IMG_0908.JPG",
-  },
-  {
-    name: "Venue",
-    slug: "venue",
-    thumbnail: "/images/events/venue/IMG_0893.JPG",
-  },
-  {
-    name: "Wappu",
-    slug: "wappu",
-    thumbnail: "/images/events/wappu/Vappu.jpg",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function Events() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [total, setTotal] = useState(0);
+  const { t } = useTranslation();
+
+  const events = [
+    {
+      name: t("Birthday"),
+      slug: "birthday",
+      thumbnail: "/images/events/birthday/IMG_0931.JPG",
+    },
+    {
+      name: t("Graduation"),
+      slug: "graduation",
+      thumbnail: "/images/events/graduation/HNRI4251.jpg",
+    },
+    {
+      name: t("MRT"),
+      slug: "mrt",
+      thumbnail: "/images/events/mrt/FC5A4397.jpg",
+    },
+    {
+      name: t("Sillis"),
+      slug: "sillis",
+      thumbnail: "/images/events/sillis/IMG_2714.jpg",
+    },
+    {
+      name: t("Sitsit"),
+      slug: "sitsit",
+      thumbnail: "/images/events/sitsit/FC5A5428.jpg",
+    },
+    {
+      name: t("Summer Festival"),
+      slug: "summer-festival",
+      thumbnail: "/images/events/summer-festival/IMG_0908.JPG",
+    },
+    {
+      name: t("Venue"),
+      slug: "venue",
+      thumbnail: "/images/events/venue/IMG_0893.JPG",
+    },
+    {
+      name: t("Wappu"),
+      slug: "wappu",
+      thumbnail: "/images/events/wappu/Vappu.jpg",
+    },
+  ];
 
   useEffect(() => {
     if (!api) {

@@ -4,26 +4,17 @@ import { cn } from "@/lib/utils";
 import { ArrowRight, Dot } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import initTranslations, { LocaleParam } from "../i18n";
 
-export default function LandingPage() {
+const i18nNamespaces = ["home", "common"];
+
+export default async function LandingPage({
+  params: { locale },
+}: LocaleParam) {
+  const { t } = await initTranslations(locale, i18nNamespaces);
+
   return (
     <>
-      {/* Nav */}
-      <div className='sticky top-5 bg-goldenish z-10'>
-        <nav className='border-t-2 border-b-2 py-2 border-black'>
-          <ul className='flex flex-row justify-around'>
-            <li className='uppercase text-2xl font-bold'>
-              <Link href='/#about'>About</Link>
-            </li>
-            <li className='uppercase text-2xl font-bold'>
-              <Link href='/#portfolio'>Portfolio</Link>
-            </li>
-            <li className='uppercase text-2xl font-bold'>
-              <Link href='/#contact'>Contact</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
       {/* TODO scroll bar animation thing */}
       <main className='max-w-7xl'>
         {/* Hero */}
@@ -35,7 +26,7 @@ export default function LandingPage() {
                 Venla Tuomala
               </h1>
               <h2 className='pt-serif-regular-italic text-5xl'>
-                Photographer
+                {t("Photographer")}
               </h2>
             </div>
             <div className='md:col-span-4'>
@@ -53,18 +44,18 @@ export default function LandingPage() {
         {/* Accordion */}
         <div className='flex flex-col items-center' id='portfolio'>
           <h2 className='text-3xl font-bold w-full text-center uppercase font-sans border border-transparent border-y-black my-10 py-2'>
-            Portfolio
+            {t("Portfolio")}
           </h2>
         </div>
-        <AccordionList />
+        <AccordionList t={t} />
 
         {/* Said about me */}
         <div className='flex flex-col items-center' id='testimonials'>
           <h2 className='text-3xl font-bold w-full text-center uppercase font-sans border border-transparent border-y-black my-10 py-2'>
-            Testimonials
+            {t("Testimonials")}
           </h2>
         </div>
-        <Testimonials />
+        <Testimonials t={t} />
       </main>
     </>
   );
@@ -75,26 +66,26 @@ type AccordionItemType = {
   link: string;
 };
 
-function AccordionList() {
+function AccordionList({ t }: { t: any }) {
   const links: AccordionItemType[] = [
     {
-      text: "Couples",
+      text: t("Couples"),
       link: "/couples",
     },
     {
-      text: "Events",
+      text: t("Events"),
       link: "/events",
     },
     {
-      text: "Portraits",
+      text: t("Portraits"),
       link: "/portraits",
     },
     {
-      text: "Weddings",
+      text: t("Weddings"),
       link: "/weddings",
     },
     {
-      text: "Other work",
+      text: t("Other work"),
       link: "/other-work",
     },
   ];
@@ -141,7 +132,7 @@ function AccordionItem({
   );
 }
 
-function Testimonials() {
+function Testimonials({ t }: { t: any }) {
   return (
     <div className='flex flex-col md:grid md:grid-cols-3 px-10 md:px-20 gap-8 grid-rows-[max-content_1fr]'>
       {/* Events */}
@@ -159,10 +150,10 @@ function Testimonials() {
         </div>
         <div>
           <h3 className='pt-serif-bold text-2xl pt-5 pb-1 md:py-1'>
-            Events
+            {t("Events")}
           </h3>
           <div className='pt-serif-regular-italic flex flex-row'>
-            18.03.2024 <Dot /> Helsinki, Finland
+            18.03.2024 <Dot /> Helsinki, {t("Finland")}
           </div>
           <div>
             “Venla is amazing hire her hire her hire her hire her hire
@@ -172,7 +163,7 @@ function Testimonials() {
           <Link
             href='/events'
             className='pt-serif-regular-italic hover:underline text-blue-600'>
-            see more...
+            {t("see more")}...
           </Link>
         </div>
       </div>
@@ -192,10 +183,10 @@ function Testimonials() {
         </div>
         <div>
           <h3 className='pt-serif-bold text-2xl pt-5 pb-1 md:py-1'>
-            Graduations
+            {t("Graduations")}
           </h3>
           <div className='pt-serif-regular-italic flex flex-row'>
-            18.03.2024 <Dot /> Lahti, Finland
+            18.03.2024 <Dot /> Lahti, {t("Finland")}
           </div>
           <div>
             “Venla is a baddie. If I didn’t have a bf I would date
@@ -204,7 +195,7 @@ function Testimonials() {
           <Link
             href='/events/graduation'
             className='pt-serif-regular-italic hover:underline text-blue-600'>
-            see more...
+            {t("see more")}...
           </Link>
         </div>
       </div>
@@ -221,10 +212,10 @@ function Testimonials() {
         </div>
         <div className='col-span-1'>
           <h3 className='pt-serif-bold text-2xl pt-5 pb-1 md:py-1'>
-            Couple&apos;s Photography
+            {t("Couple's Photography")}
           </h3>
           <div className='pt-serif-regular-italic flex flex-row'>
-            18.03.2024 <Dot /> Mikkeli, Finland
+            18.03.2024 <Dot /> Mikkeli, {t("Finland")}
           </div>
           <div>
             “Hello this is a very good and skilled and talented
@@ -234,7 +225,7 @@ function Testimonials() {
           <Link
             href='/couples'
             className='pt-serif-regular-italic hover:underline text-blue-600'>
-            see more...
+            {t("see more")}...
           </Link>
         </div>
       </div>

@@ -7,6 +7,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Circle } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
