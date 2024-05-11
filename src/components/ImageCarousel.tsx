@@ -53,7 +53,7 @@ export function ImageCarousel({
           "content-center rounded shadow-sm hover:shadow-2xl",
           className
         )}>
-        {images.map(image => {
+        {images.map((image, i) => {
           return (
             <CarouselItem key={image.url} className='rounded'>
               <Image
@@ -62,6 +62,7 @@ export function ImageCarousel({
                 alt=''
                 width={6969}
                 height={0}
+                priority={i === 0}
               />
             </CarouselItem>
           );

@@ -31,9 +31,9 @@ export function Hero() {
 
   const texts = [
     t("Photographer"),
-    "Inspiration",
-    "Idol",
-    "Cool gal",
+    t("Inspiration"),
+    t("Idol"),
+    t("Cool gal"),
   ];
   const baseText = useTransform(
     textIndex,
@@ -90,6 +90,7 @@ export function Hero() {
               className='p-10'
               width={420}
               height={420}
+              priority
             />
           </div>
         </div>
