@@ -1,8 +1,7 @@
+import { Hero } from "@/components/Hero";
 import { ImageCarousel } from "@/components/ImageCarousel";
-import { BACKGROUND } from "@/icons/background";
 import { cn } from "@/lib/utils";
 import { ArrowRight, Dot } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import initTranslations, { LocaleParam } from "../i18n";
 
@@ -17,29 +16,7 @@ export default async function LandingPage({
     <>
       {/* TODO scroll bar animation thing */}
       <main className='max-w-7xl'>
-        {/* Hero */}
-        <div className='flex flex-col justify-center items-center py-10 px-40 h-screen md:h-[66vh]'>
-          <BACKGROUND.GOLDEN_RATIO className='invisible sm:visible md:absolute -z-10 top-[225px] rotate-0 w-[calc(60vh*1.618)] h-[60vh]' />
-          <div className='absolute top-[225px] lg:w-[calc(60vh*1.618)] lg:h-[60vh] grid grid-rows-11 lg:grid-rows-1 grid-cols-1 lg:grid-cols-11 px-6 py-4 lg:rotate-0'>
-            <div className='md:col-span-7 p-5'>
-              <h1 className='font-semibold uppercase tracking-tight text-6xl'>
-                Venla Tuomala
-              </h1>
-              <h2 className='pt-serif-regular-italic text-5xl'>
-                {t("Photographer")}
-              </h2>
-            </div>
-            <div className='md:col-span-4'>
-              <Image
-                src='/images/venla.png'
-                alt='venla'
-                className='p-10'
-                width={420}
-                height={420}
-              />
-            </div>
-          </div>
-        </div>
+        <Hero />
 
         {/* Accordion */}
         <div className='flex flex-col items-center' id='portfolio'>

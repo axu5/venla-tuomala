@@ -3,10 +3,10 @@
 [ ] fix site for big screens
 [ ] fix site for small screens
 [ ] SEO
-[ ] Typing animation front page
 [ ] Better loading strategy
 [ ] Loading skeleton
 [ ] 404 page
+[x] Typing animation front page
 [x] i18n
 [x] Events
 [x] Smooth scroll
