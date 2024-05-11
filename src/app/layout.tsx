@@ -36,9 +36,11 @@ export default function RootLayout({
           <div className='flex flex-col max-w-screen-xl mx-auto'>
             {/* Venlas big ass name */}
             <div className='flex items-center justify-center min-h-36'>
-              <h1 className='pt-serif-bold uppercase tracking-widest text-3xl'>
-                Venla Tuomala
-              </h1>
+              <Link href='/'>
+                <h1 className='pt-serif-bold uppercase tracking-widest text-3xl'>
+                  Venla Tuomala
+                </h1>
+              </Link>
             </div>
             {children}
             {/* Footer */}
@@ -82,13 +84,13 @@ export default function RootLayout({
                 <span>
                   &copy; {new Date().getFullYear()} Venla Tuomala
                 </span>
-                <a
+                <Link
                   className='flex flex-row items-center'
                   target='_blank'
                   href='https://github.com/axu5'>
                   Made by axu{" "}
                   <SquareArrowOutUpRight className='h-4 w-4 ml-2' />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

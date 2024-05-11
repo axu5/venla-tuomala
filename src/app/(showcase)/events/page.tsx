@@ -8,6 +8,7 @@ import {
 import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowRight, Circle } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const events = [
@@ -102,14 +103,14 @@ export default function Events() {
                 width={6969}
                 height={0}
               />
-              <a
+              <Link
                 className='group align-bottom flex flex-row justify-center items-center py-5'
                 href={"/events/" + eventData.slug}>
                 <span className='text-2xl font-semibold'>
                   {eventData.name}
                 </span>
                 <ArrowRight className='ml-2 w-4 h-4 group-hover:translate-x-2 transition' />
-              </a>
+              </Link>
             </div>
           </CarouselItem>
         ))}

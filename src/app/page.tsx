@@ -9,6 +9,7 @@ import {
   SquareArrowOutUpRight,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function LandingPage() {
   return (
@@ -18,13 +19,13 @@ export default function LandingPage() {
         <nav className='border-t-2 border-b-2 py-2 border-black'>
           <ul className='flex flex-row justify-around'>
             <li className='uppercase text-2xl font-bold'>
-              <a href='/#about'>About</a>
+              <Link href='/#about'>About</Link>
             </li>
             <li className='uppercase text-2xl font-bold'>
-              <a href='/#portfolio'>Portfolio</a>
+              <Link href='/#portfolio'>Portfolio</Link>
             </li>
             <li className='uppercase text-2xl font-bold'>
-              <a href='/#contact'>Contact</a>
+              <Link href='/#contact'>Contact</Link>
             </li>
           </ul>
         </nav>
@@ -136,12 +137,12 @@ function AccordionItem({
 }: AccordionItemComponentType) {
   return (
     <div className={cn(className, "flex flex-col group")}>
-      <a
+      <Link
         className='w-full p-5 pt-serif-regular text-2xl flex flex-row items-center content-center'
         href={link}>
         {text}
         <ArrowRight className='pl-2 w-8 h-4 transition-all group-hover:pl-4' />
-      </a>
+      </Link>
     </div>
   );
 }
@@ -174,11 +175,11 @@ function Testimonials() {
             her hire her hire her hire her hire her hire her hire her
             hire her hire her hire her hire her hire her hire her”
           </div>
-          <a
+          <Link
             href='/events'
             className='pt-serif-regular-italic hover:underline text-blue-600'>
             see more...
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -206,11 +207,11 @@ function Testimonials() {
             “Venla is a baddie. If I didn’t have a bf I would date
             her”
           </div>
-          <a
+          <Link
             href='/events/graduation'
             className='pt-serif-regular-italic hover:underline text-blue-600'>
             see more...
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -236,11 +237,11 @@ function Testimonials() {
             photographer, Venla is also very fun to hang out with
             she’s cool like that” - Axu
           </div>
-          <a
+          <Link
             href='/couples'
             className='pt-serif-regular-italic hover:underline text-blue-600'>
             see more...
-          </a>
+          </Link>
         </div>
       </div>
     </div>
