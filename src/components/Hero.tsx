@@ -69,9 +69,9 @@ export function Hero() {
   return (
     <>
       {/* Hero */}
-      <div className='flex flex-col justify-center items-center py-10 px-40 h-screen md:h-[66vh]'>
-        <BACKGROUND.GOLDEN_RATIO className='invisible lg:visible lg:absolute -z-10 top-[225px] rotate-0 w-[calc(60vh*1.618)] h-[60vh]' />
-        <div className='absolute top-[225px] lg:w-[calc(60vh*1.618)] lg:h-[60vh] lg:grid lg:grid-rows-1 grid-cols-1 lg:grid-cols-11 px-6 py-4 lg:rotate-0'>
+      <div className='flex flex-col justify-center items-center py-10 px-40 lg:h-[66vh]'>
+        <BACKGROUND.GOLDEN_RATIO className='scale-0 lg:scale-100 invisible lg:visible absolute -z-10 top-[225px] rotate-0 w-[calc(60vh*1.618)] h-[60vh]' />
+        <div className='relative lg:absolute lg:top-[225px] lg:w-[calc(60vh*1.618)] lg:h-[60vh] lg:grid lg:grid-rows-1 grid-cols-1 lg:grid-cols-11 px-6 py-4 lg:rotate-0'>
           <div className='md:col-span-7 p-5'>
             <h1 className='font-semibold uppercase tracking-tight text-6xl'>
               Venla Tuomala
