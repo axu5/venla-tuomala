@@ -9,7 +9,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { usePathname } from "next/navigation";
-import { Fragment, useCallback } from "react";
+import { Fragment } from "react";
 
 export function ClientBreadcrumbs() {
   const pathname = usePathname();

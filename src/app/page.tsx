@@ -1,13 +1,7 @@
 import { ImageCarousel } from "@/components/ImageCarousel";
 import { BACKGROUND } from "@/icons/background";
 import { cn } from "@/lib/utils";
-import {
-  ArrowRight,
-  Dot,
-  Instagram,
-  Linkedin,
-  SquareArrowOutUpRight,
-} from "lucide-react";
+import { ArrowRight, Dot } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 

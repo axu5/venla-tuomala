@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { GeistSans } from "geist/font/sans";
 import { cn } from "@/lib/utils";
+import { GeistSans } from "geist/font/sans";
 import {
   Instagram,
   Linkedin,
   SquareArrowOutUpRight,
 } from "lucide-react";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import Link from "next/link";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
