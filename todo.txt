@@ -5,8 +5,8 @@
 [ ] i18n
 [ ] SEO
 [ ] Typing animation front page
-[ ] Smooth scroll
 [ ] Events
 [ ] Better loading strategy
 [ ] 404 page
+[x] Smooth scroll
 [x] fix everything being dynamic server rendered
