@@ -4,8 +4,9 @@
 [ ] fix site for small screens
 [ ] SEO
 [ ] Better loading strategy
-[ ] Loading skeleton
 [ ] 404 page
+[ ] Image parallax speed thing
+[x] Loading skeleton
 [x] Typing animation front page
 [x] i18n
 [x] Events

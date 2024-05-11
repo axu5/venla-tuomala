@@ -101,7 +101,8 @@ function AccordionItem({
     <div className={cn(className, "flex flex-col group")}>
       <Link
         className='w-full p-5 pt-serif-regular text-2xl flex flex-row items-center content-center'
-        href={link}>
+        href={link}
+        prefetch>
         {text}
         <ArrowRight className='pl-2 w-8 h-4 transition-all group-hover:pl-4' />
       </Link>

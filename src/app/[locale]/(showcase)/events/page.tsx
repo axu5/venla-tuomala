@@ -97,13 +97,16 @@ export default function Events() {
                   "transition-all shadow-sm rounded row-span-5",
                   {
                     "scale-90": i !== current,
-                    "shadow-md": i === current,
+                    "shadow-xl": i === current,
                   }
                 )}
                 alt=''
                 src={eventData.thumbnail}
                 width={6969}
                 height={0}
+                priority={
+                  i === 0 || i === 1 || i === events.length - 1
+                }
               />
               <Link
                 className='group align-bottom flex flex-row justify-center items-center py-5'
