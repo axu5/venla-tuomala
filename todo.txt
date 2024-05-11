@@ -4,8 +4,9 @@
 [ ] fix site for small screens
 [ ] SEO
 [ ] Better loading strategy
-[ ] 404 page
 [ ] Image parallax speed thing
+[ ] Mobile hamburger menu in nav
+[x] 404 page
 [x] Loading skeleton
 [x] Typing animation front page
 [x] i18n
