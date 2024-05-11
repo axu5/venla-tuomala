@@ -50,8 +50,12 @@ export function LanguageSwitcher() {
       </SelectTrigger>
       <SelectContent className='bg-goldenish'>
         <SelectGroup className='flex flex-col'>
-          <SelectItem value='fi'>Suomi</SelectItem>
-          <SelectItem value='en'>English</SelectItem>
+          <SelectItem value='fi' className='cursor-pointer'>
+            Suomi
+          </SelectItem>
+          <SelectItem value='en' className='cursor-pointer'>
+            English
+          </SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>
