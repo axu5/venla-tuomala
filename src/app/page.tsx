@@ -138,7 +138,7 @@ export default function LandingPage() {
             </div>
             <div className='col-span-1'>
               <h3 className='pt-serif-bold text-2xl pt-5 pb-1 md:py-1'>
-                Couple&aposs Photography
+                Couple&apos;s Photography
               </h3>
               <div className='pt-serif-regular-italic flex flex-row'>
                 18.03.2024 <Dot /> Mikkeli, Finland
