@@ -6,7 +6,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
-import { ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Circle } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -103,7 +103,7 @@ export default function Events() {
                 height={0}
               />
               <a
-                className='group align-bottom flex flex-row justify-center items-center'
+                className='group align-bottom flex flex-row justify-center items-center py-5'
                 href={"/events/" + eventData.slug}>
                 <span className='text-2xl font-semibold'>
                   {eventData.name}
@@ -114,6 +114,31 @@ export default function Events() {
           </CarouselItem>
         ))}
       </CarouselContent>
+
+      {/* Controls */}
+      <div className='flex justify-center items-center'>
+        <div className='flex flex-row items-center gap-16 justify-center backdrop-blur-lg rounded-md px-5 py-1'>
+          <div className='flex flex-row gap-2'>
+            {new Array(total).fill(null).map((_, i) => {
+              return (
+                <Circle
+                  key={i}
+                  className={cn(
+                    "cursor-pointer w-2 h-2 transition-all fill-gray-400 stroke-none",
+                    {
+                      "fill-black": i === current,
+                      "hover:fill-[#fff5]": i !== current,
+                    }
+                  )}
+                  onClick={() => {
+                    api?.scrollTo(i);
+                  }}
+                />
+              );
+            })}
+          </div>
+        </div>
+      </div>
     </Carousel>
   );
 }
