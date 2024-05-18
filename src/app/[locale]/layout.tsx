@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { TranslationsProvider } from "@/components/TranslationsProvider";
 import { cn } from "@/lib/utils";
 import { GeistSans } from "geist/font/sans";
+import { dir } from "i18next";
 import {
   Instagram,
   Linkedin,
@@ -15,7 +16,7 @@ import { Inter } from "next/font/google";
 import Link from "next/link";
 import initTranslations, { Locale, LocaleParam } from "../i18n";
 import "./globals.css";
-import { dir } from "i18next";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -87,6 +88,7 @@ export default async function RootLayout({
               {children}
               <Footer locale={locale} />
             </div>
+            <Toaster richColors />
           </ThemeProvider>
         </TranslationsProvider>
       </body>
