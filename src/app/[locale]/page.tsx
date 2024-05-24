@@ -1,7 +1,8 @@
-import { Hero } from "@/components/Hero";
 import { ImageCarousel } from "@/components/ImageCarousel";
-import { cn } from "@/lib/utils";
+import { TypingText } from "@/components/TypingText";
+import { BACKGROUND } from "@/icons/background";
 import { ArrowRight, Dot } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import initTranslations, { LocaleParam } from "../i18n";
 
@@ -16,97 +17,134 @@ export default async function LandingPage({
     <>
       {/* TODO scroll bar animation thing */}
       <main className='max-w-7xl'>
-        <Hero />
+        <div className='w-full'>
+          <Image
+            className='w-full'
+            src='/images/events/birthday/HNRI9011.png'
+            alt=''
+            width={6969}
+            height={0}
+          />
+        </div>
 
         {/* Accordion */}
-        <div className='flex flex-col items-center' id='portfolio'>
-          <h2 className='text-3xl font-bold w-full text-center uppercase font-sans border border-transparent border-y-black my-10 py-2'>
-            {t("Portfolio")}
-          </h2>
+        <SubTitle title={t("About")} id='about' />
+        <div className='relative max-w-5xl mx-auto h-[calc(min(1024px,100vw)/1.618)]'>
+          <div className='absolute grid top-0 left-0 w-full p-[3px] h-full grid-cols-[61.80%_38.20%]'>
+            <div className=''>
+              <h1 className='text-5xl p-10 uppercase font-semibold'>
+                Venla Tuomala
+              </h1>
+              <span className='p-10 text-3xl font-semibold'>
+                I am <TypingText />
+              </span>
+            </div>
+            <div className='flex flex-col justify-end w-full h-full'>
+              <Image
+                src='/images/venla2.png'
+                alt='Pic of me'
+                width={6969}
+                height={0}
+              />
+            </div>
+          </div>
+          <BACKGROUND.GOLDEN_RATIO className='w-full h-full' />
         </div>
-        <AccordionList t={t} />
+
+        <SubTitle title={t("Portfolio")} id='portfolio' />
+        <div className='grid px-5 grid-cols-1 md:grid-cols-2 grid-rows-2 gap-2'>
+          <PortfolioItem
+            src={"/images/weddings/HNRI9681.jpg"}
+            alt={"A bride holding a bouquet in the air."}
+            href={"/couples"}
+            title={"Couples"}
+          />
+          <PortfolioItem
+            src={"/images/events/summer-festival/IMG_0921.JPG"}
+            alt={"Two sirpa fans"}
+            href={"/events/"}
+            title={"Events"}
+          />
+          <PortfolioItem
+            src={"/images/portraits/Screenshot.png"}
+            alt={"An amazing portrait"}
+            href={"/portraits/"}
+            title={"Portraits"}
+          />
+          <PortfolioItem
+            src={"/images/companies/companies.png"}
+            alt={"An amazing office space and working environment"}
+            href={"/companies/"}
+            title={"Companies"}
+          />
+        </div>
+
+        <SubTitle title={t("What to expect")} id='what-to-expect' />
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-2 px-5'>
+          <Link
+            href='/customer/private'
+            className='flex items-center justify-center h-48 bg-goldenisher rounded-md hover:drop-shadow-lg'>
+            Private Customers
+          </Link>
+          <Link
+            href='/customer/corporate'
+            className='flex items-center justify-center h-48 bg-goldenisher rounded-md hover:drop-shadow-lg'>
+            Corporate Customers
+          </Link>
+        </div>
 
         {/* Said about me */}
-        <div className='flex flex-col items-center' id='testimonials'>
-          <h2 className='text-3xl font-bold w-full text-center uppercase font-sans border border-transparent border-y-black my-10 py-2'>
-            {t("Testimonials")}
-          </h2>
-        </div>
+        <SubTitle title={t("Testimonials")} id='testimonials' />
         <Testimonials t={t} />
       </main>
     </>
   );
 }
 
-type AccordionItemType = {
-  text: string;
-  link: string;
+type SubTitleProps = {
+  title: string;
+  id: string;
 };
 
-function AccordionList({ t }: { t: any }) {
-  const links: AccordionItemType[] = [
-    {
-      text: t("Couples"),
-      link: "/couples",
-    },
-    {
-      text: t("Events"),
-      link: "/events",
-    },
-    {
-      text: t("Portraits"),
-      link: "/portraits",
-    },
-    {
-      text: t("Weddings"),
-      link: "/weddings",
-    },
-    {
-      text: t("Other work"),
-      link: "/other-work",
-    },
-  ];
-
+function SubTitle({ title, id }: SubTitleProps) {
   return (
-    <>
-      {links.map((link, i) => {
-        return (
-          <AccordionItem
-            className={cn(
-              "transition-all border border-x-0 md:border-x-2 border-black hover:bg-goldenisher hover:shadow-xl from-60% hover:to-goldenish motion-reduce:transition-none motion-reduce:hover:transform-none",
-              {
-                "border-t-transparent": i !== 0,
-              }
-            )}
-            text={link.text}
-            link={link.link}
-            key={link.text}
-          />
-        );
-      })}
-    </>
+    <div className='scroll-m-16 flex flex-col items-center' id={id}>
+      <h2 className='text-3xl font-bold w-full text-center uppercase font-sans border border-transparent border-y-black my-10 py-2'>
+        {title}
+      </h2>
+    </div>
   );
 }
 
-type AccordionItemComponentType = AccordionItemType & {
-  className: string;
+type PortfolioItemProps = {
+  src: string;
+  alt: string;
+  href: string;
+  title: string;
 };
 
-function AccordionItem({
-  className,
-  text,
-  link,
-}: AccordionItemComponentType) {
+function PortfolioItem({
+  src,
+  alt,
+  href,
+  title,
+}: PortfolioItemProps) {
   return (
-    <div className={cn(className, "flex flex-col group")}>
-      <Link
-        className='w-full p-5 pt-serif-regular text-2xl flex flex-row items-center content-center'
-        href={link}
-        prefetch>
-        {text}
-        <ArrowRight className='pl-2 w-8 h-4 transition-all group-hover:pl-4' />
-      </Link>
-    </div>
+    <Link
+      href={href}
+      className='group flex flex-col justify-center items-center hover:drop-shadow-lg'>
+      <Image
+        className='contrast-[90%] group-hover:contrast-100 transition rounded-md'
+        src={src}
+        alt={alt}
+        width={6969}
+        height={0}
+      />
+      <span className='text-white h-0 flex flex-row items-center pt-serif-regular text-3xl -translate-y-16 px-5 py-2 rounded-full'>
+        {title}{" "}
+        <ArrowRight className='w-5 h-5 ml-2 group-hover:translate-x-4 transition' />
+      </span>
+    </Link>
   );
 }
 

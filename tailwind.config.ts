@@ -51,6 +51,9 @@ module.exports = {
         goldenisher: {
           DEFAULT: "var(--goldenisher)",
         },
+        brownish: {
+          DEFAULT: "var(--brownish)",
+        },
       },
       borderRadius: {
         lg: `var(--radius)`,

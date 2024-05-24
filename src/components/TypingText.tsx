@@ -24,16 +24,17 @@ const cursorVariants = {
   },
 };
 
-export function Hero() {
+export function TypingText() {
   const { t } = useTranslation();
   const count = useMotionValue(0);
   const textIndex = useMotionValue(0);
 
   const texts = [
-    t("Photographer"),
-    t("Inspiration"),
-    t("Idol"),
-    t("Cool gal"),
+    t("a photographer"),
+    t("a student"),
+    t("a coffee-lover"),
+    t("a travel enthusiast"),
+    t("a person who gets things done"),
   ];
   const baseText = useTransform(
     textIndex,
@@ -68,33 +69,10 @@ export function Hero() {
 
   return (
     <>
-      {/* Hero */}
-      <div className='flex flex-col justify-center items-center py-10 px-40 lg:h-[66vh]'>
-        <BACKGROUND.GOLDEN_RATIO className='scale-0 lg:scale-100 invisible lg:visible absolute -z-10 top-[225px] rotate-0 w-[calc(60vh*1.618)] h-[60vh]' />
-        <div className='relative lg:absolute lg:top-[225px] lg:w-[calc(60vh*1.618)] lg:h-[60vh] lg:grid lg:grid-rows-1 grid-cols-1 lg:grid-cols-11 px-6 py-4 lg:rotate-0'>
-          <div className='md:col-span-7 p-5'>
-            <h1 className='font-semibold uppercase tracking-tight text-6xl'>
-              Venla Tuomala
-            </h1>
-            <div className='flex flex-row'>
-              <motion.h2 className='pt-serif-regular-italic text-5xl'>
-                {displayText}
-              </motion.h2>
-              <BlinkingCursor />
-            </div>
-          </div>
-          <div className='lg:col-span-4'>
-            <Image
-              src='/images/venla.png'
-              alt='venla'
-              className='p-10'
-              width={420}
-              height={420}
-              priority
-            />
-          </div>
-        </div>
-      </div>
+      <motion.span className='pt-serif-regular-italic text-brownish font-semibold'>
+        {displayText}
+      </motion.span>
+      <BlinkingCursor />
     </>
   );
 }
@@ -104,7 +82,7 @@ function BlinkingCursor() {
     <motion.div
       variants={cursorVariants}
       animate='blinking'
-      className='inline-block h-12 w-[1px] translate-y-1 bg-slate-900 ml-[2px]'
+      className='inline-block h-[30px] w-[1px] translate-y-1 bg-slate-900 ml-[2px]'
     />
   );
 }

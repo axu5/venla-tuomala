@@ -76,7 +76,9 @@ export default async function RootLayout({
                       <Link href='/#portfolio'>{t("Portfolio")}</Link>
                     </li>
                     <li className='uppercase text-2xl font-bold'>
-                      <Link href='/#contact'>{t("Contact")}</Link>
+                      <Link href='/#what-to-expect'>
+                        {t("What to expect")}
+                      </Link>
                     </li>
                     <li className=''>
                       <LanguageSwitcher />
