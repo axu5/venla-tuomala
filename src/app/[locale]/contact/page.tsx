@@ -12,7 +12,6 @@ import {
 } from "@/validators/contact";
 import { FieldApi, useForm } from "@tanstack/react-form";
 import { Sparkle } from "lucide-react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
@@ -192,7 +191,7 @@ export default function Page() {
                   className='bg-goldenish border border-goldenisher drop-shadow-md'
                 />
                 <span className='text-sm py-1 text-gray-800'>
-                  Please include what you need, times you're available
+                  Please include what you need, times you&apos;re available
                   for pre-shoot meeting, and your budget.
                 </span>
                 <FieldInfo field={field} />
