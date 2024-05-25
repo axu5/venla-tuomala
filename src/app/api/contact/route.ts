@@ -12,6 +12,7 @@ export async function POST(request: Request) {
     const body = contactFormValidator.parse(_body);
 
     const data = await resend.emails.send({
+      // TODO: fix typo
       from: `${body.name} <${env.CLIENT_FORM_EMAIL_ADDRESS}>`,
       to: [env.CLIENT_EMAIL],
       subject: `[${env.CLIENT_WEBSITE_DOMAIN}] ${body.name} sent you a message`,

@@ -17,13 +17,14 @@ export default async function LandingPage({
     <>
       {/* TODO scroll bar animation thing */}
       <main className='max-w-7xl'>
-        <div className='w-full'>
+        <div className='relative w-full h-[70vh]'>
           <Image
-            className='w-full'
-            src='/images/events/birthday/HNRI9011.png'
+            className='object-cover'
+            src='/images/events/birthday/IMG_0941.JPG'
             alt=''
-            width={6969}
-            height={0}
+            // width={6969}
+            // height={600}
+            fill={true}
           />
         </div>
 
@@ -83,12 +84,12 @@ export default async function LandingPage({
         <div className='grid grid-cols-1 md:grid-cols-2 gap-2 px-5'>
           <Link
             href='/customer/private'
-            className='flex items-center justify-center h-48 bg-goldenisher rounded-md hover:drop-shadow-lg'>
+            className='flex items-center justify-center h-48 bg-goldenisher rounded-md hover:drop-shadow-lg text-2xl'>
             Private Customers
           </Link>
           <Link
             href='/customer/corporate'
-            className='flex items-center justify-center h-48 bg-goldenisher rounded-md hover:drop-shadow-lg'>
+            className='flex items-center justify-center h-48 bg-goldenisher rounded-md hover:drop-shadow-lg text-2xl'>
             Corporate Customers
           </Link>
         </div>
