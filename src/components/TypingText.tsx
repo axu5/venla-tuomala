@@ -1,13 +1,11 @@
 "use client";
 
-import { BACKGROUND } from "@/icons/background";
 import {
   animate,
   motion,
   useMotionValue,
   useTransform,
 } from "framer-motion";
-import Image from "next/image";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 

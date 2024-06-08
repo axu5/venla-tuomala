@@ -1,10 +1,9 @@
 import { ImageCarousel } from "@/components/ImageCarousel";
-import { TypingText } from "@/components/TypingText";
-import { BACKGROUND } from "@/icons/background";
 import { ArrowRight, Dot } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import initTranslations, { LocaleParam } from "../i18n";
+import { SubTitle } from "@/components/SubTitle";
 
 const i18nNamespaces = ["home", "common"];
 
@@ -28,28 +27,25 @@ export default async function LandingPage({
           />
         </div>
 
-        {/* Accordion */}
-        <SubTitle title={t("About")} id='about' />
-        <div className='relative max-w-5xl mx-auto h-[calc(min(1024px,100vw)/1.618)]'>
-          <div className='absolute grid top-0 left-0 w-full p-[3px] h-full grid-cols-[61.80%_38.20%]'>
-            <div className=''>
-              <h1 className='text-5xl p-10 uppercase font-semibold'>
-                Venla Tuomala
-              </h1>
-              <span className='p-10 text-3xl font-semibold'>
-                I am <TypingText />
-              </span>
-            </div>
-            <div className='flex flex-col justify-end w-full h-full'>
-              <Image
-                src='/images/venla2.png'
-                alt='Pic of me'
-                width={6969}
-                height={0}
-              />
-            </div>
+        {/* About me */}
+        <div className='flex flex-col max-w-2xl mx-auto gap-y-5 py-20'>
+          <div className='uppercase font-semibold'>
+            so, you are going to host an unforgettable party for your
+            friends, family or colleagues?
           </div>
-          <BACKGROUND.GOLDEN_RATIO className='w-full h-full' />
+
+          <div className='uppercase font-semibold'>
+            You Need to bring your brand to life?
+          </div>
+          <div className='uppercase font-semibold'>
+            whether its for professional or a personal needs, i&apos;m
+            excited to transform ordinary moments into unforgettable
+            memories.
+          </div>
+          <div className='uppercase font-semibold'>
+            lets create souvenirs for the most important events of
+            your life!
+          </div>
         </div>
 
         <SubTitle title={t("Portfolio")} id='portfolio' />
@@ -84,13 +80,15 @@ export default async function LandingPage({
         <div className='grid grid-cols-1 md:grid-cols-2 gap-2 px-5'>
           <Link
             href='/customer/private'
-            className='flex items-center justify-center h-48 bg-goldenisher rounded-md hover:drop-shadow-lg text-2xl'>
+            className='flex items-center uppercase justify-center h-48 drop-shadow-none hover:drop-shadow-lg text-2xl group'>
             Private Customers
+            <ArrowRight className='ml-2 w-5 h-5 group-hover:translate-x-4 transition' />
           </Link>
           <Link
             href='/customer/corporate'
-            className='flex items-center justify-center h-48 bg-goldenisher rounded-md hover:drop-shadow-lg text-2xl'>
+            className='flex items-center uppercase justify-center h-48 text-2xl group'>
             Corporate Customers
+            <ArrowRight className='ml-2 w-5 h-5 group-hover:translate-x-4 transition' />
           </Link>
         </div>
 
@@ -99,21 +97,6 @@ export default async function LandingPage({
         <Testimonials t={t} />
       </main>
     </>
-  );
-}
-
-type SubTitleProps = {
-  title: string;
-  id: string;
-};
-
-function SubTitle({ title, id }: SubTitleProps) {
-  return (
-    <div className='scroll-m-16 flex flex-col items-center' id={id}>
-      <h2 className='text-3xl font-bold w-full text-center uppercase font-sans border border-transparent border-y-black my-10 py-2'>
-        {title}
-      </h2>
-    </div>
   );
 }
 
@@ -142,7 +125,7 @@ function PortfolioItem({
         height={0}
       />
       <span className='text-white h-0 flex flex-row items-center pt-serif-regular text-3xl -translate-y-16 px-5 py-2 rounded-full'>
-        {title}{" "}
+        {title}
         <ArrowRight className='w-5 h-5 ml-2 group-hover:translate-x-4 transition' />
       </span>
     </Link>

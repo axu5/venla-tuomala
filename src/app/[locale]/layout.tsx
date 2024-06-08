@@ -69,15 +69,31 @@ export default async function RootLayout({
               <div className='sticky top-5 z-10'>
                 <nav className='border-t-2 bg-goldenish border-b-2 py-2 border-black'>
                   <ul className='flex flex-row justify-around items-center'>
-                    <li className='uppercase text-2xl font-bold'>
-                      <Link href='/#about'>{t("About")}</Link>
+                    <li className='uppercase text-3xl font-bold'>
+                      <Link href='/' className='uppercase'>
+                        VT
+                      </Link>
                     </li>
                     <li className='uppercase text-2xl font-bold'>
-                      <Link href='/#portfolio'>{t("Portfolio")}</Link>
+                      <Link href='/#gallery' className='lowercase'>
+                        {t("Gallery")}
+                      </Link>
                     </li>
                     <li className='uppercase text-2xl font-bold'>
-                      <Link href='/#what-to-expect'>
+                      <Link href='/about' className='lowercase'>
+                        {t("About")}
+                      </Link>
+                    </li>
+                    <li className='uppercase text-2xl font-bold'>
+                      <Link
+                        href='/#what-to-expect'
+                        className='lowercase'>
                         {t("What to expect")}
+                      </Link>
+                    </li>
+                    <li className='uppercase text-2xl font-bold'>
+                      <Link href='/contact' className='lowercase'>
+                        {t("contact")}
                       </Link>
                     </li>
                     <li className=''>
