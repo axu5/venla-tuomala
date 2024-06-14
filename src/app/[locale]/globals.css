@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -39,6 +39,8 @@
     --goldenish: #e4dbcc;
     --goldenisher: #dcc599;
     --brownish: #662b19;
+    --offwhite: #f5f5f5;
+    --muted-grey: #454545;
   }
 
   .dark {
@@ -81,30 +83,18 @@
   }
 }
 
-.pt-serif-regular {
-  font-family: "PT Serif", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.pt-serif-bold {
-  font-family: "PT Serif", serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.pt-serif-regular-italic {
-  font-family: "PT Serif", serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.pt-serif-bold-italic {
-  font-family: "PT Serif", serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
 body {
-  background-color: var(--goldenish);
+  background-color: var(--offwhite);
+}
+
+svg.signature path:nth-child(1) {
+  stroke-dasharray: 30px;
+}
+svg.signature path:nth-child(2) {
+}
+svg.signature path:nth-child(3) {
+}
+svg.signature path:nth-child(4) {
+}
+svg.signature path:nth-child(5) {
 }

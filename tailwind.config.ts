@@ -54,6 +54,12 @@ module.exports = {
         brownish: {
           DEFAULT: "var(--brownish)",
         },
+        offwhite: {
+          DEFAULT: "var(--offwhite)",
+        },
+        "muted-gray": {
+          DEFAULT: "var(--muted-grey)",
+        },
       },
       borderRadius: {
         lg: `var(--radius)`,
@@ -62,6 +68,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)"],
+        serif: ["Roboto Serif", "serif"],
       },
       keyframes: {
         "accordion-down": {

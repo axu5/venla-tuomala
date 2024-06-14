@@ -1,233 +1,278 @@
-import { ImageCarousel } from "@/components/ImageCarousel";
-import { ArrowRight, Dot } from "lucide-react";
+import { Title } from "@/components/Title";
+import { LocaleParam } from "../i18n";
 import Image from "next/image";
-import Link from "next/link";
-import initTranslations, { LocaleParam } from "../i18n";
 import { SubTitle } from "@/components/SubTitle";
-
-const i18nNamespaces = ["home", "common"];
+import { ASSETS } from "@/constants";
+import { Button, buttonVariants } from "@/components/ui/button";
+import Link from "next/link";
+import Balancer from "react-wrap-balancer";
+import { CircleArrowDown } from "lucide-react";
 
 export default async function LandingPage({
   params: { locale },
 }: LocaleParam) {
-  const { t } = await initTranslations(locale, i18nNamespaces);
+  return (
+    <main className='flex flex-col max-w-5xl mx-auto'>
+      <Hero />
+      <Overlay />
+      <WhatToExpect />
+      <PreviousWork />
+      <Testimonials />
+    </main>
+  );
+}
 
+function Overlay() {
   return (
     <>
-      {/* TODO scroll bar animation thing */}
-      <main className='max-w-7xl'>
-        <div className='relative w-full h-[70vh]'>
-          <Image
-            className='object-cover'
-            src='/images/events/birthday/IMG_0941.JPG'
-            alt=''
-            // width={6969}
-            // height={600}
-            fill={true}
-          />
-        </div>
-
-        {/* About me */}
-        <div className='flex flex-col max-w-2xl mx-auto gap-y-5 py-20'>
-          <div className='uppercase font-semibold'>
-            so, you are going to host an unforgettable party for your
-            friends, family or colleagues?
-          </div>
-
-          <div className='uppercase font-semibold'>
-            You Need to bring your brand to life?
-          </div>
-          <div className='uppercase font-semibold'>
-            whether its for professional or a personal needs, i&apos;m
-            excited to transform ordinary moments into unforgettable
-            memories.
-          </div>
-          <div className='uppercase font-semibold'>
-            lets create souvenirs for the most important events of
-            your life!
-          </div>
-        </div>
-
-        <SubTitle title={t("Portfolio")} id='portfolio' />
-        <div className='grid px-5 grid-cols-1 md:grid-cols-2 grid-rows-2 gap-2'>
-          <PortfolioItem
-            src={"/images/weddings/HNRI9681.jpg"}
-            alt={"A bride holding a bouquet in the air."}
-            href={"/couples"}
-            title={"Couples"}
-          />
-          <PortfolioItem
-            src={"/images/events/summer-festival/IMG_0921.JPG"}
-            alt={"Two sirpa fans"}
-            href={"/events/"}
-            title={"Events"}
-          />
-          <PortfolioItem
-            src={"/images/portraits/Screenshot.png"}
-            alt={"An amazing portrait"}
-            href={"/portraits/"}
-            title={"Portraits"}
-          />
-          <PortfolioItem
-            src={"/images/companies/companies.png"}
-            alt={"An amazing office space and working environment"}
-            href={"/companies/"}
-            title={"Companies"}
-          />
-        </div>
-
-        <SubTitle title={t("What to expect")} id='what-to-expect' />
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-2 px-5'>
-          <Link
-            href='/customer/private'
-            className='flex items-center uppercase justify-center h-48 drop-shadow-none hover:drop-shadow-lg text-2xl group'>
-            Private Customers
-            <ArrowRight className='ml-2 w-5 h-5 group-hover:translate-x-4 transition' />
-          </Link>
-          <Link
-            href='/customer/corporate'
-            className='flex items-center uppercase justify-center h-48 text-2xl group'>
-            Corporate Customers
-            <ArrowRight className='ml-2 w-5 h-5 group-hover:translate-x-4 transition' />
-          </Link>
-        </div>
-
-        {/* Said about me */}
-        <SubTitle title={t("Testimonials")} id='testimonials' />
-        <Testimonials t={t} />
-      </main>
+      <CircleArrowDown className='animate-bounce text-brownish w-16 h-16 stroke-[1px] m-10 hidden md:block' />
     </>
   );
 }
 
-type PortfolioItemProps = {
-  src: string;
-  alt: string;
-  href: string;
-  title: string;
-};
+function Signature() {
+  return <ASSETS.signature />;
+}
 
-function PortfolioItem({
-  src,
-  alt,
-  href,
-  title,
-}: PortfolioItemProps) {
+function Hero() {
   return (
-    <Link
-      href={href}
-      className='group flex flex-col justify-center items-center hover:drop-shadow-lg'>
-      <Image
-        className='contrast-[90%] group-hover:contrast-100 transition rounded-md'
-        src={src}
-        alt={alt}
-        width={6969}
-        height={0}
-      />
-      <span className='text-white h-0 flex flex-row items-center pt-serif-regular text-3xl -translate-y-16 px-5 py-2 rounded-full'>
-        {title}
-        <ArrowRight className='w-5 h-5 ml-2 group-hover:translate-x-4 transition' />
-      </span>
-    </Link>
+    <div className='grid grid-cols-1 md:grid-cols-2 gap-4 pt-10 h-[61.8vh]'>
+      <div className='flex flex-col'>
+        <Image
+          className='p-3'
+          src='/collage/collage-one.png'
+          alt='Gorgeous pictures'
+          width={6969}
+          height={300}
+        />
+        <div className='flex flex-col justify-center items-center'>
+          <Signature />
+        </div>
+      </div>
+      <div className='flex flex-col'>
+        <div className='flex flex-col px-10 md:pb-64'>
+          <Title>Venla Tuomala</Title>
+          <SubTitle>
+            Lifestyle, portrait & brand photographer
+          </SubTitle>
+        </div>
+        <div className='flex flex-row items-center justify-center gap-x-10'>
+          <Link
+            className={buttonVariants({
+              variant: "call-to-action",
+            })}
+            href={"/get-in-touch"}>
+            Get in touch
+          </Link>
+          <Link
+            className={buttonVariants({ variant: "link" })}
+            href='/#previous-work'>
+            Previous work
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }
 
-function Testimonials({ t }: { t: any }) {
+function WhatToExpect() {
   return (
-    <div className='flex flex-col md:grid md:grid-cols-3 px-10 md:px-20 gap-8 grid-rows-[max-content_1fr]'>
-      {/* Events */}
-      <div className='grid grid-cols-subgrid col-span-2'>
-        <div className='col-span-1'>
-          <ImageCarousel
-            images={[
-              { url: "/images/events/sitsit/FC5A5428.jpg" },
-              { url: "/images/events/sitsit/FC5A5714.jpg" },
-              { url: "/images/events/sitsit/FC5A5787.jpg" },
-              { url: "/images/events/sitsit/FC5A5789.jpg" },
-              { url: "/images/events/sitsit/FC5A5932.jpg" },
-            ]}
-          />
+    <>
+      <div className='flex justify-center align-center pb-20'>
+        <Title id='what-to-expect'>What to expect</Title>
+      </div>
+      <div className='grid grid-cols-2 gap-x-10'>
+        <div className='flex flex-col gap-y-9'>
+          <div className='text-2xl font-serif'>
+            <Balancer>
+              So, you have an unforgettable party coming up?
+            </Balancer>
+          </div>
+          <div className='text-2xl font-serif'>
+            <Balancer>You need to bring your brand to life?</Balancer>
+          </div>
+          <div className='text-2xl font-serif'>
+            <Balancer>
+              Whether its for professional or personal needs, I&apos;m
+              excited to transform ordinary moments into unforgettable
+              memories.
+            </Balancer>
+          </div>
+          <div className='text-2xl font-serif'>
+            <Balancer>
+              Lets create souvenirs for the most memorable events of
+              your life!
+            </Balancer>
+          </div>
         </div>
-        <div>
-          <h3 className='pt-serif-bold text-2xl pt-5 pb-1 md:py-1'>
-            {t("Events")}
-          </h3>
-          <div className='pt-serif-regular-italic flex flex-row'>
-            18.03.2024 <Dot /> Helsinki, {t("Finland")}
-          </div>
-          <div>
-            “Venla is amazing hire her hire her hire her hire her hire
-            her hire her hire her hire her hire her hire her hire her
-            hire her hire her hire her hire her hire her hire her”
-          </div>
-          <Link
-            href='/events'
-            className='pt-serif-regular-italic hover:underline text-blue-600'>
-            {t("see more")}...
-          </Link>
+        <div className='flex flex-col'>
+          <Image
+            src='/collage/collage-two.png'
+            alt='ANOTHER AMAZING PHOTO VENLA IS SO TALENTED'
+            width={6969}
+            height={0}
+          />
         </div>
       </div>
+    </>
+  );
+}
 
-      {/* Graduations */}
-      <div className='grid grid-rows-subgrid col-span-1 row-span-3'>
-        <div className='col-span-1 row-span-2 grid grid-rows-subgrid'>
-          <ImageCarousel
-            className='row-span-2'
-            images={[
-              { url: "/images/portraits/HNRI4240.jpg" },
-              { url: "/images/events/graduation/HNRI4251.jpg" },
-              { url: "/images/events/graduation/HNRI4565.jpg" },
-              { url: "/images/events/graduation/HNRI4573.jpg" },
-            ]}
+function PreviousWork() {
+  return (
+    <>
+      <div className='flex justify-center items-center py-20'>
+        <Title id='previous-work'>Previous Work</Title>
+      </div>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-20'>
+        <>
+          <Image
+            className='px-12 md:px-0'
+            src='/collage/collage-two.png'
+            alt='ANOTHER AMAZING PHOTO VENLA IS SO TALENTED'
+            width={6969}
+            height={0}
           />
-        </div>
-        <div>
-          <h3 className='pt-serif-bold text-2xl pt-5 pb-1 md:py-1'>
-            {t("Graduations")}
-          </h3>
-          <div className='pt-serif-regular-italic flex flex-row'>
-            18.03.2024 <Dot /> Lahti, {t("Finland")}
+          <div className='px-12 md:px-0 flex flex-col justify-between align-left'>
+            <div>
+              <Title>Lifestyle</Title>
+              <SubTitle>Weddings, Birthdays & Other events</SubTitle>
+              <div className='text-muted-gray text-2xl font-serif py-7'>
+                <Balancer>
+                  Some yappa dappa about maybe a testimonial
+                </Balancer>
+              </div>
+            </div>
+            <div>
+              <Link
+                className={buttonVariants({
+                  variant: "link",
+                  className: "pl-0",
+                })}
+                href='/lifestyle'>
+                More about this shit
+              </Link>
+            </div>
           </div>
-          <div>
-            “Venla is a baddie. If I didn’t have a bf I would date
-            her”
+        </>
+        <>
+          <div className='px-12 md:px-0 flex flex-col justify-between align-left'>
+            <div>
+              <Title>Portraits</Title>
+              <SubTitle>Graduations, CV Photos, Family</SubTitle>
+              <div className='text-muted-gray text-2xl font-serif py-7'>
+                <Balancer>...</Balancer>
+              </div>
+            </div>
+            <div>
+              <Link
+                className={buttonVariants({
+                  variant: "link",
+                  className: "pl-0",
+                })}
+                href='/portraits'>
+                More about this shit
+              </Link>
+            </div>
           </div>
-          <Link
-            href='/events/graduation'
-            className='pt-serif-regular-italic hover:underline text-blue-600'>
-            {t("see more")}...
-          </Link>
+          <Image
+            className='px-12 md:px-0'
+            src='/collage/collage-two.png'
+            alt='ANOTHER AMAZING PHOTO VENLA IS SO TALENTED'
+            width={6969}
+            height={0}
+          />
+        </>
+        <>
+          <Image
+            className='px-12 md:px-0'
+            src='/collage/collage-two.png'
+            alt='ANOTHER AMAZING PHOTO VENLA IS SO TALENTED'
+            width={6969}
+            height={0}
+          />
+          <div className='px-12 md:px-0 flex flex-col justify-between align-left'>
+            <div>
+              <Title>Brands</Title>
+              <SubTitle>
+                Advertising, Personal Branding & Personnel
+              </SubTitle>
+              <div className='text-muted-gray text-2xl font-serif py-7'>
+                <Balancer>Bränding yaadi yaada.</Balancer>
+              </div>
+            </div>
+            <div>
+              <Link
+                className={buttonVariants({
+                  variant: "link",
+                  className: "pl-0",
+                })}
+                href='/brands'>
+                More about this shit
+              </Link>
+            </div>
+          </div>
+        </>
+      </div>
+    </>
+  );
+}
+
+function Testimonials() {
+  return (
+    <>
+      <div className='flex justify-center align-center py-20'>
+        <Title>Testimonials</Title>
+      </div>
+      <div className='grid grid-cols-2 gap-10'>
+        <TestimonialCard
+          name='Person 1'
+          testimonial='Venla is a cool and awesome person and she made me feel so comfortable around the camera!'
+        />
+        <TestimonialCard
+          name='Person 2'
+          testimonial='Venla is a cool and awesome person and she made me feel so comfortable around the camera!'
+        />
+        <TestimonialCard
+          name='Person 3'
+          testimonial='Venla is a cool and awesome person and she made me feel so comfortable around the camera!'
+        />
+        <TestimonialCard
+          name='Person 4'
+          testimonial='Venla is a cool and awesome person and she made me feel so comfortable around the camera!'
+        />
+      </div>
+      <Link
+        className={buttonVariants({
+          variant: "link",
+          className: "py-32",
+        })}
+        href='/testimonials'>
+        Read the full testimonials
+      </Link>
+    </>
+  );
+}
+
+type TestimonialCardProps = {
+  name: string;
+  testimonial: string;
+};
+
+function TestimonialCard({
+  name,
+  testimonial,
+}: TestimonialCardProps) {
+  return (
+    <div className='flex flex-col gap-y-5'>
+      <div className='flex flex-row items-center gap-x-5'>
+        <div className='bg-gray-300 animate-pulse w-16 h-16 rounded-full'></div>
+        <div className='text-3xl font-semibold text-muted-gray'>
+          {name}
         </div>
       </div>
-
-      {/* Couples Photography */}
-      <div className='grid grid-cols-subgrid col-span-2 row-span-5'>
-        <div className='col-span-1 row-span-2 grid grid-rows-subgrid'>
-          <ImageCarousel
-            images={[
-              { url: "/images/couples/couple1/VEN11.jpg" },
-              { url: "/images/couples/couple1/VEN02299.jpg" },
-            ]}
-          />
-        </div>
-        <div className='col-span-1'>
-          <h3 className='pt-serif-bold text-2xl pt-5 pb-1 md:py-1'>
-            {t("Couple's Photography")}
-          </h3>
-          <div className='pt-serif-regular-italic flex flex-row'>
-            18.03.2024 <Dot /> Mikkeli, {t("Finland")}
-          </div>
-          <div>
-            “Hello this is a very good and skilled and talented
-            photographer, Venla is also very fun to hang out with
-            she’s cool like that” - Axu
-          </div>
-          <Link
-            href='/couples'
-            className='pt-serif-regular-italic hover:underline text-blue-600'>
-            {t("see more")}...
-          </Link>
-        </div>
+      <div className='border border-transparent border-l-muted-gray px-5 py-2 mx-5 text-muted-gray text-xl'>
+        <Balancer>{testimonial}</Balancer>
       </div>
     </div>
   );
