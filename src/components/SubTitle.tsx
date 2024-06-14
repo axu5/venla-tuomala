@@ -1,16 +1,21 @@
-import { HTMLAttributes, PropsWithChildren } from "react";
-import Balancer from "react-wrap-balancer";
+import { cn } from "@/lib/utils";
+import { ClassValue } from "clsx";
+import { PropsWithChildren } from "react";
 
 type SubTitleProps = PropsWithChildren & {
   id?: string;
+  className?: ClassValue;
 };
 
-export function SubTitle({ children, id }: SubTitleProps) {
+export function SubTitle({ className, children, id }: SubTitleProps) {
   return (
     <h2
-      className='text-4xl text-muted-gray font-serif py-2 capitalize'
+      className={cn(
+        "text-4xl text-muted-gray font-serif py-2 capitalize scroll-m-32 text-balance",
+        className
+      )}
       id={id}>
-      <Balancer>{children}</Balancer>
+      {children}
     </h2>
   );
 }

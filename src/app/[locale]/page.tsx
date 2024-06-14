@@ -36,7 +36,7 @@ function Signature() {
 
 function Hero() {
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-4 pt-10 h-[61.8vh]'>
+    <div className='grid grid-cols-1 md:grid-cols-2 gap-y-10 pb-20 md:gap-4 pt-10'>
       <div className='flex flex-col'>
         <Image
           className='p-3'
@@ -50,9 +50,9 @@ function Hero() {
         </div>
       </div>
       <div className='flex flex-col'>
-        <div className='flex flex-col px-10 md:pb-64'>
+        <div className='flex flex-col px-10 md:pb-64 justify-center items-center md:items-start'>
           <Title>Venla Tuomala</Title>
-          <SubTitle>
+          <SubTitle className='flex justify-center items-center text-center md:text-left py-10 md:py-0'>
             Lifestyle, portrait & brand photographer
           </SubTitle>
         </div>
@@ -81,7 +81,7 @@ function WhatToExpect() {
       <div className='flex justify-center align-center pb-20'>
         <Title id='what-to-expect'>What to expect</Title>
       </div>
-      <div className='grid grid-cols-2 gap-x-10'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-x-10 px-12 md:px-0 gap-y-10'>
         <div className='flex flex-col gap-y-9'>
           <div className='text-2xl font-serif'>
             <Balancer>
@@ -118,6 +118,7 @@ function WhatToExpect() {
   );
 }
 
+// TODO: fix order on mobile
 function PreviousWork() {
   return (
     <>
@@ -224,7 +225,7 @@ function Testimonials() {
       <div className='flex justify-center align-center py-20'>
         <Title>Testimonials</Title>
       </div>
-      <div className='grid grid-cols-2 gap-10'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-10 px-12 md:px-0'>
         <TestimonialCard
           name='Person 1'
           testimonial='Venla is a cool and awesome person and she made me feel so comfortable around the camera!'

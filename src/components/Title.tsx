@@ -1,14 +1,21 @@
+import { cn } from "@/lib/utils";
+import { ClassValue } from "clsx";
 import { PropsWithChildren } from "react";
-import Balancer from "react-wrap-balancer";
 
-type TitleProps = PropsWithChildren & { id?: string };
+type TitleProps = PropsWithChildren & {
+  id?: string;
+  className?: ClassValue;
+};
 
-export function Title({ children, id }: TitleProps) {
+export function Title({ className, children, id }: TitleProps) {
   return (
     <h1
-      className='font-serif text-5xl black font-medium py-3 scroll-m-32'
+      className={cn(
+        "font-serif text-5xl black font-medium py-3 scroll-m-32 text-balance",
+        className
+      )}
       id={id}>
-      <Balancer>{children}</Balancer>
+      {children}
     </h1>
   );
 }

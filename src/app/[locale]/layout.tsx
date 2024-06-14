@@ -2,35 +2,26 @@ import { i18nConfig } from "@/../../i18nConfig";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ProgressBar } from "@/components/ProgressBar";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { Title } from "@/components/Title";
 import { TranslationsProvider } from "@/components/TranslationsProvider";
-import { Toaster } from "@/components/ui/sonner";
-import { cn } from "@/lib/utils";
-import { dir } from "i18next";
-import {
-  Copyright,
-  Instagram,
-  Linkedin,
-  MenuIcon,
-  SquareArrowOutUpRight,
-} from "lucide-react";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import Link from "next/link";
-import initTranslations, { Locale, LocaleParam } from "../i18n";
-import "./globals.css";
-import { Provider as BalancerProvider } from "react-wrap-balancer";
 import { buttonVariants } from "@/components/ui/button";
-import { ASSETS } from "@/constants";
 import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Title } from "@/components/Title";
+import { Toaster } from "@/components/ui/sonner";
+import { ASSETS } from "@/constants";
+import { dir } from "i18next";
+import { Copyright, MenuIcon } from "lucide-react";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { Provider as BalancerProvider } from "react-wrap-balancer";
+import initTranslations, { Locale, LocaleParam } from "../i18n";
+import "./globals.css";
 
 // TODO: SEO
 export const metadata: Metadata = {
@@ -177,7 +168,7 @@ async function Footer({ locale }: { locale: Locale }) {
   return (
     <div className='pt-px mt-10 bg-gradient-to-r from-transparent via-goldenisher to-transparent max-w-5xl'>
       <div className='flex flex-row justify-around py-20 w-full bg-offwhite'>
-        <div className='flex flex-row justify-around w-[50%]'>
+        <div className='flex flex-col md:flex-row justify-around w-[50%]'>
           <Link
             className={buttonVariants({ variant: "link" })}
             href='/contact'>
