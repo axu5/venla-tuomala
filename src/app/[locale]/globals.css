@@ -86,15 +86,3 @@
 body {
   background-color: var(--offwhite);
 }
-
-svg.signature path:nth-child(1) {
-  stroke-dasharray: 30px;
-}
-svg.signature path:nth-child(2) {
-}
-svg.signature path:nth-child(3) {
-}
-svg.signature path:nth-child(4) {
-}
-svg.signature path:nth-child(5) {
-}
