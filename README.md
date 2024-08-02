@@ -1,10 +1,16 @@
 # TODO
 
-- [ ] Fix footer
+- [ ] /process
+- [ ] /testimonials
+- [ ] /previous-work
+- [ ] /about
+- [ ] /contact
+
 - [-] New hello there
 - [x] Testimonials
 - [x] Fix hero
 - [x] Whats included
+- [x] Fix footer
 
 - [ ] fix site for big screens
 - [ ] fix site for small screens

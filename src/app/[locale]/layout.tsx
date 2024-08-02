@@ -166,21 +166,30 @@ export default async function RootLayout({
 async function Footer({ locale }: { locale: Locale }) {
   const { t } = await initTranslations(locale, ["home", "common"]);
   return (
-    <div className='pt-px mt-10 bg-gradient-to-r from-transparent via-goldenisher to-transparent max-w-5xl'>
+    <div className='pt-px mt-10 bg-gradient-to-r from-transparent via-goldenisher to-transparent w-full max-w-7xl mx-auto'>
       <div className='flex flex-row justify-around py-20 w-full bg-offwhite'>
         <div className='flex flex-col md:flex-row justify-around w-[50%]'>
           <Link
-            className={buttonVariants({ variant: "link" })}
+            className={buttonVariants({
+              variant: "link",
+              className: "font-semibold tracking-wide text-2xl",
+            })}
             href='/contact'>
             Contact
           </Link>
           <Link
-            className={buttonVariants({ variant: "link" })}
+            className={buttonVariants({
+              variant: "link",
+              className: "font-semibold tracking-wide text-2xl",
+            })}
             href='/about'>
             About
           </Link>
           <Link
-            className={buttonVariants({ variant: "link" })}
+            className={buttonVariants({
+              variant: "link",
+              className: "font-semibold tracking-wide text-2xl",
+            })}
             href='/testimonials'>
             Testimonials
           </Link>
@@ -193,7 +202,7 @@ async function Footer({ locale }: { locale: Locale }) {
             href='/get-in-touch'>
             Get in touch!
           </Link>
-          <div className='flex flex-row text-xl items-center justify-center self-end text-muted-gray font-medium py-12'>
+          <div className='flex flex-row text-xl items-center justify-center self-end text-muted-gray font-ibarra font-medium py-12'>
             <Copyright className='mr-2' /> {new Date().getFullYear()}{" "}
             Venla Tuomala
           </div>
