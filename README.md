@@ -10,6 +10,7 @@
 - [x] Testimonials
 - [x] Fix hero
 - [x] Whats included
+- [ ] Whats included blinking animations
 - [x] Fix footer
 
 - [ ] fix site for big screens

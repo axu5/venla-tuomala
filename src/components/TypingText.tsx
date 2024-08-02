@@ -80,7 +80,7 @@ function BlinkingCursor() {
     <motion.div
       variants={cursorVariants}
       animate='blinking'
-      className='inline-block h-[30px] w-[1px] translate-y-1 bg-slate-900 ml-[2px]'
+      className='inline-block h-[47px] w-[1px] translate-y-1 bg-slate-900 ml-[2px]'
     />
   );
 }

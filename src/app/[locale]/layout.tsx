@@ -65,29 +65,31 @@ export default async function RootLayout({
                 <div className='sticky top-5 z-10 w-full max-w-screen-xl mx-auto'>
                   <nav className='bg-offwhite py-5 rounded-lg'>
                     <ul className='flex flex-row justify-around items-center'>
-                      <li className='uppercase text-3xl font-bold border border-transparent px-5 mr-5 md:pr-20 border-r-muted-gray'>
-                        <Link href='/' className='uppercase'>
+                      <li className='text-3xl font-bold border border-transparent px-5 mr-5 md:pr-20 border-r-muted-gray'>
+                        <Link href='/'>
                           <ASSETS.initials />
                         </Link>
                       </li>
-                      <li className='uppercase hidden md:block text-2xl font-bold'>
-                        <Link href='/#gallery' className='lowercase'>
-                          {t("Gallery")}
+                      <li className='hidden md:block text-2xl font-bold'>
+                        <Link
+                          href='/previous-work'
+                          className='lowercase'>
+                          {t("Previous work")}
                         </Link>
                       </li>
-                      <li className='uppercase hidden md:block text-2xl font-bold'>
+                      <li className='hidden md:block text-2xl font-bold'>
+                        <Link
+                          href='/testimonials'
+                          className='lowercase'>
+                          {t("Testimonials")}
+                        </Link>
+                      </li>
+                      <li className='hidden md:block text-2xl font-bold'>
                         <Link href='/about' className='lowercase'>
                           {t("About")}
                         </Link>
                       </li>
-                      <li className='uppercase hidden md:block text-2xl font-bold'>
-                        <Link
-                          href='/#what-to-expect'
-                          className='lowercase'>
-                          {t("What to expect")}
-                        </Link>
-                      </li>
-                      <li className='uppercase hidden md:block text-2xl font-bold'>
+                      <li className='hidden md:block text-2xl font-bold'>
                         <Link href='/contact' className='lowercase'>
                           {t("contact")}
                         </Link>
@@ -199,7 +201,7 @@ async function Footer({ locale }: { locale: Locale }) {
             className={buttonVariants({
               variant: "call-to-action",
             })}
-            href='/get-in-touch'>
+            href='/contact'>
             Get in touch!
           </Link>
           <div className='flex flex-row text-xl items-center justify-center self-end text-muted-gray font-ibarra font-medium py-12'>
