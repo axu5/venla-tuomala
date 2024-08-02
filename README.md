@@ -2,9 +2,9 @@
 
 - [ ] Fix previous work
 - [ ] New hello there
-- [ ] Whats included
 - [ ] Testimonials
 - [x] Fix hero
+- [x] Whats included
 
 - [ ] fix site for big screens
 - [ ] fix site for small screens

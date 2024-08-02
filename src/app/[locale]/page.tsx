@@ -12,12 +12,16 @@ export default async function LandingPage({
   params: { locale },
 }: LocaleParam) {
   return (
-    <main className='flex flex-col max-w-5xl mx-auto'>
-      <Hero />
-      <Overlay />
-      <HiThere />
-      <PreviousWork />
-      <Testimonials />
+    <main className='flex flex-col'>
+      <div className='max-w-5xl mx-auto'>
+        <Hero />
+        <Overlay />
+        <HiThere />
+      </div>
+      <WhatsIncluded />
+      <div className='max-w-5xl mx-auto'>
+        <Testimonials />
+      </div>
     </main>
   );
 }
@@ -114,6 +118,46 @@ function HiThere() {
         </div>
       </div>
     </>
+  );
+}
+
+function WhatsIncluded() {
+  return (
+    <section className='bg-[#232323] h-screen w-screen py-20 my-20'>
+      <div className='max-w-5xl mx-auto flex flex-col justify-center align-center w-full gap-20'>
+        <Title className='text-white mx-auto'>
+          What&apos;s included
+        </Title>
+        <div className='grid grid-cols-3 gap-10'>
+          <div className='text-white font-ibarra text-3xl mx-auto capitalize text-center'>
+            Consultation
+          </div>
+          <div className='text-white font-ibarra text-3xl mx-auto capitalize text-center'>
+            Editing high resolution images
+          </div>
+          <div className='text-white font-ibarra text-3xl mx-auto capitalize text-center'>
+            Location ideas
+          </div>
+          <div className='text-white font-ibarra text-3xl mx-auto capitalize text-center'>
+            Sneak peek photos within 48h
+          </div>
+          <div className='text-white font-ibarra text-3xl mx-auto capitalize text-center'>
+            Personal printing rights
+          </div>
+          <div className='text-white font-ibarra text-3xl mx-auto capitalize text-center'>
+            Creative portraits
+          </div>
+          <div className='text-white font-ibarra text-3xl mx-auto capitalize text-center col-start-2'>
+            Custom online gallery
+          </div>
+        </div>
+        <Link
+          className='text-2xl text-white font-ibarra mx-auto hover:underline'
+          href='/process'>
+          Read more about the process here
+        </Link>
+      </div>
+    </section>
   );
 }
 

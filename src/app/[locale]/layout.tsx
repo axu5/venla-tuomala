@@ -60,10 +60,10 @@ export default async function RootLayout({
               enableSystem
               disableTransitionOnChange>
               {/* Container so on larger screens there is always padding on the sides */}
-              <div className='flex flex-col max-w-screen-xl mx-auto'>
+              <div className='flex flex-col'>
                 {/* Nav */}
-                <div className='sticky top-5 z-10'>
-                  <nav className='bg-offwhite py-5'>
+                <div className='sticky top-5 z-10 w-full max-w-screen-xl mx-auto'>
+                  <nav className='bg-offwhite py-5 rounded-lg'>
                     <ul className='flex flex-row justify-around items-center'>
                       <li className='uppercase text-3xl font-bold border border-transparent px-5 mr-5 md:pr-20 border-r-muted-gray'>
                         <Link href='/' className='uppercase'>
