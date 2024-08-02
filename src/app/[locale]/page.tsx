@@ -15,7 +15,7 @@ export default async function LandingPage({
     <main className='flex flex-col max-w-5xl mx-auto'>
       <Hero />
       <Overlay />
-      <WhatToExpect />
+      <HiThere />
       <PreviousWork />
       <Testimonials />
     </main>
@@ -25,7 +25,7 @@ export default async function LandingPage({
 function Overlay() {
   return (
     <>
-      <CircleArrowDown className='animate-bounce text-brownish w-16 h-16 stroke-[1px] m-10 hidden md:block' />
+      <CircleArrowDown className='animate-bounce text-goldenisher w-16 h-16 stroke-[1px] m-10 absolute bottom-5 left-10' />
     </>
   );
 }
@@ -38,25 +38,13 @@ function Hero() {
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 gap-y-10 pb-20 md:gap-4 pt-10'>
       <div className='flex flex-col'>
-        <Image
-          className='p-3'
-          src='/collage/collage-one.png'
-          alt='Gorgeous pictures'
-          width={6969}
-          height={300}
-        />
-        <div className='flex flex-col justify-center items-center'>
-          <Signature />
-        </div>
-      </div>
-      <div className='flex flex-col'>
         <div className='flex flex-col px-10 md:pb-64 justify-center items-center md:items-start'>
-          <Title>Venla Tuomala</Title>
+          <Title className='py-10'>Venla Tuomala</Title>
           <SubTitle className='flex justify-center items-center text-center md:text-left py-10 md:py-0'>
             Lifestyle, portrait & brand photographer
           </SubTitle>
         </div>
-        <div className='flex flex-row items-center justify-center gap-x-10'>
+        {/* <div className='flex flex-row items-center justify-center gap-x-10'>
           <Link
             className={buttonVariants({
               variant: "call-to-action",
@@ -69,24 +57,34 @@ function Hero() {
             href='/#previous-work'>
             Previous work
           </Link>
+        </div> */}
+      </div>
+      <div className='flex flex-col'>
+        <Image
+          className='p-3'
+          src='/collage/collage-one.png'
+          alt='Gorgeous pictures'
+          width={6969}
+          height={300}
+        />
+        <div className='flex flex-col justify-center items-center'>
+          <Signature />
         </div>
       </div>
     </div>
   );
 }
 
-function WhatToExpect() {
+function HiThere() {
   return (
     <>
       <div className='flex justify-center align-center pb-20'>
-        <Title id='what-to-expect'>What to expect</Title>
+        <Title id='hi-there'>Hi There!</Title>
       </div>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-x-10 px-12 md:px-0 gap-y-10'>
         <div className='flex flex-col gap-y-9'>
           <div className='text-2xl font-serif'>
-            <Balancer>
-              So, you have an unforgettable party coming up?
-            </Balancer>
+            <Balancer>So, you need visuals?</Balancer>
           </div>
           <div className='text-2xl font-serif'>
             <Balancer>You need to bring your brand to life?</Balancer>

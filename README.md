@@ -1,10 +1,10 @@
 # TODO
 
-- [ ] Fix hero
 - [ ] Fix previous work
 - [ ] New hello there
 - [ ] Whats included
 - [ ] Testimonials
+- [x] Fix hero
 
 - [ ] fix site for big screens
 - [ ] fix site for small screens

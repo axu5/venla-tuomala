@@ -69,6 +69,8 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-geist-sans)"],
         serif: ["Roboto Serif", "serif"],
+        "babas-neue": ['"Bebas Neue"', "sans-serif"],
+        ibarra: ['"Ibarra Real Nova"', "serif"],
       },
       keyframes: {
         "accordion-down": {
