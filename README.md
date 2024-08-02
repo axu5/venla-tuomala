@@ -1,8 +1,8 @@
 # TODO
 
-- [ ] Fix previous work
-- [ ] New hello there
-- [ ] Testimonials
+- [ ] Fix footer
+- [-] New hello there
+- [x] Testimonials
 - [x] Fix hero
 - [x] Whats included
 

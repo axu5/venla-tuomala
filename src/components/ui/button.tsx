@@ -14,7 +14,7 @@ const buttonVariants = cva(
         outline:
           "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
 
-        link: "text-xl p-5 hover:underline font-extrabold",
+        link: "text-xl p-5 hover:underline font-ibarra",
         "call-to-action":
           "capitalize border border-goldenisher rounded-xl shadow-xl font-ibarra font-extrabold text-xl p-5 hover:bg-goldenisher",
       },

@@ -152,8 +152,11 @@ function WhatsIncluded() {
           </div>
         </div>
         <Link
-          className='text-2xl text-white font-ibarra mx-auto hover:underline'
-          href='/process'>
+          className={buttonVariants({
+            variant: "link",
+            className: "text-white w-full",
+          })}
+          href='/testimonials'>
           Read more about the process here
         </Link>
       </div>
@@ -265,10 +268,13 @@ function PreviousWork() {
 function Testimonials() {
   return (
     <>
-      <div className='flex justify-center align-center py-20'>
+      <div className='flex flex-col justify-center text-center py-20'>
         <Title>Testimonials</Title>
+        <h2 className='text-4xl font-babas-neue uppercase text-[#454545]'>
+          Hear out others who have trusted my work
+        </h2>
       </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-10 px-12 md:px-0'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-10 px-12 md:px-0 text-center'>
         <TestimonialCard
           name='Person 1'
           testimonial='Venla is a cool and awesome person and she made me feel so comfortable around the camera!'
@@ -289,7 +295,7 @@ function Testimonials() {
       <Link
         className={buttonVariants({
           variant: "link",
-          className: "py-32",
+          className: "py-32 w-full",
         })}
         href='/testimonials'>
         Read the full testimonials
@@ -311,11 +317,11 @@ function TestimonialCard({
     <div className='flex flex-col gap-y-5'>
       <div className='flex flex-row items-center gap-x-5'>
         <div className='bg-gray-300 animate-pulse w-16 h-16 rounded-full'></div>
-        <div className='text-3xl font-semibold text-muted-gray'>
+        <div className='text-3xl tracking-wide font-babas-neue text-muted-gray'>
           {name}
         </div>
       </div>
-      <div className='border border-transparent border-l-muted-gray px-5 py-2 mx-5 text-muted-gray text-xl'>
+      <div className='font-ibarra border border-transparent border-l-muted-gray px-5 py-2 mx-5 text-muted-gray text-xl'>
         <Balancer>{testimonial}</Balancer>
       </div>
     </div>
