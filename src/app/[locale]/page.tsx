@@ -25,7 +25,7 @@ export default async function LandingPage({
 function Overlay() {
   return (
     <>
-      <CircleArrowDown className='animate-bounce text-goldenisher w-16 h-16 stroke-[1px] m-10 absolute bottom-5 left-10' />
+      <CircleArrowDown className='animate-bounce text-goldenisher w-16 h-16 stroke-[1px] m-10 hidden md:block absolute bottom-5 left-10' />
     </>
   );
 }
@@ -82,25 +82,26 @@ function HiThere() {
         <Title id='hi-there'>Hi There!</Title>
       </div>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-x-10 px-12 md:px-0 gap-y-10'>
-        <div className='flex flex-col gap-y-9'>
-          <div className='text-2xl font-serif'>
+        <div className='flex flex-col gap-y-9 max-w-full px-10 xl:pl-0'>
+          <div className='text-3xl font-ibarra'>
             <Balancer>So, you need visuals?</Balancer>
           </div>
-          <div className='text-2xl font-serif'>
-            <Balancer>You need to bring your brand to life?</Balancer>
+          <div className='text-3xl font-ibarra'>
+            Whether its for professional or personal needs, I&apos;m
+            excited to bring your vision to life.
           </div>
-          <div className='text-2xl font-serif'>
-            <Balancer>
-              Whether its for professional or personal needs, I&apos;m
-              excited to transform ordinary moments into unforgettable
-              memories.
-            </Balancer>
+          <div className='text-3xl font-ibarra'>
+            <Balancer>Let&apos;s connect, plan, and create!</Balancer>
           </div>
-          <div className='text-2xl font-serif'>
-            <Balancer>
-              Lets create souvenirs for the most memorable events of
-              your life!
-            </Balancer>
+          <div className='max-w-3xl'>
+            <Link
+              className={buttonVariants({
+                variant: "call-to-action",
+                size: "lg",
+              })}
+              href={"/get-in-touch"}>
+              Get in touch
+            </Link>
           </div>
         </div>
         <div className='flex flex-col'>

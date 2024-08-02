@@ -67,8 +67,8 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)"],
-        serif: ["Roboto Serif", "serif"],
+        // sans: ["var(--font-geist-sans)"],
+        // serif: ["Roboto Serif", "serif"],
         "babas-neue": ['"Bebas Neue"', "sans-serif"],
         ibarra: ['"Ibarra Real Nova"', "serif"],
       },

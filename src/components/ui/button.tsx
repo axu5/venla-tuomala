@@ -16,7 +16,7 @@ const buttonVariants = cva(
 
         link: "text-xl p-5 hover:underline font-extrabold",
         "call-to-action":
-          "capitalize border border-goldenisher rounded-xl shadow-xl font-extrabold text-xl p-5 hover:bg-goldenisher",
+          "capitalize border border-goldenisher rounded-xl shadow-xl font-ibarra font-extrabold text-xl p-5 hover:bg-goldenisher",
       },
       size: {
         default: "h-10 px-4 py-2",
