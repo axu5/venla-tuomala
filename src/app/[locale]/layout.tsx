@@ -70,27 +70,31 @@ export default async function RootLayout({
                           <ASSETS.initials />
                         </Link>
                       </li>
-                      <li className='hidden md:block text-2xl font-bold'>
+                      <li className='hidden md:block text-2xl'>
                         <Link
                           href='/previous-work'
-                          className='lowercase'>
+                          className='capitalize font-ibarra'>
                           {t("Previous work")}
                         </Link>
                       </li>
-                      <li className='hidden md:block text-2xl font-bold'>
+                      <li className='hidden md:block text-2xl'>
                         <Link
                           href='/testimonials'
-                          className='lowercase'>
+                          className='capitalize font-ibarra'>
                           {t("Testimonials")}
                         </Link>
                       </li>
-                      <li className='hidden md:block text-2xl font-bold'>
-                        <Link href='/about' className='lowercase'>
+                      <li className='hidden md:block text-2xl'>
+                        <Link
+                          href='/about'
+                          className='capitalize font-ibarra'>
                           {t("About")}
                         </Link>
                       </li>
-                      <li className='hidden md:block text-2xl font-bold'>
-                        <Link href='/contact' className='lowercase'>
+                      <li className='hidden md:block text-2xl'>
+                        <Link
+                          href='/contact'
+                          className='capitalize font-ibarra'>
                           {t("contact")}
                         </Link>
                       </li>

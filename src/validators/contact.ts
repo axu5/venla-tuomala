@@ -11,7 +11,7 @@ export const nameValidator = z
 
 export const detailsValidator = z
   .string()
-  .min(120, "Details must be at least 120 characters")
+  .min(1, "Details must be at least 1 character")
   .max(2000, "Details cannot be longer than 2000 characters");
 
 export const contactFormValidator = z.object({

@@ -1,6 +1,16 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -11,8 +21,9 @@ import {
   nameValidator,
 } from "@/validators/contact";
 import { FieldApi, useForm } from "@tanstack/react-form";
-import { Sparkle } from "lucide-react";
+import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { MutableRefObject, RefObject, useRef } from "react";
 import { toast } from "sonner";
 
 function FieldInfo({
@@ -31,8 +42,30 @@ function FieldInfo({
   );
 }
 
+const ConfettiPiece = ({ x, y }: { x: number; y: number }) => {
+  const angle = ((Math.random() * 1) / 2) * Math.PI;
+  const distance = (Math.random() - 0.5) * 300;
+  return (
+    <motion.div
+      className='w-2 h-2 bg-goldenisher absolute'
+      initial={{ opacity: 1, scale: 1, x: x + "px", y: y + "px" }}
+      animate={{
+        opacity: 0,
+        scale: 0.5,
+        x: x + (Math.random() - 0.5) * 200,
+        y: y + (Math.random() - 0.5) * 200,
+      }}
+      transition={{ duration: 1, ease: "easeOut" }}
+    />
+  );
+};
+
 export default function Page() {
   const router = useRouter();
+  // const [confetti, setConfetti] = useState<
+  //   { id: number; x: number; y: number }[]
+  // >([]);
+  const dialogOpenRef = useRef<HTMLButtonElement>();
 
   const form = useForm({
     defaultValues: {
@@ -54,19 +87,36 @@ export default function Page() {
         toast.error(error.message);
         return;
       }
-      toast.success("Email sent successfully!");
-      router.push("/");
+      if (dialogOpenRef.current) {
+        dialogOpenRef.current.click();
+      }
+      // toast.success("Email sent successfully!");
+      // router.push("/");
     },
   });
 
   return (
-    <div className='flex flex-col items-center'>
-      <h1 className='text-2xl pt-serif-regular'>Contact me!</h1>
+    <div className='flex flex-col'>
+      <div className='flex flex-col gap-5 py-10'>
+        <h1 className='text-5xl font-semibold font-babas-neue uppercase'>
+          Let&apos;s start the conversation
+        </h1>
+        <h2 className='text-4xl text-[#454545] font-babas-neue uppercase'>
+          Get in touch to discuss your vision
+        </h2>
+      </div>
       <form
-        className='flex flex-col w-[40%]'
-        onSubmit={e => {
-          e.preventDefault();
-          e.stopPropagation();
+        className='flex flex-col w-full gap-y-3'
+        onSubmit={event => {
+          event.preventDefault();
+          event.stopPropagation();
+          // const rect = event.currentTarget.getBoundingClientRect();
+          // const tmp = new Array(10).fill(0).map(() => ({
+          //   id: Math.random(),
+          //   x: event.currentTarget.clientX - rect.left,
+          //   y: event.currentTarget.clientY - rect.top,
+          // }));
+          // setConfetti(oldConfetti => oldConfetti.concat(tmp));
           form.handleSubmit();
         }}>
         <form.Field
@@ -86,12 +136,11 @@ export default function Page() {
           children={field => {
             // Avoid hasty abstractions. Render props are great!
             return (
-              <>
+              <div className='flex flex-col gap-y-1'>
                 <Label
                   htmlFor={field.name}
-                  className='py-2 flex flex-row'>
+                  className='py-2 flex flex-row font-babas-neue uppercase text-2xl'>
                   Email
-                  <Sparkle className='w-[10px] h-[10px] mx-1' />
                 </Label>
                 <Input
                   id={field.name}
@@ -100,11 +149,11 @@ export default function Page() {
                   onBlur={field.handleBlur}
                   onChange={e => field.handleChange(e.target.value)}
                   placeholder='your@email.com'
-                  className='bg-goldenish border border-goldenisher drop-shadow-md'
+                  className='border border-goldenisher bg-offwhite drop-shadow-md'
                   autoFocus
                 />
                 <FieldInfo field={field} />
-              </>
+              </div>
             );
           }}
         />
@@ -125,12 +174,11 @@ export default function Page() {
           children={field => {
             // Avoid hasty abstractions. Render props are great!
             return (
-              <>
+              <div className='flex flex-col gap-y-1'>
                 <Label
                   htmlFor={field.name}
-                  className='py-2 flex flex-row'>
+                  className='py-2 flex flex-row font-babas-neue uppercase text-2xl'>
                   Name
-                  <Sparkle className='w-[10px] h-[10px] mx-1' />
                 </Label>
                 <Input
                   id={field.name}
@@ -139,10 +187,10 @@ export default function Page() {
                   onBlur={field.handleBlur}
                   onChange={e => field.handleChange(e.target.value)}
                   placeholder='Your Name'
-                  className='bg-goldenish border border-goldenisher drop-shadow-md'
+                  className='border border-goldenisher bg-offwhite drop-shadow-md'
                 />
                 <FieldInfo field={field} />
-              </>
+              </div>
             );
           }}
         />
@@ -165,13 +213,12 @@ export default function Page() {
             const length = value.length;
             // Avoid hasty abstractions. Render props are great!
             return (
-              <>
+              <div className='flex flex-col gap-y-2'>
                 <div className='flex flex-row justify-between items-center'>
                   <Label
                     htmlFor={field.name}
-                    className='py-2 flex flex-row'>
-                    Details
-                    <Sparkle className='w-[10px] h-[10px] mx-1' />
+                    className='flex flex-row font-babas-neue uppercase text-2xl'>
+                    Message
                   </Label>
                   <span
                     className={cn("text-sm invisible", {
@@ -181,6 +228,10 @@ export default function Page() {
                     {length}/2000
                   </span>
                 </div>
+                <span className='text-sm text-gray-800'>
+                  Feel free to a your photography needs, location,
+                  time, and any special requests.
+                </span>
                 <Textarea
                   id={field.name}
                   name={field.name}
@@ -188,25 +239,67 @@ export default function Page() {
                   onBlur={field.handleBlur}
                   onChange={e => field.handleChange(e.target.value)}
                   placeholder='Some details about what you want'
-                  className='bg-goldenish border border-goldenisher drop-shadow-md'
+                  className='border-goldenisher bg-offwhite drop-shadow-md'
                 />
-                <span className='text-sm py-1 text-gray-800'>
-                  Please include what you need, times you&apos;re available
-                  for pre-shoot meeting, and your budget.
-                </span>
                 <FieldInfo field={field} />
-              </>
+              </div>
             );
           }}
         />
-        <Button className='bg-goldenish border border-goldenisher rounded-md text-black py-2 hover:bg-goldenisher'>
-          Submit!
-        </Button>
-        <span className='flex flex-row text-sm text-gray-800 py-2'>
-          <Sparkle className='w-[10px] h-[10px] mx-1' />
-          Required
-        </span>
+        <form.Subscribe
+          selector={state => [state.canSubmit, state.isSubmitting]}
+          children={props => {
+            const [canSubmit, isSubmitting] = props;
+            return (
+              <Button
+                variant='call-to-action'
+                className='w-[40%]'
+                disabled={!canSubmit}>
+                {isSubmitting ? "Sending..." : "Send!"}
+              </Button>
+            );
+          }}
+        />
       </form>
+      <SuccessDialog
+        email={form.getFieldValue("email")}
+        reference={dialogOpenRef}
+      />
     </div>
+  );
+}
+
+function SuccessDialog({
+  email,
+  reference,
+}: {
+  email: string;
+  reference: MutableRefObject<HTMLButtonElement | undefined>;
+}) {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <button
+          ref={
+            reference as MutableRefObject<HTMLButtonElement>
+          }></button>
+      </DialogTrigger>
+      <DialogContent className='sm:max-w-md p-10 gap-y-5 border border-goldenisher'>
+        <DialogHeader>
+          <DialogTitle className='font-babas-neue text-5xl tracking-wide'>
+            Success!
+          </DialogTitle>
+          <DialogDescription className='font-ibarra text-2xl text-[#454545]'>
+            I&apos;ll get back to you at{" "}
+            <span className='font-bold'>{email}</span> within 48h
+          </DialogDescription>
+        </DialogHeader>
+        <DialogFooter>
+          <DialogClose asChild>
+            <Button variant='call-to-action'>Close</Button>
+          </DialogClose>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   );
 }

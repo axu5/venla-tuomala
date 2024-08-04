@@ -72,7 +72,7 @@ export default async function AboutPage({
             size: "lg",
             className: "",
           })}
-          href={"/get-in-touch"}>
+          href={"/contact"}>
           Get in touch!
         </Link>
         <div className=''>

@@ -1,10 +1,14 @@
 # TODO
 
+- [ ] high def images
+- [ ] translations
+- [ ] fix all styles for mobile!!!!!! IMPORTANT
+
 - [ ] /process
 - [ ] /testimonials
 - [ ] /previous-work
-- [ ] /about
-- [ ] /contact
+- [x] /contact
+- [x] /about
 
 - [-] New hello there
 - [x] Testimonials
