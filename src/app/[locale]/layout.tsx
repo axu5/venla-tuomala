@@ -111,42 +111,62 @@ export default async function RootLayout({
                           <SheetContent>
                             <SheetHeader>
                               <SheetTitle>
-                                <Title>Venla Tuomala</Title>
+                                <SheetClose asChild>
+                                  <Link href='/'>
+                                    <Title>Venla Tuomala</Title>
+                                  </Link>
+                                </SheetClose>
                               </SheetTitle>
                             </SheetHeader>
-                            <ul className='flex flex-col gap-y-10 py-20 px-10'>
-                              <li className='text-3xl font-bold'>
+                            <ul className='flex flex-col gap-y-10 py-10'>
+                              <li className='font-bold'>
                                 <SheetClose asChild>
                                   <Link
-                                    href='/#gallery'
-                                    className='lowercase'>
-                                    {t("Gallery")}
+                                    href='/previous-work'
+                                    className={buttonVariants({
+                                      variant: "link",
+                                      className:
+                                        "text-5xl capitalize",
+                                    })}>
+                                    Previous work
                                   </Link>
                                 </SheetClose>
                               </li>
-                              <li className='text-3xl font-bold'>
+                              <li className='font-bold'>
+                                <SheetClose asChild>
+                                  <Link
+                                    href='/testimonials'
+                                    className={buttonVariants({
+                                      variant: "link",
+                                      className:
+                                        "text-5xl capitalize",
+                                    })}>
+                                    Testimonials
+                                  </Link>
+                                </SheetClose>
+                              </li>
+                              <li className='font-bold'>
                                 <SheetClose asChild>
                                   <Link
                                     href='/about'
-                                    className='lowercase'>
-                                    {t("About")}
+                                    className={buttonVariants({
+                                      variant: "link",
+                                      className:
+                                        "text-5xl capitalize",
+                                    })}>
+                                    About
                                   </Link>
                                 </SheetClose>
                               </li>
-                              <li className='text-3xl font-bold'>
+                              <li className='font-bold'>
                                 <SheetClose asChild>
                                   <Link
-                                    href='/#what-to-expect'
-                                    className='lowercase'>
-                                    {t("What to expect")}
-                                  </Link>
-                                </SheetClose>
-                              </li>
-                              <li className='text-3xl font-bold'>
-                                <SheetClose asChild>
-                                  <Link
-                                    href='/contact'
-                                    className='lowercase'>
+                                    href='/get-in-touch'
+                                    className={buttonVariants({
+                                      variant: "link",
+                                      className:
+                                        "text-5xl capitalize",
+                                    })}>
                                     {t("contact")}
                                   </Link>
                                 </SheetClose>
