@@ -13,13 +13,13 @@ export default async function LandingPage({
 }: LocaleParam) {
   return (
     <main className='flex flex-col'>
-      <div className='max-w-5xl mx-auto'>
+      <div className='max-w-5xl mx-10 md:mx-auto'>
         <Hero />
         <Overlay />
         <HiThere />
       </div>
       <WhatsIncluded />
-      <div className='max-w-5xl mx-auto'>
+      <div className='max-w-5xl mx-10 md:mx-auto'>
         <Testimonials />
       </div>
     </main>
@@ -40,11 +40,11 @@ function Signature() {
 
 function Hero() {
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-y-10 pb-20 md:gap-4 pt-10'>
+    <div className='grid grid-cols-1 md:grid-cols-2 gap-y-5 md:gap-y-10 pb-20 md:gap-4 pt-10'>
       <div className='flex flex-col'>
-        <div className='flex flex-col px-10 md:pb-64 justify-center items-center md:items-start'>
-          <Title className='py-10'>Venla Tuomala</Title>
-          <SubTitle className='flex justify-center items-center text-center md:text-left py-10 md:py-0'>
+        <div className='flex flex-col md:pb-64 justify-center items-center md:items-start'>
+          <Title className='pt-5 md:py-10'>Venla Tuomala</Title>
+          <SubTitle className='flex justify-center items-center text-center md:text-left pb-5 md:py-0'>
             Lifestyle, portrait & brand photographer
           </SubTitle>
         </div>
@@ -65,7 +65,7 @@ function Hero() {
       </div>
       <div className='flex flex-col'>
         <Image
-          className='p-3'
+          className='p-0 md:py-3'
           src='/collage/collage-one.png'
           alt='Gorgeous pictures'
           width={6969}
@@ -82,11 +82,11 @@ function Hero() {
 function HiThere() {
   return (
     <>
-      <div className='flex justify-center align-center pb-20'>
-        <Title id='hi-there'>Hi There!</Title>
-      </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-x-10 px-12 md:px-0 gap-y-10 max-h-[70vh]'>
-        <div className='flex flex-col md:py-28 gap-y-9 max-w-full px-10 xl:pl-0'>
+      <Title id='hi-there' className='pb-10 md:pb-20'>
+        Hi There!
+      </Title>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-10'>
+        <div className='flex flex-col md:py-28 gap-y-9 max-w-full xl:pl-0'>
           <div className='text-3xl font-ibarra'>
             <Balancer>So, you need visuals?</Balancer>
           </div>
@@ -97,7 +97,7 @@ function HiThere() {
           <div className='text-3xl font-ibarra'>
             <Balancer>Let&apos;s connect, plan, and create!</Balancer>
           </div>
-          <div className='max-w-3xl'>
+          <div className='items-center md:items-start max-w-3xl'>
             <Link
               className={buttonVariants({
                 variant: "call-to-action",
@@ -108,7 +108,7 @@ function HiThere() {
             </Link>
           </div>
         </div>
-        <div className='flex flex-col max-w-[70%] mx-auto'>
+        <div className='flex flex-col md:max-w-[70%] mx-auto'>
           <Image
             src='/collage.png'
             alt='ANOTHER AMAZING PHOTO VENLA IS SO TALENTED'
@@ -123,12 +123,12 @@ function HiThere() {
 
 function WhatsIncluded() {
   return (
-    <section className='bg-[#232323] h-screen w-screen py-20 my-20'>
+    <section className='bg-[#232323] min-h-screen w-screen py-20 my-20 px-10'>
       <div className='max-w-5xl mx-auto flex flex-col justify-center align-center w-full gap-20'>
         <Title className='text-white mx-auto'>
           What&apos;s included
         </Title>
-        <div className='grid grid-cols-3 gap-10'>
+        <div className='flex flex-col md:grid md:grid-cols-3 gap-10'>
           <div className='text-white font-ibarra text-3xl mx-auto capitalize text-center'>
             Consultation
           </div>
@@ -156,7 +156,7 @@ function WhatsIncluded() {
             variant: "link",
             className: "text-white w-full",
           })}
-          href='/testimonials'>
+          href='/process'>
           Read more about the process here
         </Link>
       </div>
@@ -173,7 +173,7 @@ function Testimonials() {
           Hear out others who have trusted my work
         </h2>
       </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-10 px-12 md:px-0 text-center'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-10 text-center'>
         <TestimonialCard
           name='Person 1'
           testimonial='Venla is a cool and awesome person and she made me feel so comfortable around the camera!'
