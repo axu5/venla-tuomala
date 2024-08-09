@@ -175,7 +175,7 @@ async function Footer({ locale }: { locale: Locale }) {
   const { t } = await initTranslations(locale, ["home", "common"]);
   return (
     <div className='pt-px mt-10 bg-gradient-to-r from-transparent via-goldenisher to-transparent w-full max-w-7xl mx-auto'>
-      <div className='flex flex-row justify-around py-20 w-full bg-offwhite'>
+      <div className='flex flex-row justify-around px-10 md:px-0 py-20 w-full bg-offwhite'>
         <div className='flex flex-col md:flex-row justify-around w-[50%]'>
           <Link
             className={buttonVariants({
@@ -210,9 +210,9 @@ async function Footer({ locale }: { locale: Locale }) {
             href='/contact'>
             Get in touch!
           </Link>
-          <div className='flex flex-row text-xl items-center justify-center self-end text-muted-gray font-ibarra font-medium py-12'>
-            <Copyright className='mr-2' /> {new Date().getFullYear()}{" "}
-            Venla Tuomala
+          <div className='flex flex-row md:text-xl items-center justify-center self-end text-muted-gray font-ibarra font-medium py-12'>
+            <Copyright className='w-4 h-4 mr-1 md:mr-2' />
+            {new Date().getFullYear()} Venla Tuomala
           </div>
         </div>
       </div>
