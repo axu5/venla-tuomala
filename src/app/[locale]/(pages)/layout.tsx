@@ -7,5 +7,7 @@ export default function SubLayout({
   children: React.ReactNode;
 }> &
   LocaleParam) {
-  return <main className='max-w-4xl mx-auto'>{children}</main>;
+  return (
+    <main className='max-w-4xl px-10 md:mx-auto'>{children}</main>
+  );
 }

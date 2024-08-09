@@ -14,10 +14,10 @@ export default async function AboutPage({
 }: LocaleParam) {
   const { t } = await initTranslations(locale, i18nNamespaces);
   return (
-    <main className='px-20 lg:px-0'>
+    <main className=''>
       <div className=''>
-        <div className='flex flex-row'>
-          <div className='w-[50%] p-3 lg:p-20'>
+        <div className='flex flex-col md:flex-row justify-between'>
+          <div className='p-3 lg:p-20 md:max-w-[50%]'>
             <Image
               src='/images/venla2.png'
               alt='Pic of me'
@@ -25,8 +25,8 @@ export default async function AboutPage({
               height={0}
             />
           </div>
-          <div className='w-[50%] py-20'>
-            <div className='pb-28 text-5xl font-babas-neue h-0'>
+          <div className='py-10 md:py-20'>
+            <div className='pb-36 md:pb-28 text-5xl font-babas-neue h-0'>
               I AM <TypingText />
             </div>
             <div className='flex flex-row text-4xl text-[#454545] font-babas-neue uppercase pt-10 items-center'>
@@ -65,7 +65,7 @@ export default async function AboutPage({
           So lets have chat of your wishes and needs!
         </Paragraph>
       </div>
-      <div className='flex flex-row justify-between items-center py-5'>
+      <div className='flex flex-col-reverse md:flex-row justify-between items-center py-5'>
         <Link
           className={buttonVariants({
             variant: "call-to-action",
@@ -84,5 +84,7 @@ export default async function AboutPage({
 }
 
 function Paragraph({ children }: PropsWithChildren) {
-  return <div className='font-ibarra text-2xl'>{children}</div>;
+  return (
+    <div className='font-ibarra text-2xl w-full'>{children}</div>
+  );
 }

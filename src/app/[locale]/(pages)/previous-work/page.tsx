@@ -8,7 +8,7 @@ import Balancer from "react-wrap-balancer";
 export default function PreviousWork() {
   return (
     <>
-      <div className='flex justify-center items-center py-20'>
+      <div className='flex justify-center items-center py-20 px-10'>
         <Title id='previous-work'>Previous Work</Title>
       </div>
       <div className='flex flex-col gap-y-20'>
