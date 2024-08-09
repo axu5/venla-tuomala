@@ -1,5 +1,7 @@
 "use client";
 
+import { SubTitle } from "@/components/SubTitle";
+import { Title } from "@/components/Title";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -97,13 +99,13 @@ export default function Page() {
 
   return (
     <div className='flex flex-col'>
-      <div className='flex flex-col gap-5 py-10'>
-        <h1 className='text-5xl font-semibold font-babas-neue uppercase'>
+      <div className='flex flex-col pt-20 pb-5'>
+        <Title className='pb-0 text-5xl'>
           Let&apos;s start the conversation
-        </h1>
-        <h2 className='text-4xl text-[#454545] font-babas-neue uppercase'>
+        </Title>
+        <SubTitle className='text-3xl font-babas-neue'>
           Get in touch to discuss your vision
-        </h2>
+        </SubTitle>
       </div>
       <form
         className='flex flex-col w-full gap-y-3'

@@ -85,8 +85,8 @@ function HiThere() {
       <div className='flex justify-center align-center pb-20'>
         <Title id='hi-there'>Hi There!</Title>
       </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-x-10 px-12 md:px-0 gap-y-10'>
-        <div className='flex flex-col gap-y-9 max-w-full px-10 xl:pl-0'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-x-10 px-12 md:px-0 gap-y-10 max-h-[70vh]'>
+        <div className='flex flex-col md:py-28 gap-y-9 max-w-full px-10 xl:pl-0'>
           <div className='text-3xl font-ibarra'>
             <Balancer>So, you need visuals?</Balancer>
           </div>
@@ -108,9 +108,9 @@ function HiThere() {
             </Link>
           </div>
         </div>
-        <div className='flex flex-col'>
+        <div className='flex flex-col max-w-[70%] mx-auto'>
           <Image
-            src='/collage/collage-two.png'
+            src='/collage.png'
             alt='ANOTHER AMAZING PHOTO VENLA IS SO TALENTED'
             width={6969}
             height={0}

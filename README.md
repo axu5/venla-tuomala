@@ -3,6 +3,7 @@
 - [ ] high def images
 - [ ] translations
 - [ ] fix all styles for mobile!!!!!! IMPORTANT
+- [ ] make the current page show as bold in nav
 
 - [ ] /process
 - [ ] /testimonials

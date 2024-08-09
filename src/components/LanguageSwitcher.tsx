@@ -45,15 +45,19 @@ export function LanguageSwitcher() {
 
   return (
     <Select defaultValue={currentLocale} onValueChange={handleChange}>
-      <SelectTrigger className='bg-offwhite border-none mr-2 lowercase text-2xl font-bold'>
+      <SelectTrigger className='bg-offwhite border-none mr-2 lowercase text-2xl font-ibarra capitalize'>
         {t("Language")}
       </SelectTrigger>
       <SelectContent className='bg-offwhite'>
         <SelectGroup className='flex flex-col'>
-          <SelectItem value='fi' className='cursor-pointer lowercase'>
-            Suomi
+          <SelectItem
+            value='fi'
+            className='cursor-pointer capitalize'>
+            Finnish
           </SelectItem>
-          <SelectItem value='en' className='cursor-pointer lowercase'>
+          <SelectItem
+            value='en'
+            className='cursor-pointer capitalize'>
             English
           </SelectItem>
         </SelectGroup>

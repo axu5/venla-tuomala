@@ -11,8 +11,10 @@ export default function PreviousWork() {
       <div className='flex justify-center items-center py-20'>
         <Title id='previous-work'>Previous Work</Title>
       </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-20'>
-        <>
+      <div className='flex flex-col gap-y-20'>
+        <Link
+          href='/previous-work/lifestyle'
+          className='grid grid-cols-1 md:grid-cols-2 gap-x-10'>
           <Image
             className='px-12 md:px-0'
             src='/collage/collage-two.png'
@@ -30,19 +32,11 @@ export default function PreviousWork() {
                 </Balancer>
               </div>
             </div>
-            <div>
-              <Link
-                className={buttonVariants({
-                  variant: "link",
-                  className: "pl-0",
-                })}
-                href='/lifestyle'>
-                More about this shit
-              </Link>
-            </div>
           </div>
-        </>
-        <>
+        </Link>
+        <Link
+          href='/previous-work/portraits'
+          className='grid grid-cols-1 md:grid-cols-2 gap-x-10'>
           <Image
             className='px-12 md:px-0'
             src='/collage/collage-two.png'
@@ -58,19 +52,11 @@ export default function PreviousWork() {
                 <Balancer>...</Balancer>
               </div>
             </div>
-            <div>
-              <Link
-                className={buttonVariants({
-                  variant: "link",
-                  className: "pl-0",
-                })}
-                href='/portraits'>
-                More about this shit
-              </Link>
-            </div>
           </div>
-        </>
-        <>
+        </Link>
+        <Link
+          href='/previous-work/brands'
+          className='grid grid-cols-1 md:grid-cols-2 gap-x-10'>
           <Image
             className='px-12 md:px-0'
             src='/collage/collage-two.png'
@@ -88,18 +74,8 @@ export default function PreviousWork() {
                 <Balancer>Bränding yaadi yaada.</Balancer>
               </div>
             </div>
-            <div>
-              <Link
-                className={buttonVariants({
-                  variant: "link",
-                  className: "pl-0",
-                })}
-                href='/brands'>
-                More about this shit
-              </Link>
-            </div>
           </div>
-        </>
+        </Link>
       </div>
     </>
   );
