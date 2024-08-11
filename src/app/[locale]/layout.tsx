@@ -161,7 +161,7 @@ export default async function RootLayout({
                               <li className='font-bold'>
                                 <SheetClose asChild>
                                   <Link
-                                    href='/get-in-touch'
+                                    href='/contact'
                                     className={buttonVariants({
                                       variant: "link",
                                       className:

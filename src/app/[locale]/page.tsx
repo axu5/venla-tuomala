@@ -103,7 +103,7 @@ function HiThere() {
                 variant: "call-to-action",
                 size: "lg",
               })}
-              href={"/get-in-touch"}>
+              href='/contact'>
               Get in touch
             </Link>
           </div>
