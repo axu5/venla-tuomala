@@ -22,8 +22,14 @@ const cursorVariants = {
   },
 };
 
-export function TypingText() {
-  const { t } = useTranslation();
+type TypingTextProps = {
+  locale: string;
+};
+
+export function TypingText({ locale }: TypingTextProps) {
+  const { t, i18n } = useTranslation("about", {
+    lng: locale,
+  });
   const count = useMotionValue(0);
   const textIndex = useMotionValue(0);
 

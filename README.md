@@ -7,7 +7,7 @@
 
 - [ ] /process
 - [ ] /testimonials
-- [ ] /previous-work
+- [ ] /portfolio
 - [x] /contact
 - [x] /about
 

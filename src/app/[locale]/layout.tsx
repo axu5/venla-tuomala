@@ -29,7 +29,17 @@ export const metadata: Metadata = {
   description: "Venla Tuomala is a photographer ...",
 };
 
-const i18nNamespaces = ["home", "common"];
+const i18nNamespaces = [
+  "common",
+  "about",
+  "brands",
+  "contact",
+  "landing_page",
+  "lifestyle",
+  "portfolio",
+  "portraits",
+  "testimonials",
+];
 
 export async function generateStaticParams() {
   return i18nConfig.locales.map(locale => ({ locale }));
@@ -74,9 +84,9 @@ export default async function RootLayout({
                       </li>
                       <li className='hidden md:block text-2xl'>
                         <Link
-                          href='/previous-work'
+                          href='/portfolio'
                           className='capitalize font-ibarra'>
-                          {t("Previous work")}
+                          {t("Portfolio")}
                         </Link>
                       </li>
                       <li className='hidden md:block text-2xl'>
@@ -97,7 +107,7 @@ export default async function RootLayout({
                         <Link
                           href='/contact'
                           className='capitalize font-ibarra'>
-                          {t("contact")}
+                          {t("Contact")}
                         </Link>
                       </li>
                       <li className=''>
@@ -122,13 +132,13 @@ export default async function RootLayout({
                               <li className='font-bold'>
                                 <SheetClose asChild>
                                   <Link
-                                    href='/previous-work'
+                                    href='/portfolio'
                                     className={buttonVariants({
                                       variant: "link",
                                       className:
                                         "text-5xl capitalize",
                                     })}>
-                                    Previous work
+                                    {t("Portfolio")}
                                   </Link>
                                 </SheetClose>
                               </li>
@@ -141,7 +151,7 @@ export default async function RootLayout({
                                       className:
                                         "text-5xl capitalize",
                                     })}>
-                                    Testimonials
+                                    {t("Testimonials")}
                                   </Link>
                                 </SheetClose>
                               </li>
@@ -154,7 +164,7 @@ export default async function RootLayout({
                                       className:
                                         "text-5xl capitalize",
                                     })}>
-                                    About
+                                    {t("About")}
                                   </Link>
                                 </SheetClose>
                               </li>
@@ -167,7 +177,7 @@ export default async function RootLayout({
                                       className:
                                         "text-5xl capitalize",
                                     })}>
-                                    {t("contact")}
+                                    {t("Contact")}
                                   </Link>
                                 </SheetClose>
                               </li>
@@ -192,7 +202,7 @@ export default async function RootLayout({
 }
 
 async function Footer({ locale }: { locale: Locale }) {
-  const { t } = await initTranslations(locale, ["home", "common"]);
+  const { t } = await initTranslations(locale, i18nNamespaces);
   return (
     <div className='pt-px mt-10 bg-gradient-to-r from-transparent via-goldenisher to-transparent w-full max-w-7xl mx-auto'>
       <div className='flex flex-row justify-around px-10 md:px-0 py-20 w-full bg-offwhite'>
@@ -203,7 +213,7 @@ async function Footer({ locale }: { locale: Locale }) {
               className: "font-semibold tracking-wide text-2xl",
             })}
             href='/contact'>
-            Contact
+            {t("Contact")}
           </Link>
           <Link
             className={buttonVariants({
@@ -211,7 +221,7 @@ async function Footer({ locale }: { locale: Locale }) {
               className: "font-semibold tracking-wide text-2xl",
             })}
             href='/about'>
-            About
+            {t("About")}
           </Link>
           <Link
             className={buttonVariants({
@@ -219,7 +229,7 @@ async function Footer({ locale }: { locale: Locale }) {
               className: "font-semibold tracking-wide text-2xl",
             })}
             href='/testimonials'>
-            Testimonials
+            {t("Testimonials")}
           </Link>
         </div>
         <div className='flex flex-col'>
@@ -228,7 +238,7 @@ async function Footer({ locale }: { locale: Locale }) {
               variant: "call-to-action",
             })}
             href='/contact'>
-            Get in touch!
+            {t("Contact")}
           </Link>
           <div className='flex flex-row md:text-xl items-center justify-center self-end text-muted-gray font-ibarra font-medium py-12'>
             <Copyright className='w-4 h-4 mr-1 md:mr-2' />

@@ -1,0 +1,22 @@
+{
+    "Let’s start the conversation!": "Let’s start the conversation! missing",
+    "Get in touch to discuss your vision": "Get in touch to discuss your vision missing",
+    "Name": "Name missing",
+    "Email": "Sähköposti",
+    "Message": "Viesti",
+    "MessageInspo": "MessageInspo missing",
+    "Send!": "Lähetä!",
+    "Sending...": "Sending... missing",
+    "Success!": "Success! missing",
+    "I'll get back": "Palaan tilaukseesi lähettämällä viestiä sähköpostiisi ({{email}})",
+    "close": "close missing",
+    "Error!": "Error! missing",
+    "Something went wrong": "Something went wrong missing",
+    "your@email.com": "sinun@spost.fi",
+    "Your Name": "Your Name missing",
+    "Some details about what you want": "Some details about what you want missing",
+    "ValidEmailError": "ValidEmailError missing",
+    "NameMustNotBeEmptyError": "NameMustNotBeEmptyError missing",
+    "DetailsMustNotBeEmptyError": "DetailsMustNotBeEmptyError missing",
+    "DetailsMustNotExceedError": "DetailsMustNotExceedError missing"
+}

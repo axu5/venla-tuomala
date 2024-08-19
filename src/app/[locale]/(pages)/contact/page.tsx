@@ -1,5 +1,6 @@
 "use client";
 
+import { LocaleParam } from "@/app/i18n";
 import { SubTitle } from "@/components/SubTitle";
 import { Title } from "@/components/Title";
 import { Button } from "@/components/ui/button";
@@ -25,7 +26,8 @@ import {
 import { FieldApi, useForm } from "@tanstack/react-form";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { MutableRefObject, RefObject, useRef } from "react";
+import { MutableRefObject, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
 
 function FieldInfo({
@@ -50,23 +52,24 @@ const ConfettiPiece = ({ x, y }: { x: number; y: number }) => {
   return (
     <motion.div
       className='w-2 h-2 bg-goldenisher absolute'
-      initial={{ opacity: 1, scale: 1, x: x + "px", y: y + "px" }}
+      initial={{ opacity: 1, scale: 1, x: x + "px", y: "0px" }}
       animate={{
         opacity: 0,
         scale: 0.5,
         x: x + (Math.random() - 0.5) * 200,
-        y: y + (Math.random() - 0.5) * 200,
+        y: 200 + (Math.random() - 0.5) * 200,
       }}
       transition={{ duration: 1, ease: "easeOut" }}
     />
   );
 };
 
-export default function Page() {
-  const router = useRouter();
-  // const [confetti, setConfetti] = useState<
-  //   { id: number; x: number; y: number }[]
-  // >([]);
+// TODO: make form a separate client component
+export default function Page({ params: { locale } }: LocaleParam) {
+  const { t } = useTranslation("contact", { lng: locale });
+  const [confetti, setConfetti] = useState<
+    { id: number; x: number; y: number }[]
+  >([]);
   const dialogOpenRef = useRef<HTMLButtonElement>();
 
   const form = useForm({
@@ -83,7 +86,7 @@ export default function Page() {
       if (res.status !== 200) {
         const error = await res.json();
         if (!error.message || typeof error.message !== "string") {
-          toast.error("Something went wrong");
+          toast.error(t("Something went wrong"));
           return;
         }
         toast.error(error.message);
@@ -92,8 +95,6 @@ export default function Page() {
       if (dialogOpenRef.current) {
         dialogOpenRef.current.click();
       }
-      // toast.success("Email sent successfully!");
-      // router.push("/");
     },
   });
 
@@ -101,10 +102,10 @@ export default function Page() {
     <div className='flex flex-col'>
       <div className='flex flex-col pt-20 pb-5'>
         <Title className='pb-0 text-5xl'>
-          Let&apos;s start the conversation
+          {t("Let’s start the conversation!")}
         </Title>
         <SubTitle className='text-3xl font-babas-neue'>
-          Get in touch to discuss your vision
+          {t("Get in touch to discuss your vision")}
         </SubTitle>
       </div>
       <form
@@ -112,13 +113,16 @@ export default function Page() {
         onSubmit={event => {
           event.preventDefault();
           event.stopPropagation();
-          // const rect = event.currentTarget.getBoundingClientRect();
+          const rect = event.currentTarget.getBoundingClientRect();
           // const tmp = new Array(10).fill(0).map(() => ({
           //   id: Math.random(),
           //   x: event.currentTarget.clientX - rect.left,
           //   y: event.currentTarget.clientY - rect.top,
           // }));
-          // setConfetti(oldConfetti => oldConfetti.concat(tmp));
+          setConfetti(oldConfetti => [
+            ...oldConfetti,
+            { id: Math.random(), x: Math.random(), y: 0 },
+          ]);
           form.handleSubmit();
         }}>
         <form.Field
@@ -130,7 +134,7 @@ export default function Page() {
               if (res.success) {
                 return undefined;
               } else {
-                const errMsg = res.error.formErrors.formErrors[0];
+                const errMsg = t(res.error.formErrors.formErrors[0]);
                 return errMsg;
               }
             },
@@ -142,7 +146,7 @@ export default function Page() {
                 <Label
                   htmlFor={field.name}
                   className='py-2 flex flex-row font-babas-neue uppercase text-2xl'>
-                  Email
+                  {t("Email")}
                 </Label>
                 <Input
                   id={field.name}
@@ -150,7 +154,7 @@ export default function Page() {
                   value={field.state.value}
                   onBlur={field.handleBlur}
                   onChange={e => field.handleChange(e.target.value)}
-                  placeholder='your@email.com'
+                  placeholder={t("your@email.com")}
                   className='border border-goldenisher bg-offwhite drop-shadow-md'
                   autoFocus
                 />
@@ -168,7 +172,7 @@ export default function Page() {
               if (res.success) {
                 return undefined;
               } else {
-                const errMsg = res.error.formErrors.formErrors[0];
+                const errMsg = t(res.error.formErrors.formErrors[0]);
                 return errMsg;
               }
             },
@@ -180,7 +184,7 @@ export default function Page() {
                 <Label
                   htmlFor={field.name}
                   className='py-2 flex flex-row font-babas-neue uppercase text-2xl'>
-                  Name
+                  {t("Name")}
                 </Label>
                 <Input
                   id={field.name}
@@ -188,7 +192,7 @@ export default function Page() {
                   value={field.state.value}
                   onBlur={field.handleBlur}
                   onChange={e => field.handleChange(e.target.value)}
-                  placeholder='Your Name'
+                  placeholder={t("Your Name")}
                   className='border border-goldenisher bg-offwhite drop-shadow-md'
                 />
                 <FieldInfo field={field} />
@@ -205,7 +209,7 @@ export default function Page() {
               if (res.success) {
                 return undefined;
               } else {
-                const errMsg = res.error.formErrors.formErrors[0];
+                const errMsg = t(res.error.formErrors.formErrors[0]);
                 return errMsg;
               }
             },
@@ -220,7 +224,7 @@ export default function Page() {
                   <Label
                     htmlFor={field.name}
                     className='flex flex-row font-babas-neue uppercase text-2xl'>
-                    Message
+                    {t("Message")}
                   </Label>
                   <span
                     className={cn("text-sm invisible", {
@@ -231,8 +235,7 @@ export default function Page() {
                   </span>
                 </div>
                 <span className='text-sm text-gray-800'>
-                  Feel free to a your photography needs, location,
-                  time, and any special requests.
+                  {t("MessageInspo")}
                 </span>
                 <Textarea
                   id={field.name}
@@ -240,7 +243,7 @@ export default function Page() {
                   value={field.state.value}
                   onBlur={field.handleBlur}
                   onChange={e => field.handleChange(e.target.value)}
-                  placeholder='Some details about what you want'
+                  placeholder={t("Some details about what you want")}
                   className='border-goldenisher bg-offwhite drop-shadow-md'
                 />
                 <FieldInfo field={field} />
@@ -257,7 +260,7 @@ export default function Page() {
                 variant='call-to-action'
                 className='w-[40%]'
                 disabled={!canSubmit}>
-                {isSubmitting ? "Sending..." : "Send!"}
+                {isSubmitting ? t("Sending...") : t("Send!")}
               </Button>
             );
           }}
@@ -278,8 +281,16 @@ function SuccessDialog({
   email: string;
   reference: MutableRefObject<HTMLButtonElement | undefined>;
 }) {
+  const { t } = useTranslation("contact");
+  const router = useRouter();
   return (
-    <Dialog>
+    <Dialog
+      onOpenChange={open => {
+        // when dialog is closed, redirect to home page
+        if (!open) {
+          router.push("/");
+        }
+      }}>
       <DialogTrigger asChild>
         <button
           ref={
@@ -289,16 +300,17 @@ function SuccessDialog({
       <DialogContent className='sm:max-w-md p-10 gap-y-5 border border-goldenisher'>
         <DialogHeader>
           <DialogTitle className='font-babas-neue text-5xl tracking-wide'>
-            Success!
+            {t("Success!")}
           </DialogTitle>
           <DialogDescription className='font-ibarra text-2xl text-[#454545]'>
-            I&apos;ll get back to you at{" "}
-            <span className='font-bold'>{email}</span> within 48h
+            {t("I'll get back", { email })}
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
           <DialogClose asChild>
-            <Button variant='call-to-action'>Close</Button>
+            <Button variant='call-to-action' className='capitalize'>
+              {t("close")}
+            </Button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>

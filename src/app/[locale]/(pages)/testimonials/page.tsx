@@ -1,25 +1,29 @@
+import initTranslations, { LocaleParam } from "@/app/i18n";
 import { ImageCarousel } from "@/components/ImageCarousel";
 import { SubTitle } from "@/components/SubTitle";
 import { Title } from "@/components/Title";
 import Image from "next/image";
 
-export default function Testimonials() {
+export default async function Testimonials({
+  params: { locale },
+}: LocaleParam) {
+  const { t } = await initTranslations(locale, ["testimonials"]);
   return (
     <>
       <div className='flex items-center justify-center w-full py-20'>
-        <Title>Testimonials</Title>
+        <Title>{t("Testimonials")}</Title>
       </div>
       <main className='flex flex-col gap-y-20 w-[80vw] lg:w-full'>
         <Testimonial
-          name='Saara'
-          testimonial='Venla is a cool and awesome person and she made me feel so comfortable around the camera!'
+          name={t("Testimonial1Title")}
+          testimonial={t("Testimonial1")}
           images={[
             { url: "/images/portraits/FC5A6755.jpg", alt: "" },
           ]}
         />
         <Testimonial
-          name='Saara'
-          testimonial='Venla is a cool and awesome person and she made me feel so comfortable around the camera!'
+          name={t("Testimonial2Title")}
+          testimonial={t("Testimonial2")}
           images={[
             { url: "/images/portraits/FC5A6755.jpg", alt: "" },
             { url: "/images/portraits/FC5A6755.jpg", alt: "" },
@@ -29,8 +33,8 @@ export default function Testimonials() {
           ]}
         />
         <Testimonial
-          name='Saara'
-          testimonial='Venla is a cool and awesome person and she made me feel so comfortable around the camera!'
+          name={t("Testimonial3Title")}
+          testimonial={t("Testimonial3")}
           images={[
             { url: "/images/portraits/FC5A6755.jpg", alt: "" },
           ]}
@@ -48,7 +52,7 @@ type TestimonialType = {
 
 function Testimonial({ name, testimonial, images }: TestimonialType) {
   return (
-    <div className='gap-y-10 flex flex-col md:grid md:grid-cols-2'>
+    <div className='gap-y-10 gap-x-10 flex flex-col md:grid md:grid-cols-[2fr_1fr]'>
       <div className='flex flex-col'>
         <SubTitle className='font-babas-neue text-5xl'>
           {name}

@@ -7,7 +7,7 @@ import Link from "next/link";
 import { PropsWithChildren } from "react";
 
 // FIX: namespace
-const i18nNamespaces = ["home", "common"];
+const i18nNamespaces = ["about", "common"];
 
 export default async function AboutPage({
   params: { locale },
@@ -27,43 +27,22 @@ export default async function AboutPage({
           </div>
           <div className='py-10 md:py-20'>
             <div className='pb-36 md:pb-28 text-5xl font-babas-neue h-0'>
-              I AM <TypingText />
+              {t("I am")} <TypingText locale={locale} />
             </div>
             <div className='flex flex-row text-4xl text-[#454545] font-babas-neue uppercase pt-10 items-center'>
-              Based in Helsinki, Lahti, and Mikkeli
+              {t("Based in Helsinki, Lahti, and Mikkeli")}
             </div>
             <div className='flex flex-row text-2xl text-[#454545] font-babas-neue uppercase text items-center'>
-              but happy to travel anywhere
+              {t("will travel too.")}
             </div>
           </div>
         </div>
       </div>
       <div className='flex flex-col gap-y-7'>
-        <Paragraph>Hi, Venla here.</Paragraph>
-        <Paragraph>
-          I picked up the camera in 2022, and since then I have been
-          shooting professionally for both individuals and companies.
-        </Paragraph>
-        <Paragraph>
-          My expertise lies in lifestyle, portrait, and brand
-          photography, but you can also contact me for other
-          photography projects.
-        </Paragraph>
-        <Paragraph>
-          I believe that the best images are created when you can
-          forget that the camera even exists. That is why creating a
-          relaxed and comfortable atmosphere in the shooting
-          situations is my priority.
-        </Paragraph>
-        <Paragraph>
-          Continuous learning and development are important, and I
-          enjoy experimenting with new techniques and approaches; so
-          I&apos;m thrilled to hear about your vision and create the
-          images you need!
-        </Paragraph>
-        <Paragraph>
-          So lets have chat of your wishes and needs!
-        </Paragraph>
+        <Paragraph>{t("Hi, Venla here")}</Paragraph>
+        <Paragraph>{t("AboutStory1")}</Paragraph>
+        <Paragraph>{t("AboutStory2")}</Paragraph>
+        <Paragraph>{t("AboutStory3")}</Paragraph>
       </div>
       <div className='flex flex-col-reverse md:flex-row justify-between items-center py-5'>
         <Link
@@ -73,7 +52,7 @@ export default async function AboutPage({
             className: "",
           })}
           href={"/contact"}>
-          Get in touch!
+          {t("Lets Get in touch!")}
         </Link>
         <div className=''>
           <ASSETS.signature />

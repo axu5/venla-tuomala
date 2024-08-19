@@ -1,0 +1,22 @@
+{
+    "Let’s start the conversation!": "Let’s start the conversation!",
+    "Get in touch to discuss your vision": "Get in touch to discuss your vision",
+    "Name": "Name",
+    "Email": "Email",
+    "Message": "Message",
+    "MessageInspo": "Feel free to add your photography needs, location, time and any special requests",
+    "Send!": "Send!",
+    "Sending...": "Sending...",
+    "Success!": "Success!",
+    "I'll get back": "I’ll get back to you at {{email}} within 48h!",
+    "close": "close",
+    "Error!": "Error!",
+    "Something went wrong": "Something went wrong, please try again later",
+    "your@email.com": "your@email.com",
+    "Your Name": "Your Name",
+    "Some details about what you want": "Some details about what you want",
+    "ValidEmailError": "Please enter a valid email address",
+    "NameMustNotBeEmptyError": "Your name must not be empty",
+    "DetailsMustNotBeEmptyError": "Your message must not be empty",
+    "DetailsMustNotExceedError": "Your message cannot exceed 2000 characters"
+}

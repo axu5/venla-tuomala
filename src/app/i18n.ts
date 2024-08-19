@@ -1,7 +1,8 @@
-import { createInstance, i18n, Resource, TFunction } from "i18next";
-import { initReactI18next } from "react-i18next/initReactI18next";
-import resourcesToBackend from "i18next-resources-to-backend";
 import { i18nConfig } from "@/../i18nConfig";
+import { createInstance, i18n, Resource, TFunction } from "i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
+import resourcesToBackend from "i18next-resources-to-backend";
+import { initReactI18next } from "react-i18next/initReactI18next";
 
 export type Locale = (typeof i18nConfig.locales)[number];
 
@@ -23,12 +24,15 @@ export default async function initTranslations(
 ): Promise<InitTranslationsReturns> {
   i18nInstance = i18nInstance || createInstance();
 
-  i18nInstance.use(initReactI18next);
+  i18nInstance
+    // .use(Backend)
+    .use(LanguageDetector)
+    .use(initReactI18next);
 
   if (!resources) {
     i18nInstance.use(
       resourcesToBackend(
-        (language: string, namespace: string) =>
+        async (language: string, namespace: string) =>
           import(`@/../locales/${language}/${namespace}.json`)
       )
     );
@@ -43,6 +47,7 @@ export default async function initTranslations(
     fallbackNS: namespaces[0],
     ns: namespaces,
     preload: resources ? [] : i18nConfig.locales,
+    // debug: true,
   });
 
   return {

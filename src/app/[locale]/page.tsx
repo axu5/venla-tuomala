@@ -6,7 +6,7 @@ import { CircleArrowDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Balancer from "react-wrap-balancer";
-import { LocaleParam } from "../i18n";
+import initTranslations, { LocaleParam } from "../i18n";
 
 export default async function LandingPage({
   params: { locale },
@@ -14,13 +14,13 @@ export default async function LandingPage({
   return (
     <main className='flex flex-col'>
       <div className='max-w-5xl mx-10 md:mx-auto'>
-        <Hero />
+        <Hero locale={locale} />
         <Overlay />
-        <HiThere />
+        <HiThere locale={locale} />
       </div>
-      <WhatsIncluded />
+      <WhatsIncluded locale={locale} />
       <div className='max-w-5xl mx-10 md:mx-auto'>
-        <Testimonials />
+        <Testimonials locale={locale} />
       </div>
     </main>
   );
@@ -38,30 +38,17 @@ function Signature() {
   return <ASSETS.signature />;
 }
 
-function Hero() {
+async function Hero({ locale }: LocaleParam["params"]) {
+  const { t } = await initTranslations(locale, ["landing_page"]);
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-y-5 md:gap-y-10 pb-20 md:gap-4 pt-10'>
+    <div className='grid grid-cols-1 md:grid-cols-2 gap-y-5 md:gap-y-10 pb-20 md:gap-4 pt-10 min-h-screen'>
       <div className='flex flex-col'>
         <div className='flex flex-col md:pb-64 justify-center items-center md:items-start'>
           <Title className='pt-5 md:py-10'>Venla Tuomala</Title>
           <SubTitle className='flex justify-center items-center text-center md:text-left pb-5 md:py-0'>
-            Lifestyle, portrait & brand photographer
+            {t("Description")}
           </SubTitle>
         </div>
-        {/* <div className='flex flex-row items-center justify-center gap-x-10'>
-          <Link
-            className={buttonVariants({
-              variant: "call-to-action",
-            })}
-            href={"/get-in-touch"}>
-            Get in touch
-          </Link>
-          <Link
-            className={buttonVariants({ variant: "link" })}
-            href='/#previous-work'>
-            Previous work
-          </Link>
-        </div> */}
       </div>
       <div className='flex flex-col'>
         <Image
@@ -79,23 +66,25 @@ function Hero() {
   );
 }
 
-function HiThere() {
+async function HiThere({ locale }: LocaleParam["params"]) {
+  const { t } = await initTranslations(locale, ["landing_page"]);
   return (
     <>
       <Title id='hi-there' className='pb-10 md:pb-20'>
-        Hi There!
+        {t("Hi there!")}
       </Title>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-10'>
         <div className='flex flex-col md:py-28 gap-y-9 max-w-full xl:pl-0'>
           <div className='text-3xl font-ibarra'>
-            <Balancer>So, you need visuals?</Balancer>
+            <Balancer>{t("So, you need visuals?")}</Balancer>
           </div>
           <div className='text-3xl font-ibarra'>
-            Whether its for professional or personal needs, I&apos;m
-            excited to bring your vision to life.
+            {t("Whether its for professional or personal needs")}
           </div>
           <div className='text-3xl font-ibarra'>
-            <Balancer>Let&apos;s connect, plan, and create!</Balancer>
+            <Balancer>
+              {t("Let’s connect, plan, and create!")}
+            </Balancer>
           </div>
           <div className='items-center md:items-start max-w-3xl'>
             <Link
@@ -104,7 +93,7 @@ function HiThere() {
                 size: "lg",
               })}
               href='/contact'>
-              Get in touch
+              {t("Get in touch!")}
             </Link>
           </div>
         </div>
@@ -121,34 +110,32 @@ function HiThere() {
   );
 }
 
-function WhatsIncluded() {
+async function WhatsIncluded({ locale }: LocaleParam["params"]) {
+  const { t } = await initTranslations(locale, ["landing_page"]);
   return (
-    <section className='bg-[#232323] min-h-screen w-screen py-20 my-20 px-10'>
+    <section className='bg-[#232323] w-screen py-28 my-20 px-10'>
       <div className='max-w-5xl mx-auto flex flex-col justify-center align-center w-full gap-20'>
         <Title className='text-white mx-auto'>
-          What&apos;s included
+          {t("What’s included")}
         </Title>
         <div className='flex flex-col md:grid md:grid-cols-3 gap-10'>
-          <div className='text-white font-ibarra text-3xl mx-auto capitalize text-center'>
-            Consultation
+          <div className='text-white font-ibarra text-3xl capitalize text-center'>
+            {t("Consultation")}
           </div>
-          <div className='text-white font-ibarra text-3xl mx-auto capitalize text-center'>
-            Editing high resolution images
+          <div className='text-white font-ibarra text-3xl capitalize text-center'>
+            {t("Edited high resolution images")}
           </div>
-          <div className='text-white font-ibarra text-3xl mx-auto capitalize text-center'>
-            Location ideas
+          <div className='text-white font-ibarra text-3xl capitalize text-center'>
+            {t("Location ideas")}
           </div>
-          <div className='text-white font-ibarra text-3xl mx-auto capitalize text-center'>
-            Sneak peek photos within 48h
+          <div className='text-white font-ibarra text-3xl capitalize text-center'>
+            {t("Sneak peek photos within 48h")}
           </div>
-          <div className='text-white font-ibarra text-3xl mx-auto capitalize text-center'>
-            Personal printing rights
+          <div className='text-white font-ibarra text-3xl capitalize text-center'>
+            {t("Personal printing rights")}
           </div>
-          <div className='text-white font-ibarra text-3xl mx-auto capitalize text-center'>
-            Creative portraits
-          </div>
-          <div className='text-white font-ibarra text-3xl mx-auto capitalize text-center col-start-2'>
-            Custom online gallery
+          <div className='text-white font-ibarra text-3xl capitalize text-center'>
+            {t("Creative portraits")}
           </div>
         </div>
         <Link
@@ -157,20 +144,21 @@ function WhatsIncluded() {
             className: "text-white w-full",
           })}
           href='/process'>
-          Read more about the process here
+          {t("Read more about the process here")}
         </Link>
       </div>
     </section>
   );
 }
 
-function Testimonials() {
+async function Testimonials({ locale }: LocaleParam["params"]) {
+  const { t } = await initTranslations(locale, ["landing_page"]);
   return (
     <>
       <div className='flex flex-col justify-center text-center py-20'>
-        <Title>Testimonials</Title>
+        <Title>{t("Testimonials")}</Title>
         <h2 className='text-4xl font-babas-neue uppercase text-[#454545]'>
-          Hear out others who have trusted my work
+          {t("What my previous clients have said about me")}
         </h2>
       </div>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-10 text-center'>
@@ -197,7 +185,7 @@ function Testimonials() {
           className: "py-32 w-full",
         })}
         href='/testimonials'>
-        Read the full testimonials
+        {t("Read the full testimonials")}
       </Link>
     </>
   );
