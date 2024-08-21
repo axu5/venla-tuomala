@@ -13,13 +13,13 @@ export default async function LandingPage({
 }: LocaleParam) {
   return (
     <main className='flex flex-col'>
-      <div className='max-w-5xl mx-10 md:mx-auto'>
+      <div className='max-w-5xl px-10 md:mx-auto'>
         <Hero locale={locale} />
         <Overlay />
         <HiThere locale={locale} />
       </div>
       <WhatsIncluded locale={locale} />
-      <div className='max-w-5xl mx-10 md:mx-auto'>
+      <div className='max-w-5xl px-10 md:mx-auto'>
         <Testimonials locale={locale} />
       </div>
     </main>
@@ -82,7 +82,7 @@ async function Hero({ locale }: LocaleParam["params"]) {
             />
           </div>
         </div>
-        <div className='flex flex-col justify-center items-center'>
+        <div className='flex-col justify-center items-center hidden md:flex'>
           <Signature />
         </div>
       </div>
@@ -94,36 +94,34 @@ async function HiThere({ locale }: LocaleParam["params"]) {
   const { t } = await initTranslations(locale, ["landing_page"]);
   return (
     <>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-10'>
-        <div>
-          <Title id='hi-there' className='pb-10 md:pb-20'>
-            {t("Hi there!")}
-          </Title>
-          <div className='flex flex-col gap-y-9 max-w-full xl:pl-0'>
-            <div className='text-3xl font-ibarra'>
-              <Balancer>{t("So, you need visuals?")}</Balancer>
-            </div>
-            <div className='text-3xl font-ibarra'>
-              {t("Whether its for professional or personal needs")}
-            </div>
-            <div className='text-3xl font-ibarra'>
-              <Balancer>
-                {t("Let’s connect, plan, and create!")}
-              </Balancer>
-            </div>
-            <div className='items-center md:items-start max-w-3xl'>
-              <Link
-                className={buttonVariants({
-                  variant: "call-to-action",
-                  size: "lg",
-                })}
-                href='/contact'>
-                {t("Get in touch!")}
-              </Link>
-            </div>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
+        <Title id='hi-there' className='pb-5 md:pb-20 mx-5 md:mx-0'>
+          {t("Hi there!")}
+        </Title>
+        <div className='flex flex-col gap-y-5 max-w-full xl:pl-0 mx-5 md:mx-0'>
+          <div className='text-2xl md:text-3xl font-ibarra'>
+            <Balancer>{t("So, you need visuals?")}</Balancer>
+          </div>
+          <div className='text-2xl md:text-3xl font-ibarra'>
+            {t("Whether its for professional or personal needs")}
+          </div>
+          <div className='text-2xl md:text-3xl font-ibarra'>
+            <Balancer>
+              {t("Let’s connect, plan, and create!")}
+            </Balancer>
+          </div>
+          <div className='items-center md:items-start max-w-3xl pt-5'>
+            <Link
+              className={buttonVariants({
+                variant: "call-to-action",
+                size: "lg",
+              })}
+              href='/contact'>
+              {t("Get in touch!")}
+            </Link>
           </div>
         </div>
-        <div className='grid grid-cols-2 grid-rows-[repeat(10,1fr)] gap-3 max-w-full md:max-w-[75%] mx-auto max-h-[80vh]'>
+        <div className='grid grid-cols-2 grid-rows-[repeat(10,1fr)] gap-3 max-w-full md:max-w-[75%] mx-auto max-h-[80vh] pt-5 md:pt-0'>
           <div className='row-span-4 w-full h-full overflow-hidden row-start-2'>
             <Image
               src='/lifestyle/XXL_Mössö.5.JPG'
@@ -183,26 +181,6 @@ async function WhatsIncluded({ locale }: LocaleParam["params"]) {
         <Title className='text-white mx-auto'>
           {t("What’s included")}
         </Title>
-        {/* <div className='flex flex-col md:grid md:grid-cols-3 gap-10'>
-          <div className='text-white font-ibarra text-3xl capitalize text-center'>
-            {t("Consultation")}
-          </div>
-          <div className='text-white font-ibarra text-3xl capitalize text-center'>
-            {t("Edited high resolution images")}
-          </div>
-          <div className='text-white font-ibarra text-3xl capitalize text-center'>
-            {t("Location ideas")}
-          </div>
-          <div className='text-white font-ibarra text-3xl capitalize text-center'>
-            {t("Sneak peek photos within 48h")}
-          </div>
-          <div className='text-white font-ibarra text-3xl capitalize text-center'>
-            {t("Personal printing rights")}
-          </div>
-          <div className='text-white font-ibarra text-3xl capitalize text-center'>
-            {t("Creative portraits")}
-          </div>
-        </div> */}
         <div className='flex flex-col gap-3 text-2xl font-ibarra border border-l-2 border-y-0 border-r-0 border-l-goldenisher pl-10 py-5 text-offwhite'>
           <div className='text-3xl capitalize'>
             {t("Consultation")}
@@ -229,7 +207,10 @@ async function WhatsIncluded({ locale }: LocaleParam["params"]) {
 }
 
 async function Testimonials({ locale }: LocaleParam["params"]) {
-  const { t } = await initTranslations(locale, ["landing_page"]);
+  const { t } = await initTranslations(locale, [
+    "landing_page",
+    "testimonials",
+  ]);
   return (
     <>
       <div className='flex flex-col justify-center text-center py-20'>
@@ -238,22 +219,24 @@ async function Testimonials({ locale }: LocaleParam["params"]) {
           {t("What my previous clients have said about me")}
         </h2>
       </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-10 text-center'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
         <TestimonialCard
-          name='Person 1'
-          testimonial='Venla is a cool and awesome person and she made me feel so comfortable around the camera!'
+          src='/portraits/Saara.jpg'
+          alt='Saara'
+          name={t("testimonials:Testimonial1Title")}
+          testimonial={t("testimonials:Testimonial1")}
         />
         <TestimonialCard
-          name='Person 2'
-          testimonial='Venla is a cool and awesome person and she made me feel so comfortable around the camera!'
+          src='/lifestyle/Birthday_K&K.13.jpg'
+          alt='Katja'
+          name={t("testimonials:Testimonial2Title")}
+          testimonial={t("testimonials:Testimonial2")}
         />
         <TestimonialCard
-          name='Person 3'
-          testimonial='Venla is a cool and awesome person and she made me feel so comfortable around the camera!'
-        />
-        <TestimonialCard
-          name='Person 4'
-          testimonial='Venla is a cool and awesome person and she made me feel so comfortable around the camera!'
+          src='/brands/PB_Riia.png'
+          alt='Riia'
+          name={t("testimonials:Testimonial3Title")}
+          testimonial={t("testimonials:Testimonial3")}
         />
       </div>
       <Link
@@ -271,22 +254,32 @@ async function Testimonials({ locale }: LocaleParam["params"]) {
 type TestimonialCardProps = {
   name: string;
   testimonial: string;
+  src: string;
+  alt: string;
 };
 
 function TestimonialCard({
   name,
   testimonial,
+  src,
+  alt,
 }: TestimonialCardProps) {
   return (
     <div className='flex flex-col gap-y-5'>
       <div className='flex flex-row items-center gap-x-5'>
-        <div className='bg-gray-300 animate-pulse w-16 h-16 rounded-full'></div>
+        <Image
+          className='w-16 h-16 rounded-full object-cover'
+          width={64}
+          height={64}
+          src={src}
+          alt={alt}
+        />
         <div className='text-3xl tracking-wide font-babas-neue text-muted-gray'>
           {name}
         </div>
       </div>
-      <div className='font-ibarra border border-transparent border-l-muted-gray px-5 py-2 mx-5 text-muted-gray text-xl'>
-        <Balancer>{testimonial}</Balancer>
+      <div className='font-ibarra border border-transparent border-l-muted-gray px-5 py-2 mx-5 text-muted-gray text-xl text-pretty max-h-36 overflow-y-clip overflow-ellipsis'>
+        {testimonial}
       </div>
     </div>
   );
