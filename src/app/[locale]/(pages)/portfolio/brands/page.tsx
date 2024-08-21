@@ -61,15 +61,15 @@ export default async function BrandsPage({
         name={t("Riia")}
         images={[
           {
-            src: "/brands/Riia.png",
+            src: "/brands/PB_Riia.png",
             alt: "",
           },
           {
-            src: "/brands/Riia2.png",
+            src: "/brands/PB_Riia2.png",
             alt: "",
           },
           {
-            src: "/brands/Riia3.png",
+            src: "/brands/PB_Riia3.png",
             alt: "",
           },
         ]}
@@ -78,11 +78,11 @@ export default async function BrandsPage({
         name={t("Vappu")}
         images={[
           {
-            src: "/brands/Vappu.png",
+            src: "/brands/Vappu.jpg",
             alt: "",
           },
           {
-            src: "/brands/Vappu2.png",
+            src: "/brands/Vappu.2.jpg",
             alt: "",
           },
         ]}
