@@ -3,7 +3,7 @@ import { Title } from "@/components/Title";
 import { buttonVariants } from "@/components/ui/button";
 import { ASSETS } from "@/constants";
 import { CircleArrowDown } from "lucide-react";
-import Image, { ImageProps } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 import initTranslations, { LocaleParam } from "../i18n";

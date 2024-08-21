@@ -1,5 +1,6 @@
 "use client";
 
+import { i18nConfig } from "@/../i18nConfig";
 import { Locale } from "@/app/i18n";
 import {
   Select,
@@ -8,9 +9,9 @@ import {
   SelectItem,
   SelectTrigger,
 } from "@/components/ui/select";
+import { Globe } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
-import { i18nConfig } from "@/../i18nConfig";
 
 export function LanguageSwitcher() {
   const { i18n, t } = useTranslation();
@@ -45,8 +46,10 @@ export function LanguageSwitcher() {
 
   return (
     <Select defaultValue={currentLocale} onValueChange={handleChange}>
-      <SelectTrigger className='bg-offwhite border-none mr-2 text-2xl font-ibarra capitalize'>
-        {t("Language")}
+      <SelectTrigger className='bg-offwhite border-none mr-2 text-2xl font-ibarra'>
+        <Globe className='w-4 h-4' />
+        {/* {t("Language")} */}
+        {{ fi: "Finnish", en: "English" }[currentLocale]}
       </SelectTrigger>
       <SelectContent className='bg-offwhite'>
         <SelectGroup className='flex flex-col'>
