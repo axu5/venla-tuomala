@@ -3,7 +3,7 @@ import { Title } from "@/components/Title";
 import { buttonVariants } from "@/components/ui/button";
 import { ASSETS } from "@/constants";
 import { CircleArrowDown } from "lucide-react";
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 import initTranslations, { LocaleParam } from "../i18n";
@@ -50,14 +50,36 @@ async function Hero({ locale }: LocaleParam["params"]) {
           </SubTitle>
         </div>
       </div>
-      <div className='flex flex-col'>
-        <Image
-          className='p-0 md:py-3'
-          src='/collage/collage-one.png'
-          alt='Gorgeous pictures'
-          width={6969}
-          height={300}
-        />
+      <div className='flex flex-col max-h-[600px]'>
+        <div className='grid grid-cols-[3fr_2fr] grid-rows-[2fr_3fr] w-full gap-3 min-h-0 min-w-0'>
+          <div className='row-span-2 overflow-hidden'>
+            <Image
+              src='/portraits/Saara.jpg'
+              alt='Saaran ylioppilaskuvaus Lahden metsässä'
+              className='object-cover overflow-hidden min-h-0 h-full'
+              width={6969}
+              height={0}
+            />
+          </div>
+          <div className='overflow-hidden'>
+            <Image
+              src='/portraits/Engagement2.jpg'
+              alt='Kihlajaiskuvaus Lahden järvessä'
+              className='object-cover overflow-hidden min-h-0 h-full'
+              width={6969}
+              height={0}
+            />
+          </div>
+          <div className='overflow-hidden'>
+            <Image
+              src='/brands/FC_Probba.2.jpg'
+              alt='Jalkapallotreenit Mikkelissä'
+              className='object-cover overflow-hidden min-h-0 h-full'
+              width={6969}
+              height={0}
+            />
+          </div>
+        </div>
         <div className='flex flex-col justify-center items-center'>
           <Signature />
         </div>
@@ -70,40 +92,81 @@ async function HiThere({ locale }: LocaleParam["params"]) {
   const { t } = await initTranslations(locale, ["landing_page"]);
   return (
     <>
-      <Title id='hi-there' className='pb-10 md:pb-20'>
-        {t("Hi there!")}
-      </Title>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-10'>
-        <div className='flex flex-col md:py-28 gap-y-9 max-w-full xl:pl-0'>
-          <div className='text-3xl font-ibarra'>
-            <Balancer>{t("So, you need visuals?")}</Balancer>
-          </div>
-          <div className='text-3xl font-ibarra'>
-            {t("Whether its for professional or personal needs")}
-          </div>
-          <div className='text-3xl font-ibarra'>
-            <Balancer>
-              {t("Let’s connect, plan, and create!")}
-            </Balancer>
-          </div>
-          <div className='items-center md:items-start max-w-3xl'>
-            <Link
-              className={buttonVariants({
-                variant: "call-to-action",
-                size: "lg",
-              })}
-              href='/contact'>
-              {t("Get in touch!")}
-            </Link>
+        <div>
+          <Title id='hi-there' className='pb-10 md:pb-20'>
+            {t("Hi there!")}
+          </Title>
+          <div className='flex flex-col gap-y-9 max-w-full xl:pl-0'>
+            <div className='text-3xl font-ibarra'>
+              <Balancer>{t("So, you need visuals?")}</Balancer>
+            </div>
+            <div className='text-3xl font-ibarra'>
+              {t("Whether its for professional or personal needs")}
+            </div>
+            <div className='text-3xl font-ibarra'>
+              <Balancer>
+                {t("Let’s connect, plan, and create!")}
+              </Balancer>
+            </div>
+            <div className='items-center md:items-start max-w-3xl'>
+              <Link
+                className={buttonVariants({
+                  variant: "call-to-action",
+                  size: "lg",
+                })}
+                href='/contact'>
+                {t("Get in touch!")}
+              </Link>
+            </div>
           </div>
         </div>
-        <div className='flex flex-col md:max-w-[70%] mx-auto'>
-          <Image
-            src='/collage.png'
-            alt='ANOTHER AMAZING PHOTO VENLA IS SO TALENTED'
-            width={6969}
-            height={0}
-          />
+        <div className='grid grid-cols-2 grid-rows-[repeat(10,1fr)] gap-3 max-w-[75%] mx-auto max-h-[80vh]'>
+          <div className='row-span-4 w-full h-full overflow-hidden row-start-2'>
+            <Image
+              src='/lifestyle/XXL_Mössö.5.JPG'
+              alt=''
+              className='object-cover overflow-hidden min-h-0 h-full'
+              width={6969}
+              height={0}
+            />
+          </div>
+          <div className='row-span-4 w-full h-full overflow-hidden'>
+            <Image
+              src='/portraits/Graduation1.jpg'
+              alt=''
+              className='object-cover overflow-hidden min-h-0 h-full'
+              width={6969}
+              height={0}
+            />
+          </div>
+          <div className='row-span-2 w-full h-full overflow-hidden'>
+            <Image
+              src='/lifestyle/Birthday_K&K.3.jpg'
+              alt=''
+              className='object-cover object-[50%_70%] overflow-hidden min-h-0 h-full'
+              width={6969}
+              height={0}
+            />
+          </div>
+          <div className='row-span-3 w-full h-full overflow-hidden'>
+            <Image
+              src='/lifestyle/Wedding.8.jpg'
+              alt=''
+              className='object-cover overflow-hidden min-h-0 h-full'
+              width={6969}
+              height={0}
+            />
+          </div>
+          <div className='row-span-3 w-full h-full overflow-hidden'>
+            <Image
+              src='/lifestyle/XXL_Mössö.6.JPG'
+              alt=''
+              className='object-cover overflow-hidden min-h-0 h-full'
+              width={6969}
+              height={0}
+            />
+          </div>
         </div>
       </div>
     </>
@@ -118,7 +181,7 @@ async function WhatsIncluded({ locale }: LocaleParam["params"]) {
         <Title className='text-white mx-auto'>
           {t("What’s included")}
         </Title>
-        <div className='flex flex-col md:grid md:grid-cols-3 gap-10'>
+        {/* <div className='flex flex-col md:grid md:grid-cols-3 gap-10'>
           <div className='text-white font-ibarra text-3xl capitalize text-center'>
             {t("Consultation")}
           </div>
@@ -137,15 +200,27 @@ async function WhatsIncluded({ locale }: LocaleParam["params"]) {
           <div className='text-white font-ibarra text-3xl capitalize text-center'>
             {t("Creative portraits")}
           </div>
+        </div> */}
+        <div className='flex flex-col gap-3 text-2xl font-ibarra border border-l-2 border-y-0 border-r-0 border-l-goldenisher pl-10 py-5 text-offwhite'>
+          <div className='text-3xl capitalize'>
+            {t("Consultation")}
+          </div>
+          <div className='text-3xl capitalize'>
+            {t("Edited high resolution images")}
+          </div>
+          <div className='text-3xl capitalize'>
+            {t("Location ideas")}
+          </div>
+          <div className='text-3xl capitalize'>
+            {t("Sneak peek photos within 48h")}
+          </div>
+          <div className='text-3xl capitalize'>
+            {t("Personal printing rights")}
+          </div>
+          <div className='text-3xl capitalize'>
+            {t("Creative portraits")}
+          </div>
         </div>
-        <Link
-          className={buttonVariants({
-            variant: "link",
-            className: "text-white w-full",
-          })}
-          href='/process'>
-          {t("Read more about the process here")}
-        </Link>
       </div>
     </section>
   );

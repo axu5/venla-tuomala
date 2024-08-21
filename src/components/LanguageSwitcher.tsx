@@ -45,7 +45,7 @@ export function LanguageSwitcher() {
 
   return (
     <Select defaultValue={currentLocale} onValueChange={handleChange}>
-      <SelectTrigger className='bg-offwhite border-none mr-2 lowercase text-2xl font-ibarra capitalize'>
+      <SelectTrigger className='bg-offwhite border-none mr-2 text-2xl font-ibarra capitalize'>
         {t("Language")}
       </SelectTrigger>
       <SelectContent className='bg-offwhite'>
