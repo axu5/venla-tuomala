@@ -18,25 +18,43 @@ export default async function Testimonials({
           name={t("Testimonial1Title")}
           testimonial={t("Testimonial1")}
           images={[
-            { url: "/images/portraits/FC5A6755.jpg", alt: "" },
+            { url: "/portraits/Saara.jpg", alt: "" },
+            { url: "/portraits/Saara2.jpg", alt: "" },
+            { url: "/portraits/Saara3.jpg", alt: "" },
+            { url: "/portraits/Saara4.jpg", alt: "" },
+            { url: "/portraits/Saara5.jpg", alt: "" },
+            { url: "/portraits/Saara6.jpg", alt: "" },
+            { url: "/portraits/Saara7.jpg", alt: "" },
           ]}
         />
         <Testimonial
           name={t("Testimonial2Title")}
           testimonial={t("Testimonial2")}
           images={[
-            { url: "/images/portraits/FC5A6755.jpg", alt: "" },
-            { url: "/images/portraits/FC5A6755.jpg", alt: "" },
-            { url: "/images/portraits/FC5A6755.jpg", alt: "" },
-            { url: "/images/portraits/FC5A6755.jpg", alt: "" },
-            { url: "/images/portraits/FC5A6755.jpg", alt: "" },
+            { url: "/lifestyle/Birthday_K&K.1.JPG", alt: "" },
+            { url: "/lifestyle/Birthday_K&K.2.JPG", alt: "" },
+            { url: "/lifestyle/Birthday_K&K.3.JPG", alt: "" },
+            { url: "/lifestyle/Birthday_K&K.4.JPG", alt: "" },
+            { url: "/lifestyle/Birthday_K&K.5.JPG", alt: "" },
+            { url: "/lifestyle/Birthday_K&K.6.JPG", alt: "" },
+            { url: "/lifestyle/Birthday_K&K.7.jpg", alt: "" },
+            { url: "/lifestyle/Birthday_K&K.8.jpg", alt: "" },
+            { url: "/lifestyle/Birthday_K&K.9.jpg", alt: "" },
+            { url: "/lifestyle/Birthday_K&K.10.jpg", alt: "" },
+            { url: "/lifestyle/Birthday_K&K.11.jpg", alt: "" },
+            { url: "/lifestyle/Birthday_K&K.12.jpg", alt: "" },
+            { url: "/lifestyle/Birthday_K&K.13.jpg", alt: "" },
+            { url: "/lifestyle/Birthday_K&K.14.jpg", alt: "" },
+            { url: "/lifestyle/Birthday_K&K.15.jpg", alt: "" },
           ]}
         />
         <Testimonial
           name={t("Testimonial3Title")}
           testimonial={t("Testimonial3")}
           images={[
-            { url: "/images/portraits/FC5A6755.jpg", alt: "" },
+            { url: "/brands/PB_Riia.png", alt: "" },
+            { url: "/brands/PB_Riia2.png", alt: "" },
+            { url: "/brands/PB_Riia3.png", alt: "" },
           ]}
         />
       </main>
@@ -53,7 +71,7 @@ type TestimonialType = {
 function Testimonial({ name, testimonial, images }: TestimonialType) {
   return (
     <div className='gap-y-10 gap-x-10 flex flex-col md:grid md:grid-cols-[2fr_1fr]'>
-      <div className='flex flex-col'>
+      <div className='flex flex-col gap-y-5'>
         <SubTitle className='font-babas-neue text-5xl'>
           {name}
         </SubTitle>

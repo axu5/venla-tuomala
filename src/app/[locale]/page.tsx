@@ -41,11 +41,13 @@ function Signature() {
 async function Hero({ locale }: LocaleParam["params"]) {
   const { t } = await initTranslations(locale, ["landing_page"]);
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-y-5 md:gap-y-10 pb-20 md:gap-4 pt-10 min-h-screen'>
+    <div className='grid grid-cols-1 md:grid-cols-2 gap-y-5 md:gap-y-10 pb-5 md:pb-20 md:gap-4 pt-10 min-h-screen'>
       <div className='flex flex-col'>
         <div className='flex flex-col md:pb-64 justify-center items-center md:items-start'>
-          <Title className='pt-5 md:py-10'>Venla Tuomala</Title>
-          <SubTitle className='flex justify-center items-center text-center md:text-left pb-5 md:py-0'>
+          <Title className='pt-5 text-7xl md:py-10'>
+            Venla Tuomala
+          </Title>
+          <SubTitle className='flex justify-center items-center text-left pb-5 md:py-0'>
             {t("Description")}
           </SubTitle>
         </div>
@@ -121,7 +123,7 @@ async function HiThere({ locale }: LocaleParam["params"]) {
             </div>
           </div>
         </div>
-        <div className='grid grid-cols-2 grid-rows-[repeat(10,1fr)] gap-3 max-w-[75%] mx-auto max-h-[80vh]'>
+        <div className='grid grid-cols-2 grid-rows-[repeat(10,1fr)] gap-3 max-w-full md:max-w-[75%] mx-auto max-h-[80vh]'>
           <div className='row-span-4 w-full h-full overflow-hidden row-start-2'>
             <Image
               src='/lifestyle/XXL_Mössö.5.JPG'
@@ -177,7 +179,7 @@ async function WhatsIncluded({ locale }: LocaleParam["params"]) {
   const { t } = await initTranslations(locale, ["landing_page"]);
   return (
     <section className='bg-[#232323] w-screen py-28 my-20 px-10'>
-      <div className='max-w-5xl mx-auto flex flex-col justify-center align-center w-full gap-20'>
+      <div className='max-w-5xl mx-auto flex flex-col justify-center align-center w-full md:gap-20'>
         <Title className='text-white mx-auto'>
           {t("What’s included")}
         </Title>

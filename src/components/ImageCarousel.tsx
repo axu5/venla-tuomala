@@ -9,7 +9,9 @@ import {
 import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowRight, Circle } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+
+const MAX_DOTS_PER_ROW = 7;
 
 type ImageCarouselProps = {
   images: {
@@ -44,6 +46,11 @@ export function ImageCarousel({
     });
   }, [api]);
 
+  const rows = useCallback(
+    () => ((total / MAX_DOTS_PER_ROW) | 0) + 1,
+    [total]
+  );
+
   return (
     <Carousel
       className={cn(className)}
@@ -58,7 +65,7 @@ export function ImageCarousel({
           return (
             <CarouselItem key={image.url} className='p-0'>
               <Image
-                className='h-full object-cover object-center'
+                className='min-w-0 w-full h-full max-h-full object-cover object-center'
                 src={image.url}
                 alt={alt}
                 width={6969}
@@ -78,22 +85,36 @@ export function ImageCarousel({
           }}>
           <ArrowLeft className='w-8 h-8 rounded-full p-1 bg-gray-300 bg-opacity-70 group-hover:bg-opacity-100 transition-all group-hover:-translate-x-2' />
         </button>
-        <div className='flex flex-row gap-2'>
-          {new Array(total).fill(null).map((_, i) => {
+        <div className='flex flex-col gap-y-1 w-[50%]'>
+          {new Array(rows()).fill(null).map((_, i) => {
+            const cols = Math.min(
+              total - i * MAX_DOTS_PER_ROW,
+              MAX_DOTS_PER_ROW
+            );
             return (
-              <Circle
+              <div
                 key={i}
-                className={cn(
-                  "cursor-pointer w-2 h-2 transition-all fill-[#ccc7] stroke-none",
-                  {
-                    "fill-white": i === current,
-                    "hover:fill-[#fff5]": i !== current,
-                  }
-                )}
-                onClick={() => {
-                  api?.scrollTo(i);
-                }}
-              />
+                className='flex flex-row gap-x-3 justify-center'>
+                {new Array(cols).fill(null).map((_, j) => {
+                  const imageIndex = i * MAX_DOTS_PER_ROW + j;
+                  return (
+                    <Circle
+                      key={`${i}-${j}`}
+                      className={cn(
+                        "cursor-pointer w-2 h-2 transition-all fill-[#ccc7] stroke-none",
+                        {
+                          "fill-white": imageIndex === current,
+                          "hover:fill-[#fff5]":
+                            imageIndex !== current,
+                        }
+                      )}
+                      onClick={() => {
+                        api?.scrollTo(imageIndex);
+                      }}
+                    />
+                  );
+                })}
+              </div>
             );
           })}
         </div>
