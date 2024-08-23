@@ -1,24 +1,26 @@
+import fcProbbaImg from "@/../public/brands/FC_Probba.2.jpg";
+import engagementImg from "@/../public/portraits/Engagement1.jpg";
+import saaraImg from "@/../public/portraits/Saara.jpg";
 import { SubTitle } from "@/components/SubTitle";
 import { Title } from "@/components/Title";
 import { buttonVariants } from "@/components/ui/button";
 import { ASSETS } from "@/constants";
-import { CircleArrowDown, Dot } from "lucide-react";
+import { CircleArrowDown } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 import initTranslations, { LocaleParam } from "../i18n";
-import saaraImg from "@/../public/portraits/Saara.jpg";
-import engagementImg from "@/../public/portraits/Engagement1.jpg";
-import fcProbbaImg from "@/../public/brands/FC_Probba.2.jpg";
-// @ts-expect-error Ääkköset on haram
+
+// @ts-expect-error BIG JPG
 import xxlMosso5 from "@/../public/lifestyle/XXL_Mössö.5.JPG";
-// @ts-expect-error Ääkköset on haram
+// @ts-expect-error BIG JPG
 import xxlMosso6 from "@/../public/lifestyle/XXL_Mössö.6.JPG";
 import graduation1 from "@/../public/portraits/Graduation1.jpg";
-import birthdayKK3 from "@/../public/lifestyle/Birthday_K&K.3.jpg";
-import birthdayKK13 from "@/../public/lifestyle/Birthday_K&K.13.jpg";
-import wedding8 from "@/../public/lifestyle/Wedding.8.jpg";
 import riia from "@/../public/brands/PB_Riia.png";
+import birthdayKK13 from "@/../public/lifestyle/Birthday_K&K.13.jpg";
+// @ts-expect-error BIG JPG
+import birthdayKK3 from "@/../public/lifestyle/Birthday_K&K.3.JPG";
+import wedding8 from "@/../public/lifestyle/Wedding.8.jpg";
 
 export default async function LandingPage({
   params: { locale },
