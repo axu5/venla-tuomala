@@ -26,7 +26,23 @@ import "./globals.css";
 // TODO: SEO
 export const metadata: Metadata = {
   title: "Venla Tuomala • Photographer",
-  description: "Venla Tuomala is a photographer ...",
+  description:
+    "Tapahtuma-, henkilö- ja brändivalokuvaus. Helsinki, Lahti ja Mikkeli",
+  // TODO: figure out how to do this on a router level
+  alternates: {
+    languages: {
+      en: "/en",
+      fi: "/fi",
+    },
+  },
+  applicationName: "Venla Tuomala Portfolio",
+  category: "Portfolio",
+  keywords: [
+    "Valokuvaaja",
+    "Mikkeli",
+    "Häävalokuvaaja",
+    "Tapahtumavalokuvaaja",
+  ],
 };
 
 const i18nNamespaces = [

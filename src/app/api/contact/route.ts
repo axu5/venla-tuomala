@@ -11,17 +11,14 @@ export async function POST(request: Request) {
     const _body = await request.json();
     const body = contactFormValidator.parse(_body);
 
-    // TODO: uncomment before pushing
-    // const data = await resend.emails.send({
-    //   // TODO: fix typo
-    //   from: `${body.name} <${env.CLIENT_FORM_EMAIL_ADDRESS}>`,
-    //   to: [env.CLIENT_EMAIL],
-    //   subject: `[${env.CLIENT_WEBSITE_DOMAIN}] ${body.name} sent you a message`,
-    //   react: EmailTemplate(body),
-    //   text: `${body.name} (${body.email}) sent you the following message.\n\n${body.details}`,
-    // });
-
-    const data = { error: null };
+    const data = await resend.emails.send({
+      // TODO: fix typo
+      from: `${body.name} <${env.CLIENT_CONTACT_EMAIL_ADDRESS}>`,
+      to: [env.CLIENT_EMAIL],
+      subject: `[${env.CLIENT_WEBSITE_DOMAIN}] ${body.name} sent you a message`,
+      react: EmailTemplate(body),
+      text: `${body.name} (${body.email}) sent you the following message.\n\n${body.details}`,
+    });
 
     if (data.error !== null) {
       throw data.error;

@@ -2,11 +2,21 @@ import { SubTitle } from "@/components/SubTitle";
 import { Title } from "@/components/Title";
 import { buttonVariants } from "@/components/ui/button";
 import { ASSETS } from "@/constants";
-import { CircleArrowDown } from "lucide-react";
-import Image from "next/image";
+import { CircleArrowDown, Dot } from "lucide-react";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 import initTranslations, { LocaleParam } from "../i18n";
+import saaraImg from "@/../public/portraits/Saara.jpg";
+import engagementImg from "@/../public/portraits/Engagement1.jpg";
+import fcProbbaImg from "@/../public/brands/FC_Probba.2.jpg";
+import xxlMosso5 from "@/../public/lifestyle/XXL_Mössö.5.JPG";
+import xxlMosso6 from "@/../public/lifestyle/XXL_Mössö.6.JPG";
+import graduation1 from "@/../public/lifestyle/Graduation_S.1.jpg";
+import birthdayKK3 from "@/../public/lifestyle/Birthday_K&K.3.jpg";
+import birthdayKK13 from "@/../public/lifestyle/Birthday_K&K.13.jpg";
+import wedding8 from "@/../public/lifestyle/Wedding.8.jpg";
+import riia from "@/../public/brands/PB_Riia.png";
 
 export default async function LandingPage({
   params: { locale },
@@ -56,29 +66,23 @@ async function Hero({ locale }: LocaleParam["params"]) {
         <div className='grid grid-cols-[3fr_2fr] grid-rows-[2fr_3fr] w-full gap-3 min-h-0 min-w-0'>
           <div className='row-span-2 overflow-hidden'>
             <Image
-              src='/portraits/Saara.jpg'
+              src={saaraImg}
               alt='Saaran ylioppilaskuvaus Lahden metsässä'
               className='object-cover overflow-hidden min-h-0 h-full'
-              width={6969}
-              height={0}
             />
           </div>
           <div className='overflow-hidden'>
             <Image
-              src='/portraits/Engagement2.jpg'
+              src={engagementImg}
               alt='Kihlajaiskuvaus Lahden järvessä'
               className='object-cover overflow-hidden min-h-0 h-full'
-              width={6969}
-              height={0}
             />
           </div>
           <div className='overflow-hidden'>
             <Image
-              src='/brands/FC_Probba.2.jpg'
+              src={fcProbbaImg}
               alt='Jalkapallotreenit Mikkelissä'
               className='object-cover overflow-hidden min-h-0 h-full'
-              width={6969}
-              height={0}
             />
           </div>
         </div>
@@ -95,76 +99,68 @@ async function HiThere({ locale }: LocaleParam["params"]) {
   return (
     <>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
-        <Title id='hi-there' className='pb-5 md:pb-20 mx-5 md:mx-0'>
-          {t("Hi there!")}
-        </Title>
-        <div className='flex flex-col gap-y-5 max-w-full xl:pl-0 mx-5 md:mx-0'>
-          <div className='text-2xl md:text-3xl font-ibarra'>
-            <Balancer>{t("So, you need visuals?")}</Balancer>
-          </div>
-          <div className='text-2xl md:text-3xl font-ibarra'>
-            {t("Whether its for professional or personal needs")}
-          </div>
-          <div className='text-2xl md:text-3xl font-ibarra'>
-            <Balancer>
-              {t("Let’s connect, plan, and create!")}
-            </Balancer>
-          </div>
-          <div className='items-center md:items-start max-w-3xl pt-5'>
-            <Link
-              className={buttonVariants({
-                variant: "call-to-action",
-                size: "lg",
-              })}
-              href='/contact'>
-              {t("Get in touch!")}
-            </Link>
+        <div>
+          <Title id='hi-there' className='pb-5 md:pb-20 mx-5 md:mx-0'>
+            {t("Hi there!")}
+          </Title>
+          <div className='flex flex-col gap-y-5 max-w-full xl:pl-0 mx-5 md:mx-0'>
+            <div className='text-2xl md:text-3xl font-ibarra'>
+              <Balancer>{t("So, you need visuals?")}</Balancer>
+            </div>
+            <div className='text-2xl md:text-3xl font-ibarra'>
+              {t("Whether its for professional or personal needs")}
+            </div>
+            <div className='text-2xl md:text-3xl font-ibarra'>
+              <Balancer>
+                {t("Let’s connect, plan, and create!")}
+              </Balancer>
+            </div>
+            <div className='items-center md:items-start max-w-3xl pt-5'>
+              <Link
+                className={buttonVariants({
+                  variant: "call-to-action",
+                  size: "lg",
+                })}
+                href='/contact'>
+                {t("Get in touch!")}
+              </Link>
+            </div>
           </div>
         </div>
         <div className='grid grid-cols-2 grid-rows-[repeat(10,1fr)] gap-3 max-w-full md:max-w-[75%] mx-auto max-h-[80vh] pt-5 md:pt-0'>
           <div className='row-span-4 w-full h-full overflow-hidden row-start-2'>
             <Image
-              src='/lifestyle/XXL_Mössö.5.JPG'
+              src={xxlMosso5}
               alt=''
               className='object-cover overflow-hidden min-h-0 h-full'
-              width={6969}
-              height={0}
             />
           </div>
           <div className='row-span-4 w-full h-full overflow-hidden'>
             <Image
-              src='/portraits/Graduation1.jpg'
+              src={graduation1}
               alt=''
               className='object-cover overflow-hidden min-h-0 h-full'
-              width={6969}
-              height={0}
             />
           </div>
           <div className='row-span-2 w-full h-full overflow-hidden'>
             <Image
-              src='/lifestyle/Birthday_K&K.3.jpg'
+              src={birthdayKK3}
               alt=''
               className='object-cover object-[50%_70%] overflow-hidden min-h-0 h-full'
-              width={6969}
-              height={0}
             />
           </div>
           <div className='row-span-3 w-full h-full overflow-hidden'>
             <Image
-              src='/lifestyle/Wedding.8.jpg'
+              src={wedding8}
               alt=''
               className='object-cover overflow-hidden min-h-0 h-full'
-              width={6969}
-              height={0}
             />
           </div>
           <div className='row-span-3 w-full h-full overflow-hidden'>
             <Image
-              src='/lifestyle/XXL_Mössö.6.JPG'
+              src={xxlMosso6}
               alt=''
               className='object-cover overflow-hidden min-h-0 h-full'
-              width={6969}
-              height={0}
             />
           </div>
         </div>
@@ -182,23 +178,23 @@ async function WhatsIncluded({ locale }: LocaleParam["params"]) {
           {t("What’s included")}
         </Title>
         <div className='flex flex-col gap-3 text-2xl font-ibarra border border-l-2 border-y-0 border-r-0 border-l-goldenisher pl-10 py-5 text-offwhite'>
-          <div className='text-3xl capitalize'>
-            {t("Consultation")}
+          <div className='text-3xl capitalize flex flex-row items-center'>
+            • {t("Consultation")}
           </div>
           <div className='text-3xl capitalize'>
-            {t("Edited high resolution images")}
+            • {t("Edited high resolution images")}
           </div>
           <div className='text-3xl capitalize'>
-            {t("Location ideas")}
+            • {t("Location ideas")}
           </div>
           <div className='text-3xl capitalize'>
-            {t("Sneak peek photos within 48h")}
+            • {t("Sneak peek photos within 48h")}
           </div>
           <div className='text-3xl capitalize'>
-            {t("Personal printing rights")}
+            • {t("Personal printing rights")}
           </div>
           <div className='text-3xl capitalize'>
-            {t("Creative portraits")}
+            • {t("Creative portraits")}
           </div>
         </div>
       </div>
@@ -221,19 +217,19 @@ async function Testimonials({ locale }: LocaleParam["params"]) {
       </div>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
         <TestimonialCard
-          src='/portraits/Saara.jpg'
+          src={saaraImg}
           alt='Saara'
           name={t("testimonials:Testimonial1Title")}
           testimonial={t("testimonials:Testimonial1")}
         />
         <TestimonialCard
-          src='/lifestyle/Birthday_K&K.13.jpg'
+          src={birthdayKK13}
           alt='Katja'
           name={t("testimonials:Testimonial2Title")}
           testimonial={t("testimonials:Testimonial2")}
         />
         <TestimonialCard
-          src='/brands/PB_Riia.png'
+          src={riia}
           alt='Riia'
           name={t("testimonials:Testimonial3Title")}
           testimonial={t("testimonials:Testimonial3")}
@@ -242,10 +238,10 @@ async function Testimonials({ locale }: LocaleParam["params"]) {
       <Link
         className={buttonVariants({
           variant: "link",
-          className: "py-32 w-full",
+          className: "py-16 w-full",
         })}
         href='/testimonials'>
-        {t("Read the full testimonials")}
+        {t("Read the full Testimonials")}
       </Link>
     </>
   );
@@ -254,7 +250,7 @@ async function Testimonials({ locale }: LocaleParam["params"]) {
 type TestimonialCardProps = {
   name: string;
   testimonial: string;
-  src: string;
+  src: StaticImageData;
   alt: string;
 };
 
@@ -265,7 +261,9 @@ function TestimonialCard({
   alt,
 }: TestimonialCardProps) {
   return (
-    <div className='flex flex-col gap-y-5'>
+    <Link
+      href={"/testimonials#" + name}
+      className='flex flex-col gap-y-5 p-5 rounded-xl shadow-sm hover:shadow-xl'>
       <div className='flex flex-row items-center gap-x-5'>
         <Image
           className='w-16 h-16 rounded-full object-cover'
@@ -278,9 +276,10 @@ function TestimonialCard({
           {name}
         </div>
       </div>
-      <div className='font-ibarra border border-transparent border-l-muted-gray px-5 py-2 mx-5 text-muted-gray text-xl text-pretty max-h-36 overflow-y-clip overflow-ellipsis'>
+      <div className='relative font-ibarra border border-transparent border-l-muted-gray px-5 py-2 mx-5 text-muted-gray text-xl text-pretty max-h-36 overflow-y-clip overflow-ellipsis'>
         {testimonial}
+        <div className='absolute top-0 left-0 h-36 w-full bg-gradient-to-t from-offwhite to-transparent'></div>
       </div>
-    </div>
+    </Link>
   );
 }

@@ -2,7 +2,6 @@ import initTranslations, { LocaleParam } from "@/app/i18n";
 import { ImageCarousel } from "@/components/ImageCarousel";
 import { SubTitle } from "@/components/SubTitle";
 import { Title } from "@/components/Title";
-import Image from "next/image";
 
 export default async function Testimonials({
   params: { locale },
@@ -72,7 +71,7 @@ function Testimonial({ name, testimonial, images }: TestimonialType) {
   return (
     <div className='gap-y-10 gap-x-10 flex flex-col md:grid md:grid-cols-[2fr_1fr]'>
       <div className='flex flex-col gap-y-5'>
-        <SubTitle className='font-babas-neue text-5xl'>
+        <SubTitle className='font-babas-neue text-5xl' id={name}>
           {name}
         </SubTitle>
         <div className='font-ibarra text-2xl'>{testimonial}</div>

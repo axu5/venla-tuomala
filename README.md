@@ -1,13 +1,13 @@
 # TODO
 
-- [ ] high def images
-- [ ] translations
+- [x] high def images
+- [ ] image carousel dot size is different
+- [x] translations
 - [ ] fix all styles for mobile!!!!!! IMPORTANT
 - [ ] make the current page show as bold in nav
 
-- [ ] /process
-- [ ] /testimonials
-- [ ] /portfolio
+- [x] /testimonials
+- [x] /portfolio
 - [x] /contact
 - [x] /about
 
@@ -15,16 +15,14 @@
 - [x] Testimonials
 - [x] Fix hero
 - [x] Whats included
-- [ ] Whats included blinking animations
 - [x] Fix footer
 
 - [ ] fix site for big screens
 - [ ] fix site for small screens
 - [ ] SEO
 - [ ] Better loading strategy
-- [ ] Image parallax speed thing
-- [ ] Mobile hamburger menu in nav
-- [ ] Favicon
+- [x] Mobile hamburger menu in nav
+- [x] Favicon
 - [x] 404 page
 - [x] Loading skeleton
 - [x] Typing animation front page
