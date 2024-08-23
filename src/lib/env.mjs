@@ -11,7 +11,7 @@ export const env = createEnv({
     RESEND_API_KEY: z.string().min(1),
 
     CLIENT_EMAIL: z.string().email(),
-    CLIENT_WEBSITE_DOMAIN: z.string().url(),
+    CLIENT_WEBSITE_DOMAIN: z.string(),
     CLIENT_CONTACT_EMAIL_ADDRESS: z.string().email(),
   },
   client: {
