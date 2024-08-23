@@ -10,9 +10,11 @@ import initTranslations, { LocaleParam } from "../i18n";
 import saaraImg from "@/../public/portraits/Saara.jpg";
 import engagementImg from "@/../public/portraits/Engagement1.jpg";
 import fcProbbaImg from "@/../public/brands/FC_Probba.2.jpg";
+// @ts-expect-error Ääkköset on haram
 import xxlMosso5 from "@/../public/lifestyle/XXL_Mössö.5.JPG";
+// @ts-expect-error Ääkköset on haram
 import xxlMosso6 from "@/../public/lifestyle/XXL_Mössö.6.JPG";
-import graduation1 from "@/../public/lifestyle/Graduation_S.1.jpg";
+import graduation1 from "@/../public/portraits/Graduation1.jpg";
 import birthdayKK3 from "@/../public/lifestyle/Birthday_K&K.3.jpg";
 import birthdayKK13 from "@/../public/lifestyle/Birthday_K&K.13.jpg";
 import wedding8 from "@/../public/lifestyle/Wedding.8.jpg";
@@ -69,6 +71,8 @@ async function Hero({ locale }: LocaleParam["params"]) {
               src={saaraImg}
               alt='Saaran ylioppilaskuvaus Lahden metsässä'
               className='object-cover overflow-hidden min-h-0 h-full'
+              placeholder='blur'
+              priority
             />
           </div>
           <div className='overflow-hidden'>
@@ -76,6 +80,8 @@ async function Hero({ locale }: LocaleParam["params"]) {
               src={engagementImg}
               alt='Kihlajaiskuvaus Lahden järvessä'
               className='object-cover overflow-hidden min-h-0 h-full'
+              placeholder='blur'
+              priority
             />
           </div>
           <div className='overflow-hidden'>
@@ -83,6 +89,8 @@ async function Hero({ locale }: LocaleParam["params"]) {
               src={fcProbbaImg}
               alt='Jalkapallotreenit Mikkelissä'
               className='object-cover overflow-hidden min-h-0 h-full'
+              placeholder='blur'
+              priority
             />
           </div>
         </div>
@@ -140,6 +148,7 @@ async function HiThere({ locale }: LocaleParam["params"]) {
               src={graduation1}
               alt=''
               className='object-cover overflow-hidden min-h-0 h-full'
+              placeholder='blur'
             />
           </div>
           <div className='row-span-2 w-full h-full overflow-hidden'>
@@ -147,6 +156,7 @@ async function HiThere({ locale }: LocaleParam["params"]) {
               src={birthdayKK3}
               alt=''
               className='object-cover object-[50%_70%] overflow-hidden min-h-0 h-full'
+              placeholder='blur'
             />
           </div>
           <div className='row-span-3 w-full h-full overflow-hidden'>
@@ -154,6 +164,7 @@ async function HiThere({ locale }: LocaleParam["params"]) {
               src={wedding8}
               alt=''
               className='object-cover overflow-hidden min-h-0 h-full'
+              placeholder='blur'
             />
           </div>
           <div className='row-span-3 w-full h-full overflow-hidden'>

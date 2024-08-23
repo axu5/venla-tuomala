@@ -121,8 +121,10 @@ export default async function RootLayout({
                       </li>
                       <li className='hidden md:block text-2xl'>
                         <Link
-                          href='/contact'
-                          className='capitalize font-ibarra'>
+                          className={buttonVariants({
+                            variant: "call-to-action",
+                          })}
+                          href='/contact'>
                           {t("Contact")}
                         </Link>
                       </li>
@@ -189,7 +191,7 @@ export default async function RootLayout({
                                   <Link
                                     href='/contact'
                                     className={buttonVariants({
-                                      variant: "link",
+                                      variant: "call-to-action",
                                       className:
                                         "text-5xl capitalize",
                                     })}>
@@ -220,16 +222,16 @@ export default async function RootLayout({
 async function Footer({ locale }: { locale: Locale }) {
   const { t } = await initTranslations(locale, i18nNamespaces);
   return (
-    <div className='pt-px mt-10 bg-gradient-to-r from-transparent via-goldenisher to-transparent w-full max-w-7xl mx-auto'>
-      <div className='flex flex-row justify-around px-10 md:px-0 py-20 w-full bg-offwhite'>
-        <div className='flex flex-col md:flex-row justify-around w-[50%]'>
+    <div className='pt-px mt-10 bg-gradient-to-r from-transparent via-goldenisher to-transparent w-full max-w-[calc(100vw-80px)] md:max-w-7xl mx-auto'>
+      <div className='flex flex-col gap-y-10 md:flex-row justify-around px-10 md:px-0 py-20 w-full bg-offwhite'>
+        <div className='flex flex-col md:flex-row justify-center md:justify-around items-center md:w-[50%]'>
           <Link
             className={buttonVariants({
               variant: "link",
               className: "font-semibold tracking-wide text-2xl",
             })}
-            href='/contact'>
-            {t("Contact")}
+            href='/portfolio'>
+            {t("Portfolio")}
           </Link>
           <Link
             className={buttonVariants({

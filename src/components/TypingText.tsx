@@ -27,7 +27,7 @@ type TypingTextProps = {
 };
 
 export function TypingText({ locale }: TypingTextProps) {
-  const { t, i18n } = useTranslation("about", {
+  const { t } = useTranslation("about", {
     lng: locale,
   });
   const count = useMotionValue(0);
@@ -73,7 +73,7 @@ export function TypingText({ locale }: TypingTextProps) {
 
   return (
     <>
-      <motion.span className='pt-serif-regular-italic text-brownish font-semibold'>
+      <motion.span className='pt-serif-regular-italic text-[#454545] font-semibold'>
         {displayText}
       </motion.span>
       <BlinkingCursor />

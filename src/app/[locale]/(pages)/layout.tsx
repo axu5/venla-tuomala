@@ -8,6 +8,8 @@ export default function SubLayout({
 }> &
   LocaleParam) {
   return (
-    <main className='max-w-4xl px-10 md:mx-auto'>{children}</main>
+    <main className='max-w-[calc(100vw-80px)] md:max-w-5xl mx-auto'>
+      {children}
+    </main>
   );
 }

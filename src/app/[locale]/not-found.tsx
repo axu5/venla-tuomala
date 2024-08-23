@@ -5,6 +5,8 @@ import Image from "next/image";
 import { Title } from "@/components/Title";
 import { buttonVariants } from "@/components/ui/button";
 
+import img404 from "@/../public/404.jpg";
+
 export default async function NotFound() {
   const locale = serverGetLocale();
 
@@ -47,10 +49,8 @@ export default async function NotFound() {
       <div className='w-[40%] min-h-0 overflow-hidden'>
         <Image
           className='object-cover min-h-0 object-bottom'
-          src='/404.jpg'
+          src={img404}
           alt='Venla on eksynyt'
-          width={6969}
-          height={0}
         />
       </div>
     </div>

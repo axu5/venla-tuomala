@@ -6,6 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { PropsWithChildren } from "react";
 
+import aboutImg from "@/../public/about/VT__1351.jpg";
+
 // FIX: namespace
 const i18nNamespaces = ["about", "common"];
 
@@ -18,12 +20,7 @@ export default async function AboutPage({
       <div className=''>
         <div className='flex flex-col md:flex-row justify-between'>
           <div className='p-3 lg:p-20 md:max-w-[50%]'>
-            <Image
-              src='/images/venla2.png'
-              alt='Pic of me'
-              width={6969}
-              height={0}
-            />
+            <Image src={aboutImg} alt='Pic of me' />
           </div>
           <div className='py-10 md:py-20'>
             <div className='pb-36 md:pb-28 text-5xl font-babas-neue h-0'>

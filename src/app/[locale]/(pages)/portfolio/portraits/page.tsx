@@ -1,6 +1,22 @@
 import initTranslations, { LocaleParam } from "@/app/i18n";
 import { PortfolioItem } from "@/components/PortfolioItem";
 
+import coupleBJ1 from "@/../public/portraits/Couple_B&J.jpg";
+import coupleBJ2 from "@/../public/portraits/Couple_B&J2.jpg";
+import coupleBJ3 from "@/../public/portraits/Couple_B&J3.jpg";
+import engagement1 from "@/../public/portraits/Engagement1.jpg";
+import engagement2 from "@/../public/portraits/Engagement2.jpg";
+import graduation1 from "@/../public/portraits/Graduation1.jpg";
+import graduation2 from "@/../public/portraits/Graduation2.jpg";
+import ondrej1 from "@/../public/portraits/Ondrej.jpg";
+import saara1 from "@/../public/portraits/Saara.jpg";
+import saara2 from "@/../public/portraits/Saara2.jpg";
+import saara3 from "@/../public/portraits/Saara3.jpg";
+import saara4 from "@/../public/portraits/Saara4.jpg";
+import saara5 from "@/../public/portraits/Saara5.jpg";
+import saara6 from "@/../public/portraits/Saara6.jpg";
+import saara7 from "@/../public/portraits/Saara7.jpg";
+
 export default async function PortraitsPage({
   params: { locale },
 }: LocaleParam) {
@@ -8,18 +24,19 @@ export default async function PortraitsPage({
   return (
     <>
       <PortfolioItem
+        priority
         name={t("Couple B&J")}
         images={[
           {
-            src: "/portraits/Couple_B&J.jpg",
+            src: coupleBJ1,
             alt: "",
           },
           {
-            src: "/portraits/Couple_B&J2.jpg",
+            src: coupleBJ2,
             alt: "",
           },
           {
-            src: "/portraits/Couple_B&J3.jpg",
+            src: coupleBJ3,
             alt: "",
           },
         ]}
@@ -28,11 +45,11 @@ export default async function PortraitsPage({
         name={t("Engagement")}
         images={[
           {
-            src: "/portraits/Engagement1.jpg",
+            src: engagement1,
             alt: "",
           },
           {
-            src: "/portraits/Engagement2.jpg",
+            src: engagement2,
             alt: "",
           },
         ]}
@@ -41,11 +58,11 @@ export default async function PortraitsPage({
         name={t("Graduation")}
         images={[
           {
-            src: "/portraits/Graduation1.jpg",
+            src: graduation1,
             alt: "",
           },
           {
-            src: "/portraits/Graduation2.jpg",
+            src: graduation2,
             alt: "",
           },
         ]}
@@ -54,7 +71,7 @@ export default async function PortraitsPage({
         name={t("Ondrej")}
         images={[
           {
-            src: "/portraits/Ondrej.jpg",
+            src: ondrej1,
             alt: "",
           },
         ]}
@@ -62,34 +79,13 @@ export default async function PortraitsPage({
       <PortfolioItem
         name={t("Saara")}
         images={[
-          {
-            src: "/portraits/Saara.jpg",
-            alt: "",
-          },
-          {
-            src: "/portraits/Saara2.jpg",
-            alt: "",
-          },
-          {
-            src: "/portraits/Saara3.jpg",
-            alt: "",
-          },
-          {
-            src: "/portraits/Saara4.jpg",
-            alt: "",
-          },
-          {
-            src: "/portraits/Saara5.jpg",
-            alt: "",
-          },
-          {
-            src: "/portraits/Saara6.jpg",
-            alt: "",
-          },
-          {
-            src: "/portraits/Saara7.jpg",
-            alt: "",
-          },
+          { src: saara1, alt: "" },
+          { src: saara2, alt: "" },
+          { src: saara3, alt: "" },
+          { src: saara4, alt: "" },
+          { src: saara5, alt: "" },
+          { src: saara6, alt: "" },
+          { src: saara7, alt: "" },
         ]}
       />
     </>

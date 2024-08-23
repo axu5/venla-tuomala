@@ -1,9 +1,11 @@
 import initTranslations, { LocaleParam } from "@/app/i18n";
 import { SubTitle } from "@/components/SubTitle";
 import { Title } from "@/components/Title";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import Balancer from "react-wrap-balancer";
+import mikkeliGraduationPic from "@/../public/lifestyle/Mikkeli_Graduation.jpg";
+import saara6 from "@/../public/portraits/Saara6.jpg";
+import yoga1 from "@/../public/brands/Yoga.1.jpg";
 
 export default async function Portfolio({
   params: { locale },
@@ -11,62 +13,65 @@ export default async function Portfolio({
   const { t } = await initTranslations(locale, ["portfolio"]);
   return (
     <>
-      <div className='flex justify-center items-center py-20 px-10'>
+      <div className='flex justify-center items-center py-20'>
         <Title id='portfolio'>{t("PortfolioPage")}</Title>
       </div>
-      <div className='flex flex-col gap-y-20'>
-        <Link
+      <div className='flex flex-col gap-y-16'>
+        <Category
           href='/portfolio/lifestyle'
-          className='grid grid-cols-1 md:grid-cols-2 gap-x-10 max-h-[600px]'>
-          <Image
-            className='px-12 md:px-0'
-            src='/lifestyle/Mikkeli_Graduation.jpg'
-            alt='Valmistujaiset Aalto Yliopiston Mikkeli kampuksella 2024'
-            width={6969}
-            height={0}
-          />
-          <div className='px-12 md:px-0 flex flex-col justify-between align-left'>
-            <div>
-              <Title>{t("Lifestyle")}</Title>
-              <SubTitle>{t("LifestyleExplanation")}</SubTitle>
-            </div>
-          </div>
-        </Link>
-        <Link
+          src={mikkeliGraduationPic}
+          alt='Valmistujaiset Aalto Yliopiston Mikkeli kampuksella 2024'
+          title={t("Lifestyle")}
+          subtitle={t("LifestyleExplanation")}
+        />
+        <Category
           href='/portfolio/portraits'
-          className='grid grid-cols-1 md:grid-cols-2 gap-x-10'>
-          <Image
-            className='px-12 md:px-0'
-            src='/portraits/Saara6.jpg'
-            alt='Saaran Ylioppilaskuvaus'
-            width={6969}
-            height={0}
-          />
-          <div className='px-12 md:px-0 flex flex-col justify-between align-left'>
-            <div>
-              <Title>{t("Portraits")}</Title>
-              <SubTitle>{t("PortraitsExplanation")}</SubTitle>
-            </div>
-          </div>
-        </Link>
-        <Link
+          src={saara6}
+          alt='Saaran Ylioppilaskuvaus'
+          title={t("Portraits")}
+          subtitle={t("PortraitsExplanation")}
+        />
+        <Category
           href='/portfolio/brands'
-          className='grid grid-cols-1 md:grid-cols-2 gap-x-10'>
-          <Image
-            className='px-12 md:px-0'
-            src='/brands/Yoga.1.jpg'
-            alt='Elämäntapavalmentaja tapaamisessa asiakkaansa kanssa'
-            width={6969}
-            height={0}
-          />
-          <div className='px-12 md:px-0 flex flex-col justify-between align-left'>
-            <div>
-              <Title>{t("Brands")}</Title>
-              <SubTitle>{t("BrandsExplained")}</SubTitle>
-            </div>
-          </div>
-        </Link>
+          src={yoga1}
+          alt='Elämäntapavalmentaja tapaamisessa asiakkaansa kanssa'
+          title={t("Brands")}
+          subtitle={t("BrandsExplanation")}
+        />
       </div>
     </>
+  );
+}
+
+type CategoryProps = {
+  href: string;
+  src: StaticImageData;
+  alt: string;
+  title: string;
+  subtitle: string;
+};
+
+function Category({
+  href,
+  src,
+  alt,
+  title,
+  subtitle,
+}: CategoryProps) {
+  return (
+    <Link
+      href={href}
+      className='grid grid-cols-1 md:grid-cols-2 gap-x-10 md:max-h-[500px] min-w-0 overflow-hidden'>
+      <Image
+        src={src}
+        alt={alt}
+        placeholder='blur'
+        className='object-cover object-center overflow-hidden min-h-0 md:max-h-[500px]'
+      />
+      <div className='flex flex-col justify-between md:justify-start align-left'>
+        <Title>{title}</Title>
+        <SubTitle>{subtitle}</SubTitle>
+      </div>
+    </Link>
   );
 }

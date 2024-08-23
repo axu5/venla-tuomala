@@ -12,7 +12,7 @@ export default async function Testimonials({
       <div className='flex items-center justify-center w-full py-20'>
         <Title>{t("Testimonials")}</Title>
       </div>
-      <main className='flex flex-col gap-y-20 w-[80vw] lg:w-full'>
+      <div className='flex flex-col gap-y-20 w-full'>
         <Testimonial
           name={t("Testimonial1Title")}
           testimonial={t("Testimonial1")}
@@ -56,7 +56,7 @@ export default async function Testimonials({
             { url: "/brands/PB_Riia3.png", alt: "" },
           ]}
         />
-      </main>
+      </div>
     </>
   );
 }

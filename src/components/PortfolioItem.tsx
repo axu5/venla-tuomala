@@ -1,11 +1,12 @@
 import { cn } from "@/lib/utils";
 import { SubTitle } from "./SubTitle";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 type PortfolioItemProps = {
   name: string;
+  priority?: true;
   images: {
-    src: string;
+    src: StaticImageData;
     alt: string;
     center?: {
       x: number;
@@ -14,12 +15,16 @@ type PortfolioItemProps = {
   }[];
 };
 
-export function PortfolioItem({ name, images }: PortfolioItemProps) {
+export function PortfolioItem({
+  name,
+  images,
+  priority,
+}: PortfolioItemProps) {
   return (
     <div className='flex flex-col gap-x-20'>
       <SubTitle className='py-10'>{name}</SubTitle>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
-        {images.map(image => {
+        {images.map((image, i) => {
           const position = `${image.center?.x ?? 50}% ${
             image.center?.y ?? 50
           }%`;
@@ -29,11 +34,12 @@ export function PortfolioItem({ name, images }: PortfolioItemProps) {
               style={{
                 objectPosition: position,
               }}
-              key={image.src}
+              key={i}
               src={image.src}
               alt={image.alt}
-              width={6969}
-              height={0}
+              sizes='100w'
+              placeholder='blur'
+              priority={priority}
             />
           );
         })}

@@ -16,7 +16,7 @@
     "Your Name": "Your Name",
     "Some details about what you want": "Some details about what you want",
     "ValidEmailError": "Please enter a valid email address",
-    "NameMustNotBeEmptyError": "Your name must not be empty",
-    "DetailsMustNotBeEmptyError": "Your message must not be empty",
-    "DetailsMustNotExceedError": "Your message cannot exceed 2000 characters"
+    "NameMustNotBeEmptyError": "Must include name",
+    "DetailsMustNotBeEmptyError": "Must include messge",
+    "DetailsMustNotExceedError": "Max. 2000 characters"
 }
