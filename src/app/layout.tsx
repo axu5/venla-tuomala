@@ -5,7 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   icons: {
-    icon: "/vt_favicon.png",
+    icon: "/Logo.svg",
   },
 };
 

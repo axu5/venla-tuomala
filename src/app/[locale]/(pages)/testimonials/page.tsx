@@ -4,36 +4,30 @@ import { SubTitle } from "@/components/SubTitle";
 import { Title } from "@/components/Title";
 import { StaticImageData } from "next/image";
 
-import saara1 from "@/../public/portraits/Saara.jpg";
-import saara2 from "@/../public/portraits/Saara2.jpg";
-import saara3 from "@/../public/portraits/Saara3.jpg";
-import saara4 from "@/../public/portraits/Saara4.jpg";
-import saara5 from "@/../public/portraits/Saara5.jpg";
-import saara6 from "@/../public/portraits/Saara6.jpg";
-// @ts-expect-error ITS CAPS
-import birthdayKK1 from "@/../public/lifestyle/Birthday_K&K.1.JPG";
-// @ts-expect-error ITS CAPS
-import birthdayKK2 from "@/../public/lifestyle/Birthday_K&K.2.JPG";
-// @ts-expect-error ITS CAPS
-import birthdayKK3 from "@/../public/lifestyle/Birthday_K&K.3.JPG";
-// @ts-expect-error ITS CAPS
-import birthdayKK4 from "@/../public/lifestyle/Birthday_K&K.4.JPG";
-// @ts-expect-error ITS CAPS
-import birthdayKK5 from "@/../public/lifestyle/Birthday_K&K.5.JPG";
-// @ts-expect-error ITS CAPS
-import birthdayKK6 from "@/../public/lifestyle/Birthday_K&K.6.JPG";
-import birthdayKK7 from "@/../public/lifestyle/Birthday_K&K.7.jpg";
-import birthdayKK8 from "@/../public/lifestyle/Birthday_K&K.8.jpg";
-import birthdayKK9 from "@/../public/lifestyle/Birthday_K&K.9.jpg";
-import birthdayKK10 from "@/../public/lifestyle/Birthday_K&K.10.jpg";
-import birthdayKK11 from "@/../public/lifestyle/Birthday_K&K.11.jpg";
-import birthdayKK12 from "@/../public/lifestyle/Birthday_K&K.12.jpg";
-import birthdayKK13 from "@/../public/lifestyle/Birthday_K&K.13.jpg";
-import birthdayKK14 from "@/../public/lifestyle/Birthday_K&K.14.jpg";
-import birthdayKK15 from "@/../public/lifestyle/Birthday_K&K.15.jpg";
-import riia1 from "@/../public/brands/PB_Riia.png";
-import riia2 from "@/../public/brands/PB_Riia2.png";
-import riia3 from "@/../public/brands/PB_Riia3.png";
+import saara1 from "@/../public/portraits/Saara.webp";
+import saara2 from "@/../public/portraits/Saara2.webp";
+import saara3 from "@/../public/portraits/Saara3.webp";
+import saara4 from "@/../public/portraits/Saara4.webp";
+import saara5 from "@/../public/portraits/Saara5.webp";
+import saara6 from "@/../public/portraits/Saara6.webp";
+import birthdayKK1 from "@/../public/lifestyle/Birthday_K&K.1.webp";
+import birthdayKK2 from "@/../public/lifestyle/Birthday_K&K.2.webp";
+import birthdayKK3 from "@/../public/lifestyle/Birthday_K&K.3.webp";
+import birthdayKK4 from "@/../public/lifestyle/Birthday_K&K.4.webp";
+import birthdayKK5 from "@/../public/lifestyle/Birthday_K&K.5.webp";
+import birthdayKK6 from "@/../public/lifestyle/Birthday_K&K.6.webp";
+import birthdayKK7 from "@/../public/lifestyle/Birthday_K&K.7.webp";
+import birthdayKK8 from "@/../public/lifestyle/Birthday_K&K.8.webp";
+import birthdayKK9 from "@/../public/lifestyle/Birthday_K&K.9.webp";
+import birthdayKK10 from "@/../public/lifestyle/Birthday_K&K.10.webp";
+import birthdayKK11 from "@/../public/lifestyle/Birthday_K&K.11.webp";
+import birthdayKK12 from "@/../public/lifestyle/Birthday_K&K.12.webp";
+import birthdayKK13 from "@/../public/lifestyle/Birthday_K&K.13.webp";
+import birthdayKK14 from "@/../public/lifestyle/Birthday_K&K.14.webp";
+import birthdayKK15 from "@/../public/lifestyle/Birthday_K&K.15.webp";
+import riia1 from "@/../public/brands/PB_Riia.webp";
+import riia2 from "@/../public/brands/PB_Riia2.webp";
+import riia3 from "@/../public/brands/PB_Riia3.webp";
 
 export default async function Testimonials({
   params: { locale },

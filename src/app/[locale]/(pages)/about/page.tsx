@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PropsWithChildren } from "react";
 
-import aboutImg from "@/../public/about/VT__1351.jpg";
+import aboutImg from "@/../public/about/VT__1351.webp";
 
 // FIX: namespace
 const i18nNamespaces = ["about", "common"];

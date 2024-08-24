@@ -3,9 +3,10 @@ import { SubTitle } from "@/components/SubTitle";
 import { Title } from "@/components/Title";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import mikkeliGraduationPic from "@/../public/lifestyle/Mikkeli_Graduation.jpg";
-import saara6 from "@/../public/portraits/Saara6.jpg";
-import yoga1 from "@/../public/brands/Yoga.1.jpg";
+
+import mikkeliGraduationPic from "@/../public/lifestyle/Mikkeli_Graduation.webp";
+import saara6 from "@/../public/portraits/Saara6.webp";
+import yoga1 from "@/../public/brands/Yoga.1.webp";
 
 export default async function Portfolio({
   params: { locale },

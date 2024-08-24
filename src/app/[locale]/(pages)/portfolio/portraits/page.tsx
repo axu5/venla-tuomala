@@ -1,21 +1,21 @@
 import initTranslations, { LocaleParam } from "@/app/i18n";
 import { PortfolioItem } from "@/components/PortfolioItem";
 
-import coupleBJ1 from "@/../public/portraits/Couple_B&J.jpg";
-import coupleBJ2 from "@/../public/portraits/Couple_B&J2.jpg";
-import coupleBJ3 from "@/../public/portraits/Couple_B&J3.jpg";
-import engagement1 from "@/../public/portraits/Engagement1.jpg";
-import engagement2 from "@/../public/portraits/Engagement2.jpg";
-import graduation1 from "@/../public/portraits/Graduation1.jpg";
-import graduation2 from "@/../public/portraits/Graduation2.jpg";
-import ondrej1 from "@/../public/portraits/Ondrej.jpg";
-import saara1 from "@/../public/portraits/Saara.jpg";
-import saara2 from "@/../public/portraits/Saara2.jpg";
-import saara3 from "@/../public/portraits/Saara3.jpg";
-import saara4 from "@/../public/portraits/Saara4.jpg";
-import saara5 from "@/../public/portraits/Saara5.jpg";
-import saara6 from "@/../public/portraits/Saara6.jpg";
-import saara7 from "@/../public/portraits/Saara7.jpg";
+import coupleBJ1 from "@/../public/portraits/Couple_B&J.webp";
+import coupleBJ2 from "@/../public/portraits/Couple_B&J2.webp";
+import coupleBJ3 from "@/../public/portraits/Couple_B&J3.webp";
+import engagement1 from "@/../public/portraits/Engagement1.webp";
+import engagement2 from "@/../public/portraits/Engagement2.webp";
+import graduation1 from "@/../public/portraits/Graduation1.webp";
+import graduation2 from "@/../public/portraits/Graduation2.webp";
+import ondrej1 from "@/../public/portraits/Ondrej.webp";
+import saara1 from "@/../public/portraits/Saara.webp";
+import saara2 from "@/../public/portraits/Saara2.webp";
+import saara3 from "@/../public/portraits/Saara3.webp";
+import saara4 from "@/../public/portraits/Saara4.webp";
+import saara5 from "@/../public/portraits/Saara5.webp";
+import saara6 from "@/../public/portraits/Saara6.webp";
+import saara7 from "@/../public/portraits/Saara7.webp";
 
 export default async function PortraitsPage({
   params: { locale },

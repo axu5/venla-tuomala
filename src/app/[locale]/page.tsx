@@ -1,6 +1,3 @@
-import fcProbbaImg from "@/../public/brands/FC_Probba.2.jpg";
-import engagementImg from "@/../public/portraits/Engagement1.jpg";
-import saaraImg from "@/../public/portraits/Saara.jpg";
 import { SubTitle } from "@/components/SubTitle";
 import { Title } from "@/components/Title";
 import { buttonVariants } from "@/components/ui/button";
@@ -11,16 +8,16 @@ import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 import initTranslations, { LocaleParam } from "../i18n";
 
-// @ts-expect-error BIG JPG
-import xxlMosso5 from "@/../public/lifestyle/XXL_Mössö.5.JPG";
-// @ts-expect-error BIG JPG
-import xxlMosso6 from "@/../public/lifestyle/XXL_Mössö.6.JPG";
-import graduation1 from "@/../public/portraits/Graduation1.jpg";
-import riia from "@/../public/brands/PB_Riia.png";
-import birthdayKK13 from "@/../public/lifestyle/Birthday_K&K.13.jpg";
-// @ts-expect-error BIG JPG
-import birthdayKK3 from "@/../public/lifestyle/Birthday_K&K.3.JPG";
-import wedding8 from "@/../public/lifestyle/Wedding.8.jpg";
+import fcProbbaImg from "@/../public/brands/FC_Probba.2.webp";
+import engagementImg from "@/../public/portraits/Engagement1.webp";
+import saaraImg from "@/../public/portraits/Saara.webp";
+import xxlMosso5 from "@/../public/lifestyle/XXL_Mössö.5.webp";
+import xxlMosso6 from "@/../public/lifestyle/XXL_Mössö.6.webp";
+import graduation1 from "@/../public/portraits/Graduation1.webp";
+import riia from "@/../public/brands/PB_Riia.webp";
+import birthdayKK13 from "@/../public/lifestyle/Birthday_K&K.13.webp";
+import birthdayKK3 from "@/../public/lifestyle/Birthday_K&K.3.webp";
+import wedding8 from "@/../public/lifestyle/Wedding.8.webp";
 
 export default async function LandingPage({
   params: { locale },

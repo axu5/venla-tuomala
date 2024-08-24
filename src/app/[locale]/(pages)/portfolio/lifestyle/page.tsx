@@ -1,83 +1,68 @@
 import initTranslations, { LocaleParam } from "@/app/i18n";
 import { PortfolioItem } from "@/components/PortfolioItem";
 
-// @ts-expect-error capitalized ending ???? why
-import birthdayKK1 from "@/../public/lifestyle/Birthday_K&K.1.JPG";
-// @ts-expect-error capitalized ending ???? why
-import birthdayKK2 from "@/../public/lifestyle/Birthday_K&K.2.JPG";
-// @ts-expect-error capitalized ending ???? why
-import birthdayKK3 from "@/../public/lifestyle/Birthday_K&K.3.JPG";
-// @ts-expect-error capitalized ending ???? why
-import birthdayKK4 from "@/../public/lifestyle/Birthday_K&K.4.JPG";
-// @ts-expect-error capitalized ending ???? why
-import birthdayKK5 from "@/../public/lifestyle/Birthday_K&K.5.JPG";
-// @ts-expect-error capitalized ending ???? why
-import birthdayKK6 from "@/../public/lifestyle/Birthday_K&K.6.JPG";
-import birthdayKK7 from "@/../public/lifestyle/Birthday_K&K.7.jpg";
-import birthdayKK8 from "@/../public/lifestyle/Birthday_K&K.8.jpg";
-import birthdayKK9 from "@/../public/lifestyle/Birthday_K&K.9.jpg";
-import birthdayKK10 from "@/../public/lifestyle/Birthday_K&K.10.jpg";
-import birthdayKK11 from "@/../public/lifestyle/Birthday_K&K.11.jpg";
-import birthdayKK12 from "@/../public/lifestyle/Birthday_K&K.12.jpg";
-import birthdayKK13 from "@/../public/lifestyle/Birthday_K&K.13.jpg";
-import birthdayKK14 from "@/../public/lifestyle/Birthday_K&K.14.jpg";
-import birthdayKK15 from "@/../public/lifestyle/Birthday_K&K.15.jpg";
-import boatTrip1 from "@/../public/lifestyle/Boat_Trip.1.jpg";
-import boatTrip2 from "@/../public/lifestyle/Boat_Trip.2.jpg";
-import boatTrip3 from "@/../public/lifestyle/Boat_Trip.3.jpg";
-import boatTrip4 from "@/../public/lifestyle/Boat_Trip.4.jpg";
-import boatTrip5 from "@/../public/lifestyle/Boat_Trip.5.jpg";
-import boatTrip6 from "@/../public/lifestyle/Boat_Trip.6.jpg";
-import boatTrip7 from "@/../public/lifestyle/Boat_Trip.7.jpg";
-import boatTrip8 from "@/../public/lifestyle/Boat_Trip.9.jpg";
-// @ts-expect-error capitalized ending ???? why
-import venue1 from "@/../public/lifestyle/Cool_Venue.JPG";
-// @ts-expect-error capitalized ending ???? why
-import venue2 from "@/../public/lifestyle/Cool_Venue.2.JPG";
-// @ts-expect-error capitalized ending ???? why
-import venue3 from "@/../public/lifestyle/Cool_Venue.3.JPG";
-import graduation1 from "@/../public/lifestyle/Graduation_S.1.jpg";
-import graduation2 from "@/../public/lifestyle/Graduation_S.2.jpg";
-import graduation3 from "@/../public/lifestyle/Graduation_S.3.jpg";
-import graduation4 from "@/../public/lifestyle/Graduation_S.4.jpg";
-import graduation5 from "@/../public/lifestyle/Graduation_S.5.jpg";
-import graduation6 from "@/../public/lifestyle/Graduation_S.6.jpg";
-import mikkeliGraduation1 from "@/../public/lifestyle/Mikkeli_Graduation.jpg";
-import mikkeliGraduation2 from "@/../public/lifestyle/Mikkeli_Graduation.2.jpg";
-import studentEvents1 from "@/../public/lifestyle/MRT.1.jpg";
-import studentEvents2 from "@/../public/lifestyle/MRT.2.jpg";
-import studentEvents3 from "@/../public/lifestyle/MRT.3.jpg";
-import studentEvents4 from "@/../public/lifestyle/MRT.4.jpg";
-import studentEvents5 from "@/../public/lifestyle/MRT.5.jpg";
-import studentEvents6 from "@/../public/lifestyle/MRT.6.jpg";
-import studentEvents7 from "@/../public/lifestyle/MRT.7.jpg";
-import studentEvents8 from "@/../public/lifestyle/Sillis.1.jpg";
-import studentEvents9 from "@/../public/lifestyle/Sillis.2.jpg";
-import sitsit1 from "@/../public/lifestyle/Sitsit.1.jpg";
-import sitsit2 from "@/../public/lifestyle/Sitsit.2.jpg";
-import sitsit3 from "@/../public/lifestyle/Sitsit.3.jpg";
-import sitsit4 from "@/../public/lifestyle/Sitsit.4.jpg";
-import sitsit5 from "@/../public/lifestyle/Sitsit.5.jpg";
-import wedding1 from "@/../public/lifestyle/Wedding_1.jpg";
-import wedding2 from "@/../public/lifestyle/Wedding.2.jpg";
-import wedding3 from "@/../public/lifestyle/Wedding.3.jpg";
-import wedding4 from "@/../public/lifestyle/Wedding.4.jpg";
-import wedding5 from "@/../public/lifestyle/Wedding.5.jpg";
-import wedding6 from "@/../public/lifestyle/Wedding.6.jpg";
-import wedding7 from "@/../public/lifestyle/Wedding.7.jpg";
-import wedding8 from "@/../public/lifestyle/Wedding.8.jpg";
-// @ts-expect-error capitalized ending ???? why
-import festival1 from "@/../public/lifestyle/XXL_Mössö.JPG";
-// @ts-expect-error capitalized ending ???? why
-import festival2 from "@/../public/lifestyle/XXL_Mössö.2.JPG";
-// @ts-expect-error capitalized ending ???? why
-import festival3 from "@/../public/lifestyle/XXL_Mössö.3.JPG";
-// @ts-expect-error capitalized ending ???? why
-import festival4 from "@/../public/lifestyle/XXL_Mössö.4.JPG";
-// @ts-expect-error capitalized ending ???? why
-import festival5 from "@/../public/lifestyle/XXL_Mössö.5.JPG";
-// @ts-expect-error capitalized ending ???? why
-import festival6 from "@/../public/lifestyle/XXL_Mössö.6.JPG";
+import birthdayKK1 from "@/../public/lifestyle/Birthday_K&K.1.webp";
+import birthdayKK2 from "@/../public/lifestyle/Birthday_K&K.2.webp";
+import birthdayKK3 from "@/../public/lifestyle/Birthday_K&K.3.webp";
+import birthdayKK4 from "@/../public/lifestyle/Birthday_K&K.4.webp";
+import birthdayKK5 from "@/../public/lifestyle/Birthday_K&K.5.webp";
+import birthdayKK6 from "@/../public/lifestyle/Birthday_K&K.6.webp";
+import birthdayKK7 from "@/../public/lifestyle/Birthday_K&K.7.webp";
+import birthdayKK8 from "@/../public/lifestyle/Birthday_K&K.8.webp";
+import birthdayKK9 from "@/../public/lifestyle/Birthday_K&K.9.webp";
+import birthdayKK10 from "@/../public/lifestyle/Birthday_K&K.10.webp";
+import birthdayKK11 from "@/../public/lifestyle/Birthday_K&K.11.webp";
+import birthdayKK12 from "@/../public/lifestyle/Birthday_K&K.12.webp";
+import birthdayKK13 from "@/../public/lifestyle/Birthday_K&K.13.webp";
+import birthdayKK14 from "@/../public/lifestyle/Birthday_K&K.14.webp";
+import birthdayKK15 from "@/../public/lifestyle/Birthday_K&K.15.webp";
+import boatTrip1 from "@/../public/lifestyle/Boat_Trip.1.webp";
+import boatTrip2 from "@/../public/lifestyle/Boat_Trip.2.webp";
+import boatTrip3 from "@/../public/lifestyle/Boat_Trip.3.webp";
+import boatTrip4 from "@/../public/lifestyle/Boat_Trip.4.webp";
+import boatTrip5 from "@/../public/lifestyle/Boat_Trip.5.webp";
+import boatTrip6 from "@/../public/lifestyle/Boat_Trip.6.webp";
+import boatTrip7 from "@/../public/lifestyle/Boat_Trip.7.webp";
+import boatTrip8 from "@/../public/lifestyle/Boat_Trip.9.webp";
+import venue1 from "@/../public/lifestyle/Cool_Venue.webp";
+import venue2 from "@/../public/lifestyle/Cool_Venue.2.webp";
+import venue3 from "@/../public/lifestyle/Cool_Venue.3.webp";
+import graduation1 from "@/../public/lifestyle/Graduation_S.1.webp";
+import graduation2 from "@/../public/lifestyle/Graduation_S.2.webp";
+import graduation3 from "@/../public/lifestyle/Graduation_S.3.webp";
+import graduation4 from "@/../public/lifestyle/Graduation_S.4.webp";
+import graduation5 from "@/../public/lifestyle/Graduation_S.5.webp";
+import graduation6 from "@/../public/lifestyle/Graduation_S.6.webp";
+import mikkeliGraduation1 from "@/../public/lifestyle/Mikkeli_Graduation.webp";
+import mikkeliGraduation2 from "@/../public/lifestyle/Mikkeli_Graduation.2.webp";
+import studentEvents1 from "@/../public/lifestyle/MRT.1.webp";
+import studentEvents2 from "@/../public/lifestyle/MRT.2.webp";
+import studentEvents3 from "@/../public/lifestyle/MRT.3.webp";
+import studentEvents4 from "@/../public/lifestyle/MRT.4.webp";
+import studentEvents5 from "@/../public/lifestyle/MRT.5.webp";
+import studentEvents6 from "@/../public/lifestyle/MRT.6.webp";
+import studentEvents7 from "@/../public/lifestyle/MRT.7.webp";
+import studentEvents8 from "@/../public/lifestyle/Sillis.1.webp";
+import studentEvents9 from "@/../public/lifestyle/Sillis.2.webp";
+import sitsit1 from "@/../public/lifestyle/Sitsit.1.webp";
+import sitsit2 from "@/../public/lifestyle/Sitsit.2.webp";
+import sitsit3 from "@/../public/lifestyle/Sitsit.3.webp";
+import sitsit4 from "@/../public/lifestyle/Sitsit.4.webp";
+import sitsit5 from "@/../public/lifestyle/Sitsit.5.webp";
+import wedding1 from "@/../public/lifestyle/Wedding_1.webp";
+import wedding2 from "@/../public/lifestyle/Wedding.2.webp";
+import wedding3 from "@/../public/lifestyle/Wedding.3.webp";
+import wedding4 from "@/../public/lifestyle/Wedding.4.webp";
+import wedding5 from "@/../public/lifestyle/Wedding.5.webp";
+import wedding6 from "@/../public/lifestyle/Wedding.6.webp";
+import wedding7 from "@/../public/lifestyle/Wedding.7.webp";
+import wedding8 from "@/../public/lifestyle/Wedding.8.webp";
+import festival1 from "@/../public/lifestyle/XXL_Mössö.webp";
+import festival2 from "@/../public/lifestyle/XXL_Mössö.2.webp";
+import festival3 from "@/../public/lifestyle/XXL_Mössö.3.webp";
+import festival4 from "@/../public/lifestyle/XXL_Mössö.4.webp";
+import festival5 from "@/../public/lifestyle/XXL_Mössö.5.webp";
+import festival6 from "@/../public/lifestyle/XXL_Mössö.6.webp";
 
 export default async function LifestylePage({
   params: { locale },

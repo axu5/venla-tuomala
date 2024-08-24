@@ -1,29 +1,29 @@
 import initTranslations, { LocaleParam } from "@/app/i18n";
 import { PortfolioItem } from "@/components/PortfolioItem";
 
-import beautySalon1 from "@/../public/brands/Beauty_Salon.1.jpg";
-import beautySalon2 from "@/../public/brands/Beauty_Salon.2.jpg";
-import beautySalon3 from "@/../public/brands/Beauty_Salon.3.jpg";
-import fcProbba1 from "@/../public/brands/FC_Probba.1.jpg";
-import fcProbba2 from "@/../public/brands/FC_Probba.2.jpg";
-import fcProbba3 from "@/../public/brands/FC_Probba.3.jpg";
-import fcProbba4 from "@/../public/brands/FC_Probba.4.jpg";
-import fcProbba5 from "@/../public/brands/FC_Probba.5.jpg";
-import fcProbba7 from "@/../public/brands/FC_Probba.7.jpg";
-import fcProbba8 from "@/../public/brands/FC_Probba.8.jpg";
-import riia1 from "@/../public/brands/PB_Riia.png";
-import riia2 from "@/../public/brands/PB_Riia2.png";
-import riia3 from "@/../public/brands/PB_Riia3.png";
-import vappu1 from "@/../public/brands/Vappu.jpg";
-import vappu2 from "@/../public/brands/Vappu.2.jpg";
-import yoga1 from "@/../public/brands/Yoga.1.jpg";
-import yoga2 from "@/../public/brands/Yoga.2.jpg";
-import yoga3 from "@/../public/brands/Yoga.3.jpg";
-import yoga4 from "@/../public/brands/Yoga.4.jpg";
-import yoga5 from "@/../public/brands/Yoga.5.jpg";
-import yoga6 from "@/../public/brands/Yoga.6.jpg";
-import yoga7 from "@/../public/brands/Yoga.7.jpg";
-import yoga8 from "@/../public/brands/Yoga.8.jpg";
+import beautySalon1 from "@/../public/brands/Beauty_Salon.1.webp";
+import beautySalon2 from "@/../public/brands/Beauty_Salon.2.webp";
+import beautySalon3 from "@/../public/brands/Beauty_Salon.3.webp";
+import fcProbba1 from "@/../public/brands/FC_Probba.1.webp";
+import fcProbba2 from "@/../public/brands/FC_Probba.2.webp";
+import fcProbba3 from "@/../public/brands/FC_Probba.3.webp";
+import fcProbba4 from "@/../public/brands/FC_Probba.4.webp";
+import fcProbba5 from "@/../public/brands/FC_Probba.5.webp";
+import fcProbba7 from "@/../public/brands/FC_Probba.7.webp";
+import fcProbba8 from "@/../public/brands/FC_Probba.8.webp";
+import riia1 from "@/../public/brands/PB_Riia.webp";
+import riia2 from "@/../public/brands/PB_Riia2.webp";
+import riia3 from "@/../public/brands/PB_Riia3.webp";
+import vappu1 from "@/../public/brands/Vappu.webp";
+import vappu2 from "@/../public/brands/Vappu.2.webp";
+import yoga1 from "@/../public/brands/Yoga.1.webp";
+import yoga2 from "@/../public/brands/Yoga.2.webp";
+import yoga3 from "@/../public/brands/Yoga.3.webp";
+import yoga4 from "@/../public/brands/Yoga.4.webp";
+import yoga5 from "@/../public/brands/Yoga.5.webp";
+import yoga6 from "@/../public/brands/Yoga.6.webp";
+import yoga7 from "@/../public/brands/Yoga.7.webp";
+import yoga8 from "@/../public/brands/Yoga.8.webp";
 
 export default async function BrandsPage({
   params: { locale },

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Title } from "@/components/Title";
 import { buttonVariants } from "@/components/ui/button";
 
-import img404 from "@/../public/404.jpg";
+import img404 from "@/../public/404.webp";
 
 export default async function NotFound() {
   const locale = serverGetLocale();
