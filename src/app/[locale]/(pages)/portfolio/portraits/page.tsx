@@ -68,15 +68,6 @@ export default async function PortraitsPage({
         ]}
       />
       <PortfolioItem
-        name={t("Ondrej")}
-        images={[
-          {
-            src: ondrej1,
-            alt: "",
-          },
-        ]}
-      />
-      <PortfolioItem
         name={t("Saara")}
         images={[
           { src: saara1, alt: "" },
