@@ -140,6 +140,7 @@ async function HiThere({ locale }: LocaleParam["params"]) {
               src={xxlMosso5}
               alt=''
               className='object-cover overflow-hidden min-h-0 h-full'
+              placeholder='blur'
             />
           </div>
           <div className='row-span-4 w-full h-full overflow-hidden'>
@@ -171,6 +172,7 @@ async function HiThere({ locale }: LocaleParam["params"]) {
               src={xxlMosso6}
               alt=''
               className='object-cover overflow-hidden min-h-0 h-full'
+              placeholder='blur'
             />
           </div>
         </div>
