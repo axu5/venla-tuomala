@@ -15,7 +15,12 @@ import {
 } from "@/components/ui/sheet";
 import { Toaster } from "@/components/ui/sonner";
 import { dir } from "i18next";
-import { Copyright, LinkedinIcon, MenuIcon } from "lucide-react";
+import {
+  Copyright,
+  LinkedinIcon,
+  MailIcon,
+  MenuIcon,
+} from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Provider as BalancerProvider } from "react-wrap-balancer";

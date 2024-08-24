@@ -7,10 +7,9 @@ import { StaticImageData } from "next/image";
 import saara1 from "@/../public/portraits/Saara.jpg";
 import saara2 from "@/../public/portraits/Saara2.jpg";
 import saara3 from "@/../public/portraits/Saara3.jpg";
-import saara4 from "@/../public/portraits/Saara3.jpg";
-import saara5 from "@/../public/portraits/Saara4.jpg";
-import saara6 from "@/../public/portraits/Saara5.jpg";
-import saara7 from "@/../public/portraits/Saara6.jpg";
+import saara4 from "@/../public/portraits/Saara4.jpg";
+import saara5 from "@/../public/portraits/Saara5.jpg";
+import saara6 from "@/../public/portraits/Saara6.jpg";
 // @ts-expect-error ITS CAPS
 import birthdayKK1 from "@/../public/lifestyle/Birthday_K&K.1.JPG";
 // @ts-expect-error ITS CAPS
@@ -56,7 +55,6 @@ export default async function Testimonials({
             { data: saara4, alt: "" },
             { data: saara5, alt: "" },
             { data: saara6, alt: "" },
-            { data: saara7, alt: "" },
           ]}
         />
         <Testimonial
