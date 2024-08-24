@@ -158,7 +158,7 @@ async function HiThere({ locale }: LocaleParam["params"]) {
               src={birthdayKK3}
               alt=''
               className='object-cover object-[50%_70%] overflow-hidden min-h-0 h-full'
-              placeholder='blur'
+              placeholder='empty'
             />
           </div>
           <div className='row-span-3 w-full h-full overflow-hidden'>
@@ -191,24 +191,20 @@ async function WhatsIncluded({ locale }: LocaleParam["params"]) {
           {t("What’s included")}
         </Title>
         <div className='flex flex-col gap-3 text-2xl font-ibarra border border-l-2 border-y-0 border-r-0 border-l-goldenisher pl-10 py-5 text-offwhite'>
-          <div className='text-3xl capitalize flex flex-row items-center'>
+          <div className='text-3xl flex flex-row items-center'>
             • {t("Consultation")}
           </div>
-          <div className='text-3xl capitalize'>
+          <div className='text-3xl'>
             • {t("Edited high resolution images")}
           </div>
-          <div className='text-3xl capitalize'>
-            • {t("Location ideas")}
-          </div>
-          <div className='text-3xl capitalize'>
+          <div className='text-3xl'>• {t("Location ideas")}</div>
+          <div className='text-3xl'>
             • {t("Sneak peek photos within 48h")}
           </div>
-          <div className='text-3xl capitalize'>
+          <div className='text-3xl'>
             • {t("Personal printing rights")}
           </div>
-          <div className='text-3xl capitalize'>
-            • {t("Creative portraits")}
-          </div>
+          <div className='text-3xl'>• {t("Creative portraits")}</div>
         </div>
       </div>
     </section>
@@ -228,7 +224,7 @@ async function Testimonials({ locale }: LocaleParam["params"]) {
           {t("What my previous clients have said about me")}
         </h2>
       </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-10 pb-10'>
         <TestimonialCard
           src={saaraImg}
           alt='Saara'
@@ -251,7 +247,7 @@ async function Testimonials({ locale }: LocaleParam["params"]) {
       <Link
         className={buttonVariants({
           variant: "link",
-          className: "py-16 w-full",
+          className: "w-full",
         })}
         href='/testimonials'>
         {t("Read the full Testimonials")}

@@ -61,16 +61,18 @@ function Category({
   return (
     <Link
       href={href}
-      className='grid grid-cols-1 md:grid-cols-2 gap-x-10 md:max-h-[500px] min-w-0 overflow-hidden'>
+      className='grid grid-cols-1 md:grid-cols-2 gap-x-10 md:max-h-[500px] min-w-0 overflow-hidden shadow-sm rounded-lg hover:shadow-xl'>
       <Image
         src={src}
         alt={alt}
         placeholder='blur'
         className='object-cover object-center overflow-hidden min-h-0 md:max-h-[500px]'
       />
-      <div className='flex flex-col justify-between md:justify-start align-left'>
-        <Title>{title}</Title>
-        <SubTitle>{subtitle}</SubTitle>
+      <div className='flex flex-col justify-between md:justify-start align-left p-10'>
+        <Title className='text-4xl md:text-6xl'>{title}</Title>
+        <SubTitle className='text-3xl md:text-4xl'>
+          {subtitle}
+        </SubTitle>
       </div>
     </Link>
   );

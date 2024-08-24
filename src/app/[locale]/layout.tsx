@@ -14,9 +14,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Toaster } from "@/components/ui/sonner";
-import { ASSETS } from "@/constants";
 import { dir } from "i18next";
-import { Copyright, MenuIcon } from "lucide-react";
+import { Copyright, LinkedinIcon, MenuIcon } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Provider as BalancerProvider } from "react-wrap-balancer";
@@ -94,8 +93,8 @@ export default async function RootLayout({
                       <li className='flex flex-row items-center'>
                         <Link
                           href='/'
-                          className='py-1 text-3xl font-bold border border-transparent px-5 mr-5 md:pr-20 border-r-muted-gray'>
-                          <ASSETS.initials />
+                          className='py-1 text-3xl font-bold border border-transparent px-5 mr-5 md:pr-20 border-r-muted-gray font-babas-neue tracking-wide'>
+                          VT
                         </Link>
                       </li>
                       <li className='hidden md:block text-2xl'>
@@ -238,6 +237,14 @@ async function Footer({ locale }: { locale: Locale }) {
               variant: "link",
               className: "font-semibold tracking-wide text-2xl",
             })}
+            href='/testimonials'>
+            {t("Testimonials")}
+          </Link>
+          <Link
+            className={buttonVariants({
+              variant: "link",
+              className: "font-semibold tracking-wide text-2xl",
+            })}
             href='/about'>
             {t("About")}
           </Link>
@@ -246,8 +253,10 @@ async function Footer({ locale }: { locale: Locale }) {
               variant: "link",
               className: "font-semibold tracking-wide text-2xl",
             })}
-            href='/testimonials'>
-            {t("Testimonials")}
+            target='_blank'
+            href='https://www.linkedin.com/in/venla-tuomala/'>
+            <LinkedinIcon className='w-4 h-4 mr-2' />
+            LinkedIn
           </Link>
         </div>
         <div className='flex flex-col'>

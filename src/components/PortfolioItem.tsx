@@ -38,7 +38,9 @@ export function PortfolioItem({
               src={image.src}
               alt={image.alt}
               sizes='100w'
-              placeholder='blur'
+              placeholder={
+                image.src.src.endsWith(".JPG") ? "empty" : "blur"
+              }
               priority={priority}
             />
           );

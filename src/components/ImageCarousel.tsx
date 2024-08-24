@@ -8,14 +8,14 @@ import {
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowRight, Circle } from "lucide-react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useCallback, useEffect, useState } from "react";
 
 const MAX_DOTS_PER_ROW = 7;
 
 type ImageCarouselProps = {
   images: {
-    url: string;
+    data: StaticImageData;
   }[];
   alt?: string;
   className?: string;
@@ -63,13 +63,16 @@ export function ImageCarousel({
         className={cn("content-center shadow-sm", className)}>
         {images.map((image, i) => {
           return (
-            <CarouselItem key={image.url} className='p-0'>
+            <CarouselItem key={i} className='p-0'>
               <Image
                 className='min-w-0 w-full h-full max-h-full object-cover object-center'
-                src={image.url}
+                src={image.data}
                 alt={alt}
                 width={6969}
                 height={0}
+                placeholder={
+                  image.data.src.endsWith(".jpg") ? "blur" : "empty"
+                }
                 priority={i === 0}
               />
             </CarouselItem>
