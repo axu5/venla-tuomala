@@ -25,6 +25,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Provider as BalancerProvider } from "react-wrap-balancer";
 import initTranslations, { Locale, LocaleParam } from "../i18n";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 // TODO: SEO
@@ -218,6 +219,7 @@ export default async function RootLayout({
             </ThemeProvider>
           </TranslationsProvider>
         </BalancerProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
