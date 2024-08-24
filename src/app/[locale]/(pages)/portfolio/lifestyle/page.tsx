@@ -71,6 +71,30 @@ export default async function LifestylePage({
   return (
     <>
       <PortfolioItem
+        name={t("Wedding")}
+        images={[
+          { src: wedding1, alt: "" },
+          { src: wedding2, alt: "" },
+          { src: wedding3, alt: "" },
+          { src: wedding4, alt: "" },
+          { src: wedding5, alt: "" },
+          { src: wedding6, alt: "" },
+          { src: wedding7, alt: "" },
+          { src: wedding8, alt: "" },
+        ]}
+      />
+      <PortfolioItem
+        name={t("XXL Mössö")}
+        images={[
+          { src: festival1, alt: "" },
+          { src: festival2, alt: "" },
+          { src: festival3, alt: "" },
+          { src: festival4, alt: "" },
+          { src: festival5, alt: "" },
+          { src: festival6, alt: "" },
+        ]}
+      />
+      <PortfolioItem
         priority
         name={t("Birthday K&K")}
         images={[
@@ -124,24 +148,15 @@ export default async function LifestylePage({
         ]}
       />
       <PortfolioItem
-        name={t("Mikkeli Graduation")}
-        images={[
-          {
-            src: mikkeliGraduation1,
-            alt: "",
-          },
-          {
-            src: mikkeliGraduation2,
-            alt: "",
-          },
-        ]}
-      />
-      <PortfolioItem
         name={t("Student Events")}
         images={[
           {
             src: studentEvents1,
             alt: "",
+            center: {
+              x: 75,
+              y: 50,
+            },
           },
           {
             src: studentEvents2,
@@ -179,40 +194,11 @@ export default async function LifestylePage({
               y: 50,
             },
           },
-        ]}
-      />
-      <PortfolioItem
-        name={t("Sitsit")}
-        images={[
           { src: sitsit1, alt: "" },
           { src: sitsit2, alt: "" },
           { src: sitsit3, alt: "" },
           { src: sitsit4, alt: "" },
           { src: sitsit5, alt: "" },
-        ]}
-      />
-      <PortfolioItem
-        name={t("Wedding")}
-        images={[
-          { src: wedding1, alt: "" },
-          { src: wedding2, alt: "" },
-          { src: wedding3, alt: "" },
-          { src: wedding4, alt: "" },
-          { src: wedding5, alt: "" },
-          { src: wedding6, alt: "" },
-          { src: wedding7, alt: "" },
-          { src: wedding8, alt: "" },
-        ]}
-      />
-      <PortfolioItem
-        name={t("XXL Mössö")}
-        images={[
-          { src: festival1, alt: "" },
-          { src: festival2, alt: "" },
-          { src: festival3, alt: "" },
-          { src: festival4, alt: "" },
-          { src: festival5, alt: "" },
-          { src: festival6, alt: "" },
         ]}
       />
     </>
