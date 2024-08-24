@@ -25,9 +25,9 @@ import birthdayKK12 from "@/../public/lifestyle/Birthday_K&K.12.webp";
 import birthdayKK13 from "@/../public/lifestyle/Birthday_K&K.13.webp";
 import birthdayKK14 from "@/../public/lifestyle/Birthday_K&K.14.webp";
 import birthdayKK15 from "@/../public/lifestyle/Birthday_K&K.15.webp";
-import riia1 from "@/../public/brands/PB_Riia.webp";
-import riia2 from "@/../public/brands/PB_Riia2.webp";
-import riia3 from "@/../public/brands/PB_Riia3.webp";
+import riia1 from "@/../public/brands/Riia.webp";
+import riia2 from "@/../public/brands/PB_Riia.webp";
+import riia3 from "@/../public/brands/PB_Riia2.webp";
 
 export default async function Testimonials({
   params: { locale },
