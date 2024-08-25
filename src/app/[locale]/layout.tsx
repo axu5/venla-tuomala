@@ -1,4 +1,5 @@
 import { i18nConfig } from "@/../../i18nConfig";
+import { ClientPortfolioDropdown } from "@/components/ClientPortfolioDropdown";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ProgressBar } from "@/components/ProgressBar";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -18,7 +19,6 @@ import { cn } from "@/lib/utils";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { dir } from "i18next";
 import {
-  ChevronDown,
   Copyright,
   LinkedinIcon,
   MailIcon,
@@ -29,12 +29,6 @@ import Link from "next/link";
 import { Provider as BalancerProvider } from "react-wrap-balancer";
 import initTranslations, { Locale, LocaleParam } from "../i18n";
 import "./globals.css";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
-import { ClientPortfolioDropdown } from "@/components/ClientPortfolioDropdown";
 
 // TODO: SEO
 export const metadata: Metadata = {
@@ -372,9 +366,9 @@ async function Footer({ locale }: { locale: Locale }) {
                 className: "font-semibold tracking-wide text-2xl",
               })}
               target='_blank'
-              href='mailto:venla.tuomala.business@gmail.com'>
+              href='mailto:contact@venlatuomala.com'>
               <MailIcon className='w-4 h-4 mr-2' />
-              venla.tuomala.business@gmail.com
+              contact@venlatuomala.com
             </Link>
           </div>
         </div>
