@@ -159,7 +159,7 @@ async function WideScreenNav({ locale }: { locale: Locale }) {
               {t("portraits:Portraits")}
             </Link>
             <Link
-              href='/portfolio/lifestyle'
+              href='/portfolio/brands'
               className={buttonVariants({
                 variant: "link",
               })}>
