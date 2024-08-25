@@ -133,15 +133,15 @@ async function WideScreenNav({ locale }: { locale: Locale }) {
   const { t } = await initTranslations(locale, i18nNamespaces);
   return (
     <>
-      <li className='hidden md:block text-2xl group'>
-        <HoverCard>
+      <li className='hidden md:flex flex-row text-2xl'>
+        <HoverCard openDelay={0} closeDelay={1000}>
           <HoverCardTrigger className='flex flex-row items-center'>
             <Link
               href='/portfolio'
               className='capitalize font-ibarra flex flex-row justify-center items-center'>
               {t("Portfolio")}
             </Link>
-            <ChevronDown className='w-4 h-4 ml-2 animate group-hover:rotate-180' />
+            <ChevronDown className='w-4 h-4 ml-4' />
           </HoverCardTrigger>
           <HoverCardContent className='flex flex-col font-ibarra'>
             <Link
