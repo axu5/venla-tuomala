@@ -70,9 +70,7 @@ export function ImageCarousel({
                 alt={alt}
                 width={6969}
                 height={0}
-                placeholder={
-                  image.data.src.endsWith(".jpg") ? "blur" : "empty"
-                }
+                placeholder='blur'
                 priority={i === 0}
               />
             </CarouselItem>
