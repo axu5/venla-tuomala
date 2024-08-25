@@ -327,7 +327,7 @@ async function Footer({ locale }: { locale: Locale }) {
                   }),
                   "text-md block md:hidden mx-auto"
                 )}
-                href='/portfolio/portraits'>
+                href='/portfolio/brands'>
                 {t("portfolio:Brands")}
               </Link>
             </div>
