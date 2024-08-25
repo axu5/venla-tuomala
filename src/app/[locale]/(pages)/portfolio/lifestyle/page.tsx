@@ -1,5 +1,6 @@
 import initTranslations, { LocaleParam } from "@/app/i18n";
 import { PortfolioItem } from "@/components/PortfolioItem";
+import { PortfolioTitle } from "@/components/PortfolioTitle";
 
 import birthdayKK1 from "@/../public/lifestyle/Birthday_K&K.1.webp";
 import birthdayKK2 from "@/../public/lifestyle/Birthday_K&K.2.webp";
@@ -70,8 +71,12 @@ export default async function LifestylePage({
   const { t } = await initTranslations(locale, ["lifestyle"]);
   return (
     <>
+      <PortfolioTitle
+        title={t("Lifestyle")}
+        subtitle={t("LifestyleExplanation")}
+        description={t("LifestyleIntro")}
+      />
       <PortfolioItem
-        name={t("Wedding")}
         images={[
           { src: wedding1, alt: "" },
           { src: wedding2, alt: "" },
@@ -81,23 +86,12 @@ export default async function LifestylePage({
           { src: wedding6, alt: "" },
           { src: wedding7, alt: "" },
           { src: wedding8, alt: "" },
-        ]}
-      />
-      <PortfolioItem
-        name={t("XXL Mössö")}
-        images={[
           { src: festival1, alt: "" },
           { src: festival2, alt: "" },
           { src: festival3, alt: "" },
           { src: festival4, alt: "" },
           { src: festival5, alt: "" },
           { src: festival6, alt: "" },
-        ]}
-      />
-      <PortfolioItem
-        priority
-        name={t("Birthday K&K")}
-        images={[
           { src: birthdayKK1, alt: "" },
           { src: birthdayKK2, alt: "" },
           { src: birthdayKK3, alt: "" },
@@ -113,11 +107,6 @@ export default async function LifestylePage({
           { src: birthdayKK13, alt: "" },
           { src: birthdayKK14, alt: "" },
           { src: birthdayKK15, alt: "" },
-        ]}
-      />
-      <PortfolioItem
-        name={t("Boat Trip")}
-        images={[
           { src: boatTrip1, alt: "" },
           { src: boatTrip2, alt: "" },
           { src: boatTrip3, alt: "" },
@@ -126,30 +115,15 @@ export default async function LifestylePage({
           { src: boatTrip6, alt: "" },
           { src: boatTrip7, alt: "" },
           { src: boatTrip8, alt: "" },
-        ]}
-      />
-      <PortfolioItem
-        name={t("Venue")}
-        images={[
           { src: venue1, alt: "" },
           { src: venue2, alt: "" },
           { src: venue3, alt: "" },
-        ]}
-      />
-      <PortfolioItem
-        name={t("Graduation")}
-        images={[
           { src: graduation1, alt: "" },
           { src: graduation2, alt: "" },
           { src: graduation3, alt: "" },
           { src: graduation4, alt: "" },
           { src: graduation5, alt: "" },
           { src: graduation6, alt: "" },
-        ]}
-      />
-      <PortfolioItem
-        name={t("Student Events")}
-        images={[
           {
             src: studentEvents1,
             alt: "",

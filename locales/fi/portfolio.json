@@ -1,9 +1,3 @@
 {
-    "PortfolioPage": "Portfolio",
-    "Lifestyle": "Lifestyle",
-    "LifestyleExplanation": "Häät, vuosipäivät ja muut tapahtumat",
-    "Portraits": "Henkilökuvaukset",
-    "PortraitsExplanation": "Valmistujaiset, CV-kuvat, perheet",
-    "Brands": "Brändikuvaukset",
-    "BrandsExplanation": "Brändit, mainokset, yritykset"
+    "PortfolioPage": "Portfolio"
 }

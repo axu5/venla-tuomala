@@ -1,7 +1,5 @@
 {
-    "Couple B&J": "B&J",
-    "Engagement": "Kihlajaiskuvat",
-    "Graduation": "Yo-kuvat",
-    "Ondrej": "Henkilökuvaus",
-    "Saara": "Yo-kuvat"
+    "Portraits": "Henkilökuvaukset",
+    "PortraitsExplanation": "Valmistujaiset, parit, CV-kuvat",
+    "PortraitsIntro": "Käänteentekeviä hetkiä ja yksilöllisiä muotokuvia"
 }

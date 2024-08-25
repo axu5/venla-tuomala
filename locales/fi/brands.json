@@ -1,7 +1,5 @@
 {
-    "Beauty Salon": "Kosmetologi",
-    "FC Probba": "Jalkapallojoukkue",
-    "Riia": "Henkilöbrändäys",
-    "Vappu": "Vappu",
-    "Yoga": "Jooga"
+    "Brands": "Brändikuvaukset",
+    "BrandsExplanation": "Yritykskuvaukset, mainokset, markkinointimateriaalit",
+    "BrandsIntro": "Dynaamiset kuvamateriaalit ammattilaisille"
 }

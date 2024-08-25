@@ -8,10 +8,17 @@ import mikkeliGraduationPic from "@/../public/lifestyle/Mikkeli_Graduation.webp"
 import saara6 from "@/../public/portraits/Saara6.webp";
 import yoga1 from "@/../public/brands/Yoga.1.webp";
 
+const i18nNamespaces = [
+  "portfolio",
+  "lifestyle",
+  "portraits",
+  "brands",
+];
+
 export default async function Portfolio({
   params: { locale },
 }: LocaleParam) {
-  const { t } = await initTranslations(locale, ["portfolio"]);
+  const { t } = await initTranslations(locale, i18nNamespaces);
   return (
     <>
       <div className='flex justify-center items-center py-20'>
@@ -22,22 +29,25 @@ export default async function Portfolio({
           href='/portfolio/lifestyle'
           src={mikkeliGraduationPic}
           alt='Valmistujaiset Aalto Yliopiston Mikkeli kampuksella 2024'
-          title={t("Lifestyle")}
-          subtitle={t("LifestyleExplanation")}
+          title={t("lifestyle:Lifestyle")}
+          subtitle={t("lifestyle:LifestyleExplanation")}
+          body={t("lifestyle:LifestyleIntro")}
         />
         <Category
           href='/portfolio/portraits'
           src={saara6}
           alt='Saaran Ylioppilaskuvaus'
-          title={t("Portraits")}
-          subtitle={t("PortraitsExplanation")}
+          title={t("portraits:Portraits")}
+          subtitle={t("portraits:PortraitsExplanation")}
+          body={t("portraits:PortraitsIntro")}
         />
         <Category
           href='/portfolio/brands'
           src={yoga1}
           alt='Elämäntapavalmentaja tapaamisessa asiakkaansa kanssa'
-          title={t("Brands")}
-          subtitle={t("BrandsExplanation")}
+          title={t("brands:Brands")}
+          subtitle={t("brands:BrandsExplanation")}
+          body={t("brands:BrandsIntro")}
         />
       </div>
     </>
@@ -50,6 +60,7 @@ type CategoryProps = {
   alt: string;
   title: string;
   subtitle: string;
+  body: string;
 };
 
 function Category({
@@ -58,6 +69,7 @@ function Category({
   alt,
   title,
   subtitle,
+  body,
 }: CategoryProps) {
   return (
     <Link
@@ -74,6 +86,7 @@ function Category({
         <SubTitle className='text-3xl md:text-4xl'>
           {subtitle}
         </SubTitle>
+        <div className='font-ibarra text-xl pt-5'>{body}</div>
       </div>
     </Link>
   );

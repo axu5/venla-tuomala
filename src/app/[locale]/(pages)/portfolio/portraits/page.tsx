@@ -1,5 +1,6 @@
 import initTranslations, { LocaleParam } from "@/app/i18n";
 import { PortfolioItem } from "@/components/PortfolioItem";
+import { PortfolioTitle } from "@/components/PortfolioTitle";
 
 import coupleBJ1 from "@/../public/portraits/Couple_B&J.webp";
 import coupleBJ2 from "@/../public/portraits/Couple_B&J2.webp";
@@ -16,16 +17,20 @@ import saara4 from "@/../public/portraits/Saara4.webp";
 import saara5 from "@/../public/portraits/Saara5.webp";
 import saara6 from "@/../public/portraits/Saara6.webp";
 import saara7 from "@/../public/portraits/Saara7.webp";
+import vic1 from "@/../public/portraits/Vic.webp";
 
 export default async function PortraitsPage({
   params: { locale },
 }: LocaleParam) {
-  const { t } = await initTranslations(locale, ["lifestyle"]);
+  const { t } = await initTranslations(locale, ["portraits"]);
   return (
     <>
+      <PortfolioTitle
+        title={t("Portraits")}
+        subtitle={t("PortraitsExplanation")}
+        description={t("PortraitsIntro")}
+      />
       <PortfolioItem
-        priority
-        name={t("Couple B&J")}
         images={[
           {
             src: coupleBJ1,
@@ -39,11 +44,6 @@ export default async function PortraitsPage({
             src: coupleBJ3,
             alt: "",
           },
-        ]}
-      />
-      <PortfolioItem
-        name={t("Engagement")}
-        images={[
           {
             src: engagement1,
             alt: "",
@@ -52,11 +52,6 @@ export default async function PortraitsPage({
             src: engagement2,
             alt: "",
           },
-        ]}
-      />
-      <PortfolioItem
-        name={t("Graduation")}
-        images={[
           {
             src: graduation1,
             alt: "",
@@ -65,11 +60,6 @@ export default async function PortraitsPage({
             src: graduation2,
             alt: "",
           },
-        ]}
-      />
-      <PortfolioItem
-        name={t("Saara")}
-        images={[
           { src: saara1, alt: "" },
           { src: saara2, alt: "" },
           { src: saara3, alt: "" },
@@ -77,6 +67,8 @@ export default async function PortraitsPage({
           { src: saara5, alt: "" },
           { src: saara6, alt: "" },
           { src: saara7, alt: "" },
+          { src: ondrej1, alt: "" },
+          { src: vic1, alt: "" },
         ]}
       />
     </>

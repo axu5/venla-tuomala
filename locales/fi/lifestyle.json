@@ -1,11 +1,5 @@
 {
-    "Birthday K&K": "Syntymäpäivät",
-    "Boat Trip": "Risteily",
-    "Venue": "Tapahtumapaikka",
-    "Graduation": "Ylioppilasjuhlat",
-    "Mikkeli Graduation": "Valmistujaiset",
-    "Student Events": "Opiskelijatapahtumia",
-    "Sitsit": "Sitsit",
-    "Wedding": "Häät",
-    "XXL Mössö": "Festarit"
+    "Lifestyle": "Lifestyle",
+    "LifestyleExplanation": "Häät, tapahtumapaikat, muut tapahtumat",
+    "LifestyleIntro": "Merkittävät tapahtumat ajattomiksi muistoiksi"
 }
