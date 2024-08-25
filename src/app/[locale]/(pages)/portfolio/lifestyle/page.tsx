@@ -124,6 +124,8 @@ export default async function LifestylePage({
           { src: graduation4, alt: "" },
           { src: graduation5, alt: "" },
           { src: graduation6, alt: "" },
+          { src: mikkeliGraduation1, alt: "" },
+          { src: mikkeliGraduation2, alt: "" },
           {
             src: studentEvents1,
             alt: "",

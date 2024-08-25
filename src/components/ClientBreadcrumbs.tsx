@@ -17,13 +17,15 @@ import { useTranslation } from "react-i18next";
 export function ClientBreadcrumbs() {
   const pathname = usePathname();
   const splitPathname = pathname.split("/").splice(1);
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
 
   return (
-    <Breadcrumb className='border-y md:border-x border-black px-5 py-2 shadow-sm'>
+    <Breadcrumb className='px-5 py-2 shadow-sm rounded-md'>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href='/'>{t("Home")}</BreadcrumbLink>
+          <BreadcrumbLink href='/' className='capitalize text-xl'>
+            {t("Home")}
+          </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         {splitPathname.map((x, i) => {
@@ -34,7 +36,7 @@ export function ClientBreadcrumbs() {
           if (i === splitPathname.length - 1) {
             return (
               <BreadcrumbItem key={x}>
-                <BreadcrumbPage className='capitalize'>
+                <BreadcrumbPage className='capitalize text-xl'>
                   {displayText}
                 </BreadcrumbPage>
               </BreadcrumbItem>
@@ -45,7 +47,9 @@ export function ClientBreadcrumbs() {
           return (
             <Fragment key={x}>
               <BreadcrumbItem>
-                <BreadcrumbLink className='capitalize' href={currUrl}>
+                <BreadcrumbLink
+                  className='capitalize text-xl'
+                  href={currUrl}>
                   {displayText}
                 </BreadcrumbLink>
               </BreadcrumbItem>
