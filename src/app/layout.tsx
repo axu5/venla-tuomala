@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   icons: {
-    icon: "/Logo.svg",
+    icon: "/Logo.webp",
   },
 };
 
