@@ -15,21 +15,29 @@ export default async function AboutPage({
   params: { locale },
 }: LocaleParam) {
   const { t } = await initTranslations(locale, i18nNamespaces);
+  const texts = [
+    t("a photographer"),
+    t("a student"),
+    t("a coffee-lover"),
+    t("a travel enthusiast"),
+    t("a person who gets things done"),
+  ];
+
   return (
     <main className=''>
       <div className=''>
-        <div className='flex flex-col md:flex-row justify-between'>
+        <div className='flex flex-col md:flex-row'>
           <div className='p-3 lg:p-20 md:max-w-[50%]'>
             <Image src={aboutImg} alt='Pic of me' />
           </div>
-          <div className='py-10 md:py-20'>
+          <div className='py-10 pl-10 md:py-20'>
             <div className='pb-36 md:pb-28 text-5xl font-babas-neue h-0'>
-              {t("I am")} <TypingText locale={locale} />
+              {t("I am")} <TypingText texts={texts} />
             </div>
-            <div className='flex flex-row text-4xl text-[#454545] font-babas-neue uppercase pt-10 items-center'>
+            <div className='flex flex-row text-4xl text-muted-gray font-babas-neue uppercase pt-10 items-center'>
               {t("Based in Helsinki, Lahti, and Mikkeli")}
             </div>
-            <div className='flex flex-row text-2xl text-[#454545] font-babas-neue uppercase text items-center'>
+            <div className='flex flex-row text-2xl text-muted-gray font-babas-neue uppercase text items-center'>
               {t("will travel too.")}
             </div>
           </div>

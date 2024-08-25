@@ -7,7 +7,6 @@ import {
   useTransform,
 } from "framer-motion";
 import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
 
 const cursorVariants = {
   blinking: {
@@ -23,23 +22,13 @@ const cursorVariants = {
 };
 
 type TypingTextProps = {
-  locale: string;
+  texts: string[];
 };
 
-export function TypingText({ locale }: TypingTextProps) {
-  const { t } = useTranslation("about", {
-    lng: locale,
-  });
+export function TypingText({ texts }: TypingTextProps) {
   const count = useMotionValue(0);
   const textIndex = useMotionValue(0);
 
-  const texts = [
-    t("a photographer"),
-    t("a student"),
-    t("a coffee-lover"),
-    t("a travel enthusiast"),
-    t("a person who gets things done"),
-  ];
   const baseText = useTransform(
     textIndex,
     latest => texts[latest] || ""
@@ -73,7 +62,7 @@ export function TypingText({ locale }: TypingTextProps) {
 
   return (
     <>
-      <motion.span className='pt-serif-regular-italic text-[#454545] font-semibold'>
+      <motion.span className='pt-serif-regular-italic text-muted-gray font-semibold'>
         {displayText}
       </motion.span>
       <BlinkingCursor />
