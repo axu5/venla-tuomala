@@ -16,7 +16,12 @@ import {
 import { Toaster } from "@/components/ui/sonner";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { dir } from "i18next";
-import { Copyright, LinkedinIcon, MenuIcon } from "lucide-react";
+import {
+  Copyright,
+  LinkedinIcon,
+  MailIcon,
+  MenuIcon,
+} from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Provider as BalancerProvider } from "react-wrap-balancer";
@@ -97,11 +102,11 @@ async function Nav({ locale }: { locale: Locale }) {
   return (
     <div className='sticky top-0 pt-5 z-10 w-full max-w-screen-xl mx-auto'>
       <nav className='bg-offwhite py-5 rounded-lg'>
-        <ul className='flex flex-row justify-around items-center'>
+        <ul className='flex flex-row justify-evenly md:justify-around items-center'>
           <li className='flex flex-row items-center'>
             <Link
               href='/'
-              className='py-1 text-3xl font-bold border border-transparent px-5 mr-5 md:pr-20 border-r-muted-gray font-babas-neue tracking-wide'>
+              className='py-1 text-3xl font-bold border border-transparent pl-5 mr-5 pr-10 md:pr-20 border-r-muted-gray font-babas-neue tracking-wide'>
               VT
             </Link>
           </li>
@@ -343,6 +348,16 @@ async function Footer({ locale }: { locale: Locale }) {
               href='https://www.linkedin.com/in/venla-tuomala/'>
               <LinkedinIcon className='w-4 h-4 mr-2' />
               LinkedIn
+            </Link>
+            <Link
+              className={buttonVariants({
+                variant: "link",
+                className: "font-semibold tracking-wide text-2xl",
+              })}
+              target='_blank'
+              href='mailto:venla.tuomala.business@gmail.com'>
+              <MailIcon className='w-4 h-4 mr-2' />
+              venla.tuomala.business@gmail.com
             </Link>
           </div>
         </div>
