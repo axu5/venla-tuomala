@@ -34,6 +34,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
+import { ClientPortfolioDropdown } from "@/components/ClientPortfolioDropdown";
 
 // TODO: SEO
 export const metadata: Metadata = {
@@ -136,43 +137,20 @@ async function Nav({ locale }: { locale: Locale }) {
 }
 
 async function WideScreenNav({ locale }: { locale: Locale }) {
-  const { t } = await initTranslations(locale, i18nNamespaces);
+  const { t, i18n } = await initTranslations(locale, i18nNamespaces);
+  const bundle = {};
+  Object.assign(
+    bundle,
+    i18n.getResourceBundle(locale, "portfolio"),
+    i18n.getResourceBundle(locale, "lifestyle"),
+    i18n.getResourceBundle(locale, "portraits"),
+    i18n.getResourceBundle(locale, "brands")
+  );
+
   return (
     <>
       <li className='hidden md:flex flex-row text-2xl'>
-        <HoverCard openDelay={0} closeDelay={1000}>
-          <HoverCardTrigger className='flex flex-row items-center'>
-            <Link
-              href='/portfolio'
-              className='capitalize font-ibarra flex flex-row justify-center items-center'>
-              {t("Portfolio")}
-            </Link>
-            <ChevronDown className='w-4 h-4 ml-4' />
-          </HoverCardTrigger>
-          <HoverCardContent className='flex flex-col font-ibarra'>
-            <Link
-              href='/portfolio/lifestyle'
-              className={buttonVariants({
-                variant: "link",
-              })}>
-              {t("lifestyle:Lifestyle")}
-            </Link>
-            <Link
-              href='/portfolio/portraits'
-              className={buttonVariants({
-                variant: "link",
-              })}>
-              {t("portraits:Portraits")}
-            </Link>
-            <Link
-              href='/portfolio/brands'
-              className={buttonVariants({
-                variant: "link",
-              })}>
-              {t("brands:Brands")}
-            </Link>
-          </HoverCardContent>
-        </HoverCard>
+        <ClientPortfolioDropdown t={bundle} />
       </li>
       <li className='hidden md:block text-2xl'>
         <Link href='/testimonials' className='capitalize font-ibarra'>
