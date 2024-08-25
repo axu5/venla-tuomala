@@ -1,5 +1,12 @@
 import { i18nConfig } from "@/../i18nConfig";
-import { createInstance, i18n, Resource, TFunction } from "i18next";
+import { interpolate } from "framer-motion";
+import {
+  createInstance,
+  i18n,
+  Resource,
+  TFunction,
+  init,
+} from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import resourcesToBackend from "i18next-resources-to-backend";
 import { initReactI18next } from "react-i18next/initReactI18next";

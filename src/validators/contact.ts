@@ -1,11 +1,15 @@
 import { z } from "zod";
 
 // TODO: add validation translations
-export const emailValidator = z.string().email("ValidEmailError");
+export const emailValidator = z
+  .string()
+  .max(512, "ValidEmailError")
+  .email("ValidEmailError");
 
 export const nameValidator = z
   .string()
-  .min(1, "NameMustNotBeEmptyError");
+  .min(1, "NameMustNotBeEmptyError")
+  .max(120, "NameMustNotExceedError");
 
 export const detailsValidator = z
   .string()
