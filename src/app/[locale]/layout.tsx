@@ -14,6 +14,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Toaster } from "@/components/ui/sonner";
+import { cn } from "@/lib/utils";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { dir } from "i18next";
 import {
@@ -27,7 +28,6 @@ import Link from "next/link";
 import { Provider as BalancerProvider } from "react-wrap-balancer";
 import initTranslations, { Locale, LocaleParam } from "../i18n";
 import "./globals.css";
-import { cn } from "@/lib/utils";
 
 // TODO: SEO
 export const metadata: Metadata = {
@@ -98,7 +98,6 @@ export default async function RootLayout({
 }
 
 async function Nav({ locale }: { locale: Locale }) {
-  const { t } = await initTranslations(locale, i18nNamespaces);
   return (
     <div className='sticky top-0 pt-5 z-10 w-full max-w-screen-xl mx-auto'>
       <nav className='bg-offwhite py-5 rounded-lg'>
@@ -111,7 +110,7 @@ async function Nav({ locale }: { locale: Locale }) {
             </Link>
           </li>
           <WideScreenNav locale={locale} />
-          <li className=''>
+          <li>
             <LanguageSwitcher />
           </li>
           <li className='block md:hidden'>
