@@ -3,7 +3,7 @@
 - [x] high def images
 - [ ] image carousel dot size is different
 - [x] translations
-- [ ] fix all styles for mobile!!!!!! IMPORTANT
+- [x] fix all styles for mobile!!!!!! IMPORTANT
 - [ ] make the current page show as bold in nav
 
 - [x] /testimonials
@@ -11,16 +11,16 @@
 - [x] /contact
 - [x] /about
 
-- [-] New hello there
+- [x] New hello there
 - [x] Testimonials
 - [x] Fix hero
 - [x] Whats included
 - [x] Fix footer
 
-- [ ] fix site for big screens
-- [ ] fix site for small screens
+- [x] fix site for big screens
+- [x] fix site for small screens
 - [ ] SEO
-- [ ] Better loading strategy
+- [x] Better loading strategy
 - [x] Mobile hamburger menu in nav
 - [x] Favicon
 - [x] 404 page
