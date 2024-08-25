@@ -18,6 +18,7 @@ import { cn } from "@/lib/utils";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { dir } from "i18next";
 import {
+  ChevronDown,
   Copyright,
   LinkedinIcon,
   MailIcon,
@@ -28,6 +29,11 @@ import Link from "next/link";
 import { Provider as BalancerProvider } from "react-wrap-balancer";
 import initTranslations, { Locale, LocaleParam } from "../i18n";
 import "./globals.css";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 
 // TODO: SEO
 export const metadata: Metadata = {
@@ -127,12 +133,40 @@ async function WideScreenNav({ locale }: { locale: Locale }) {
   const { t } = await initTranslations(locale, i18nNamespaces);
   return (
     <>
-      <li className='hidden md:block text-2xl'>
-        <Link
-          href='/portfolio'
-          className='capitalize font-ibarra flex flex-row justify-center items-center'>
-          {t("Portfolio")}
-        </Link>
+      <li className='hidden md:block text-2xl group'>
+        <HoverCard>
+          <HoverCardTrigger className='flex flex-row items-center'>
+            <Link
+              href='/portfolio'
+              className='capitalize font-ibarra flex flex-row justify-center items-center'>
+              {t("Portfolio")}
+            </Link>
+            <ChevronDown className='w-4 h-4 ml-2 animate group-hover:rotate-180' />
+          </HoverCardTrigger>
+          <HoverCardContent className='flex flex-col font-ibarra'>
+            <Link
+              href='/portfolio/lifestyle'
+              className={buttonVariants({
+                variant: "link",
+              })}>
+              {t("lifestyle:Lifestyle")}
+            </Link>
+            <Link
+              href='/portfolio/portraits'
+              className={buttonVariants({
+                variant: "link",
+              })}>
+              {t("portraits:Portraits")}
+            </Link>
+            <Link
+              href='/portfolio/lifestyle'
+              className={buttonVariants({
+                variant: "link",
+              })}>
+              {t("brands:Brands")}
+            </Link>
+          </HoverCardContent>
+        </HoverCard>
       </li>
       <li className='hidden md:block text-2xl'>
         <Link href='/testimonials' className='capitalize font-ibarra'>

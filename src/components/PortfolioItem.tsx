@@ -55,9 +55,6 @@ export function PortfolioItem({ images }: PortfolioItemProps) {
                 />
               </DialogTrigger>
               <DialogContent className='h-[85vh] overflow-y-scroll'>
-                <DialogTitle className='text-muted-gray py-5'>
-                  {image.alt}
-                </DialogTitle>
                 <DialogDescription
                   onKeyDown={event => {
                     if (
@@ -76,21 +73,11 @@ export function PortfolioItem({ images }: PortfolioItemProps) {
                       setImageIndex(old => old - 1);
                     }
                   }}
-                  className='flex flex-col gap-5 justify-between'>
-                  <div>
-                    <Image
-                      className='object-cover'
-                      style={{
-                        objectPosition: position,
-                      }}
-                      src={dialogImage.src}
-                      alt={dialogImage.alt}
-                      placeholder='blur'
-                    />
-                  </div>
-                  <div className='flex flex-row justify-between px-10'>
+                  className='flex flex-col gap-5 justify-between relative'>
+                  <div className='flex flex-row justify-between absolute h-full items-center w-full'>
                     <Button
-                      variant='outline'
+                      variant='icon'
+                      className='h-full'
                       disabled={imageIndex === 0}
                       onClick={() => {
                         setImageIndex(old => old - 1);
@@ -98,7 +85,8 @@ export function PortfolioItem({ images }: PortfolioItemProps) {
                       <ChevronLeft />
                     </Button>
                     <Button
-                      variant='outline'
+                      variant='icon'
+                      className='h-full'
                       disabled={imageIndex === images.length - 1}
                       onClick={() => {
                         setImageIndex(old => old + 1);
@@ -106,6 +94,15 @@ export function PortfolioItem({ images }: PortfolioItemProps) {
                       <ChevronRight />
                     </Button>
                   </div>
+                  <Image
+                    className='object-cover my-auto'
+                    style={{
+                      objectPosition: position,
+                    }}
+                    src={dialogImage.src}
+                    alt={dialogImage.alt}
+                    placeholder='blur'
+                  />
                 </DialogDescription>
               </DialogContent>
             </Dialog>
