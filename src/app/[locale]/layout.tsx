@@ -57,7 +57,13 @@ export const metadata: Metadata = {
   ],
 };
 
-const i18nNamespaces = ["common", "portfolio"];
+const i18nNamespaces = [
+  "common",
+  "portfolio",
+  "lifestyle",
+  "portraits",
+  "brands",
+];
 
 export async function generateStaticParams() {
   return i18nConfig.locales.map(locale => ({ locale }));
