@@ -56,7 +56,7 @@ export function PortfolioItem({ images }: PortfolioItemProps) {
               </DialogTrigger>
               <DialogContent className='h-[85vh] overflow-y-scroll'>
                 <DialogTitle className='text-muted-gray py-5'>
-                  {image.src.alt}
+                  {image.alt}
                 </DialogTitle>
                 <DialogDescription
                   onKeyDown={event => {
