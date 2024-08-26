@@ -17,6 +17,7 @@
     "Some details about what you want": "Lisää kuvaustoiveisiin liittyvä viesti",
     "ValidEmailError": "Lisää toimiva sähköpostiosoite",
     "NameMustNotBeEmptyError": "Lisää nimi",
+    "NameMustNotExceedError": "Max. 120 merkkiä",
     "DetailsMustNotBeEmptyError": "Lisää viesti",
     "DetailsMustNotExceedError": "Max. 2000 merkkiä"
 }
