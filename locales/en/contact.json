@@ -18,6 +18,6 @@
     "ValidEmailError": "Please enter a valid email address",
     "NameMustNotBeEmptyError": "Must include name",
     "NameMustNotExceedError": "Max. 120 characters",
-    "DetailsMustNotBeEmptyError": "Must include messge",
+    "DetailsMustNotBeEmptyError": "Must include message",
     "DetailsMustNotExceedError": "Max. 2000 characters"
 }
