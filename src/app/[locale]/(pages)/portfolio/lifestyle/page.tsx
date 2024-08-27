@@ -9,8 +9,6 @@ import birthdayKK4 from "@/../public/lifestyle/Birthday_K&K.4.webp";
 import birthdayKK5 from "@/../public/lifestyle/Birthday_K&K.5.webp";
 import birthdayKK6 from "@/../public/lifestyle/Birthday_K&K.6.webp";
 import birthdayKK7 from "@/../public/lifestyle/Birthday_K&K.7.webp";
-import birthdayKK8 from "@/../public/lifestyle/Birthday_K&K.8.webp";
-import birthdayKK9 from "@/../public/lifestyle/Birthday_K&K.9.webp";
 import birthdayKK10 from "@/../public/lifestyle/Birthday_K&K.10.webp";
 import birthdayKK11 from "@/../public/lifestyle/Birthday_K&K.11.webp";
 import birthdayKK12 from "@/../public/lifestyle/Birthday_K&K.12.webp";
@@ -29,10 +27,8 @@ import venue1 from "@/../public/lifestyle/Cool_Venue.webp";
 import venue2 from "@/../public/lifestyle/Cool_Venue.2.webp";
 import venue3 from "@/../public/lifestyle/Cool_Venue.3.webp";
 import graduation1 from "@/../public/lifestyle/Graduation_S.1.webp";
-import graduation2 from "@/../public/lifestyle/Graduation_S.2.webp";
 import graduation3 from "@/../public/lifestyle/Graduation_S.3.webp";
 import graduation4 from "@/../public/lifestyle/Graduation_S.4.webp";
-import graduation5 from "@/../public/lifestyle/Graduation_S.5.webp";
 import graduation6 from "@/../public/lifestyle/Graduation_S.6.webp";
 import mikkeliGraduation1 from "@/../public/lifestyle/Mikkeli_Graduation.webp";
 import mikkeliGraduation2 from "@/../public/lifestyle/Mikkeli_Graduation.2.webp";
@@ -53,9 +49,7 @@ import sitsit5 from "@/../public/lifestyle/Sitsit.5.webp";
 import wedding1 from "@/../public/lifestyle/Wedding_1.webp";
 import wedding2 from "@/../public/lifestyle/Wedding.2.webp";
 import wedding3 from "@/../public/lifestyle/Wedding.3.webp";
-import wedding4 from "@/../public/lifestyle/Wedding.4.webp";
 import wedding5 from "@/../public/lifestyle/Wedding.5.webp";
-import wedding6 from "@/../public/lifestyle/Wedding.6.webp";
 import wedding7 from "@/../public/lifestyle/Wedding.7.webp";
 import wedding8 from "@/../public/lifestyle/Wedding.8.webp";
 import festival1 from "@/../public/lifestyle/XXL_Mössö.webp";
@@ -81,9 +75,7 @@ export default async function LifestylePage({
           { src: wedding1, alt: "" },
           { src: wedding2, alt: "" },
           { src: wedding3, alt: "" },
-          { src: wedding4, alt: "" },
           { src: wedding5, alt: "" },
-          { src: wedding6, alt: "" },
           { src: wedding7, alt: "" },
           { src: wedding8, alt: "" },
           { src: festival1, alt: "" },
@@ -99,8 +91,6 @@ export default async function LifestylePage({
           { src: birthdayKK5, alt: "" },
           { src: birthdayKK6, alt: "" },
           { src: birthdayKK7, alt: "" },
-          { src: birthdayKK8, alt: "" },
-          { src: birthdayKK9, alt: "" },
           { src: birthdayKK10, alt: "" },
           { src: birthdayKK11, alt: "" },
           { src: birthdayKK12, alt: "" },
@@ -119,10 +109,8 @@ export default async function LifestylePage({
           { src: venue2, alt: "" },
           { src: venue3, alt: "" },
           { src: graduation1, alt: "" },
-          { src: graduation2, alt: "" },
           { src: graduation3, alt: "" },
           { src: graduation4, alt: "" },
-          { src: graduation5, alt: "" },
           { src: graduation6, alt: "" },
           { src: mikkeliGraduation1, alt: "" },
           { src: mikkeliGraduation2, alt: "" },

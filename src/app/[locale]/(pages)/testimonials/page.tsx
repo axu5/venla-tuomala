@@ -17,8 +17,6 @@ import birthdayKK4 from "@/../public/lifestyle/Birthday_K&K.4.webp";
 import birthdayKK5 from "@/../public/lifestyle/Birthday_K&K.5.webp";
 import birthdayKK6 from "@/../public/lifestyle/Birthday_K&K.6.webp";
 import birthdayKK7 from "@/../public/lifestyle/Birthday_K&K.7.webp";
-import birthdayKK8 from "@/../public/lifestyle/Birthday_K&K.8.webp";
-import birthdayKK9 from "@/../public/lifestyle/Birthday_K&K.9.webp";
 import birthdayKK10 from "@/../public/lifestyle/Birthday_K&K.10.webp";
 import birthdayKK11 from "@/../public/lifestyle/Birthday_K&K.11.webp";
 import birthdayKK12 from "@/../public/lifestyle/Birthday_K&K.12.webp";
@@ -62,8 +60,6 @@ export default async function Testimonials({
             { data: birthdayKK5, alt: "" },
             { data: birthdayKK6, alt: "" },
             { data: birthdayKK7, alt: "" },
-            { data: birthdayKK8, alt: "" },
-            { data: birthdayKK9, alt: "" },
             { data: birthdayKK10, alt: "" },
             { data: birthdayKK11, alt: "" },
             { data: birthdayKK12, alt: "" },
