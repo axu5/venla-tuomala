@@ -207,7 +207,7 @@ async function NarrowScreenNav({ locale }: { locale: Locale }) {
                     }),
                     "text-lg capitalize ml-4 border border-y-0 border-r-0 border-l-2 border-goldenisher rounded-none"
                   )}>
-                  {t("portfolio:Lifestyle")}
+                  {t("lifestyle:Lifestyle")}
                 </Link>
               </SheetClose>
               <SheetClose asChild>
@@ -219,7 +219,7 @@ async function NarrowScreenNav({ locale }: { locale: Locale }) {
                     }),
                     "text-lg capitalize ml-4 border border-y-0 border-r-0 border-l-2 border-goldenisher rounded-none"
                   )}>
-                  {t("portfolio:Portraits")}
+                  {t("portraits:Portraits")}
                 </Link>
               </SheetClose>
               <SheetClose asChild>
@@ -231,7 +231,7 @@ async function NarrowScreenNav({ locale }: { locale: Locale }) {
                     }),
                     "text-lg capitalize ml-4 border border-y-0 border-r-0 border-l-2 border-goldenisher rounded-none"
                   )}>
-                  {t("portfolio:Brands")}
+                  {t("brands:Brands")}
                 </Link>
               </SheetClose>
             </li>
