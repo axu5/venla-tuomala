@@ -2,6 +2,10 @@ import initTranslations, { LocaleParam } from "@/app/i18n";
 import { PortfolioItem } from "@/components/PortfolioItem";
 import { PortfolioTitle } from "@/components/PortfolioTitle";
 
+import redbull1 from "@/../public/brands/RedBull.1.webp";
+import redbull2 from "@/../public/brands/RedBull.2.webp";
+import redbull3 from "@/../public/brands/RedBull.3.webp";
+import redbull4 from "@/../public/brands/RedBull.4..webp";
 import beautySalon1 from "@/../public/brands/Beauty_Salon.1.webp";
 import beautySalon2 from "@/../public/brands/Beauty_Salon.2.webp";
 import beautySalon3 from "@/../public/brands/Beauty_Salon.3.webp";
@@ -24,9 +28,6 @@ import yoga2 from "@/../public/brands/Yoga.2.webp";
 import yoga3 from "@/../public/brands/Yoga.3.webp";
 import yoga4 from "@/../public/brands/Yoga.4.webp";
 import yoga5 from "@/../public/brands/Yoga.5.webp";
-import yoga6 from "@/../public/brands/Yoga.6.webp";
-import yoga7 from "@/../public/brands/Yoga.7.webp";
-import yoga8 from "@/../public/brands/Yoga.8.webp";
 
 export default async function BrandsPage({
   params: { locale },
@@ -41,6 +42,22 @@ export default async function BrandsPage({
       />
       <PortfolioItem
         images={[
+          {
+            src: redbull1,
+            alt: "",
+          },
+          {
+            src: redbull2,
+            alt: "",
+          },
+          {
+            src: redbull3,
+            alt: "",
+          },
+          {
+            src: redbull4,
+            alt: "",
+          },
           {
             src: beautySalon1,
             alt: "",
@@ -114,9 +131,6 @@ export default async function BrandsPage({
           { src: yoga3, alt: "" },
           { src: yoga4, alt: "" },
           { src: yoga5, alt: "" },
-          { src: yoga6, alt: "" },
-          { src: yoga7, alt: "" },
-          { src: yoga8, alt: "" },
         ]}
       />
     </>

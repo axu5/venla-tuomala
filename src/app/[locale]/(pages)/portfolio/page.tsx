@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import mikkeliGraduationPic from "@/../public/lifestyle/Mikkeli_Graduation.webp";
 import saara6 from "@/../public/portraits/Saara6.webp";
-import yoga1 from "@/../public/brands/Yoga.1.webp";
+import redbull1 from "@/../public/brands/RedBull.1.webp";
 
 const i18nNamespaces = [
   "portfolio",
@@ -43,7 +43,7 @@ export default async function Portfolio({
         />
         <Category
           href='/portfolio/brands'
-          src={yoga1}
+          src={redbull1}
           alt='Elämäntapavalmentaja tapaamisessa asiakkaansa kanssa'
           title={t("brands:Brands")}
           subtitle={t("brands:BrandsExplanation")}
