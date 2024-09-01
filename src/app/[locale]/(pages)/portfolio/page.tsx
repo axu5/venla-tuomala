@@ -9,6 +9,7 @@ import saara6 from "@/../public/portraits/Saara6.webp";
 import redbull1 from "@/../public/brands/RedBull.1.webp";
 
 const i18nNamespaces = [
+  "seo-alt",
   "portfolio",
   "lifestyle",
   "portraits",
@@ -22,13 +23,13 @@ export default async function Portfolio({
   return (
     <>
       <div className='flex justify-center items-center py-20'>
-        <Title id='portfolio'>{t("PortfolioPage")}</Title>
+        <Title id='portfolio'>{t("portfolio:PortfolioPage")}</Title>
       </div>
       <div className='flex flex-col gap-y-16'>
         <Category
           href='/portfolio/lifestyle'
           src={mikkeliGraduationPic}
-          alt='Valmistujaiset Aalto Yliopiston Mikkeli kampuksella 2024'
+          alt={t("Mikkeli Graduation")}
           title={t("lifestyle:Lifestyle")}
           subtitle={t("lifestyle:LifestyleExplanation")}
           body={t("lifestyle:LifestyleIntro")}
@@ -36,7 +37,7 @@ export default async function Portfolio({
         <Category
           href='/portfolio/portraits'
           src={saara6}
-          alt='Saaran Ylioppilaskuvaus'
+          alt={t("Saara")}
           title={t("portraits:Portraits")}
           subtitle={t("portraits:PortraitsExplanation")}
           body={t("portraits:PortraitsIntro")}
@@ -44,7 +45,7 @@ export default async function Portfolio({
         <Category
           href='/portfolio/brands'
           src={redbull1}
-          alt='Elämäntapavalmentaja tapaamisessa asiakkaansa kanssa'
+          alt={t("Redbull")}
           title={t("brands:Brands")}
           subtitle={t("brands:BrandsExplanation")}
           body={t("brands:BrandsIntro")}

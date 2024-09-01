@@ -32,105 +32,105 @@ import yoga5 from "@/../public/brands/Yoga.5.webp";
 export default async function BrandsPage({
   params: { locale },
 }: LocaleParam) {
-  const { t } = await initTranslations(locale, ["brands"]);
+  const { t } = await initTranslations(locale, ["seo-alt", "brands"]);
   return (
     <>
       <PortfolioTitle
-        title={t("Brands")}
-        subtitle={t("BrandsExplanation")}
-        description={t("BrandsIntro")}
+        title={t("brands:Brands")}
+        subtitle={t("brands:BrandsExplanation")}
+        description={t("brands:BrandsIntro")}
       />
       <PortfolioItem
         images={[
           {
             src: redbull1,
-            alt: "",
+            alt: t("Redbull"),
           },
           {
             src: redbull2,
-            alt: "",
+            alt: t("Redbull"),
           },
           {
             src: redbull3,
-            alt: "",
+            alt: t("Redbull"),
           },
           {
             src: redbull4,
-            alt: "",
+            alt: t("Redbull"),
           },
           {
             src: beautySalon1,
-            alt: "",
+            alt: t("Beauty_Salon"),
           },
           {
             src: beautySalon2,
-            alt: "",
+            alt: t("Beauty_Salon"),
           },
           {
             src: beautySalon3,
-            alt: "",
+            alt: t("Beauty_Salon"),
           },
           {
             src: fcProbba1,
-            alt: "",
+            alt: t("FC Probba"),
           },
           {
             src: fcProbba2,
-            alt: "",
+            alt: t("FC Probba"),
           },
           {
             src: fcProbba3,
-            alt: "",
+            alt: t("FC Probba"),
           },
           {
             src: fcProbba4,
-            alt: "",
+            alt: t("FC Probba"),
           },
           {
             src: fcProbba5,
-            alt: "",
+            alt: t("FC Probba"),
           },
           {
             src: fcProbba7,
-            alt: "",
+            alt: t("FC Probba"),
           },
           {
             src: fcProbba8,
-            alt: "",
+            alt: t("FC Probba"),
           },
           {
             src: muc1,
-            alt: "",
+            alt: t("MUC"),
           },
           {
             src: muc2,
-            alt: "",
+            alt: t("MUC"),
           },
           {
             src: riia1,
-            alt: "",
+            alt: t("Riia"),
           },
           {
             src: riia2,
-            alt: "",
+            alt: t("Riia"),
           },
           {
             src: riia3,
-            alt: "",
+            alt: t("Riia"),
           },
           {
             src: vappu1,
-            alt: "",
+            alt: t("Vappu"),
           },
           {
             src: vappu2,
-            alt: "",
+            alt: t("Vappu"),
           },
-          { src: yoga1, alt: "" },
-          { src: yoga2, alt: "" },
-          { src: yoga3, alt: "" },
-          { src: yoga4, alt: "" },
-          { src: yoga5, alt: "" },
+          { src: yoga1, alt: t("Yoga") },
+          { src: yoga2, alt: t("Yoga") },
+          { src: yoga3, alt: t("Yoga") },
+          { src: yoga4, alt: t("Yoga") },
+          { src: yoga5, alt: t("Yoga") },
         ]}
       />
     </>

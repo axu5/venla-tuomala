@@ -22,53 +22,56 @@ import vic1 from "@/../public/portraits/Vic.webp";
 export default async function PortraitsPage({
   params: { locale },
 }: LocaleParam) {
-  const { t } = await initTranslations(locale, ["portraits"]);
+  const { t } = await initTranslations(locale, [
+    "seo-alt",
+    "portraits",
+  ]);
   return (
     <>
       <PortfolioTitle
-        title={t("Portraits")}
-        subtitle={t("PortraitsExplanation")}
-        description={t("PortraitsIntro")}
+        title={t("portraits:Portraits")}
+        subtitle={t("portraits:PortraitsExplanation")}
+        description={t("portraits:PortraitsIntro")}
       />
       <PortfolioItem
         images={[
           {
             src: coupleBJ1,
-            alt: "",
+            alt: t("Couple B&J"),
           },
           {
             src: coupleBJ2,
-            alt: "",
+            alt: t("Couple B&J"),
           },
           {
             src: coupleBJ3,
-            alt: "",
+            alt: t("Couple B&J"),
           },
           {
             src: engagement1,
-            alt: "",
+            alt: t("Engagement"),
           },
           {
             src: engagement2,
-            alt: "",
+            alt: t("Engagement"),
           },
           {
             src: graduation1,
-            alt: "",
+            alt: t("Graduation"),
           },
           {
             src: graduation2,
-            alt: "",
+            alt: t("Graduation"),
           },
-          { src: saara1, alt: "" },
-          { src: saara2, alt: "" },
-          { src: saara3, alt: "" },
-          { src: saara4, alt: "" },
-          { src: saara5, alt: "" },
-          { src: saara6, alt: "" },
-          { src: saara7, alt: "" },
-          { src: ondrej1, alt: "" },
-          { src: vic1, alt: "" },
+          { src: saara1, alt: t("Saara") },
+          { src: saara2, alt: t("Saara") },
+          { src: saara3, alt: t("Saara") },
+          { src: saara4, alt: t("Saara") },
+          { src: saara5, alt: t("Saara") },
+          { src: saara6, alt: t("Saara") },
+          { src: saara7, alt: t("Saara") },
+          { src: ondrej1, alt: t("Ondrej") },
+          { src: vic1, alt: t("Vic") },
         ]}
       />
     </>

@@ -1,16 +1,15 @@
 "use client";
 
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
+import { useState } from "react";
+import { Button } from "./ui/button";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "./ui/button";
-import { useState } from "react";
 
 type PortfolioItemProps = {
   images: {
