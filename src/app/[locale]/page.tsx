@@ -8,7 +8,7 @@ import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 import initTranslations, { LocaleParam } from "../i18n";
 
-import fcProbbaImg from "@/../public/thumbnails/FC_Probba.2.webp";
+import redbullImg from "@/../public/thumbnails/RedBull.1.webp";
 import engagementImg from "@/../public/thumbnails/Engagement1.webp";
 import saaraImg from "@/../public/thumbnails/Saara.webp";
 import xxlMosso5 from "@/../public/thumbnails/XXL_Mössö.5.webp";
@@ -85,8 +85,8 @@ async function Hero({ locale }: LocaleParam["params"]) {
           </div>
           <div className='overflow-hidden'>
             <Image
-              src={fcProbbaImg}
-              alt='Jalkapallotreenit Mikkelissä'
+              src={redbullImg}
+              alt='Red Bull yhteistyötapahtumassa'
               className='object-cover overflow-hidden min-h-0 h-full'
               placeholder='blur'
               priority
