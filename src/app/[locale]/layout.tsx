@@ -30,27 +30,68 @@ import { Provider as BalancerProvider } from "react-wrap-balancer";
 import initTranslations, { Locale, LocaleParam } from "../i18n";
 import "./globals.css";
 
-// TODO: SEO
-export const metadata: Metadata = {
-  title: "Venla Tuomala • Photographer",
-  description:
-    "Tapahtuma-, henkilö- ja brändivalokuvaus. Helsinki, Lahti ja Mikkeli",
-  // TODO: figure out how to do this on a router level
-  alternates: {
-    languages: {
-      en: "/en",
-      fi: "/fi",
+export async function generateMetadata({ params }: LocaleParam) {
+  const { t } = await initTranslations(params.locale, [
+    "landing_page",
+  ]);
+  const title =
+    "Venla Tuomala • " +
+    (params.locale === "fi" ? "Valokuvaaja" : "Photographer");
+  // TODO: SEO
+  // TODO: don't do manual translation
+  return {
+    openGraph: {
+      title,
+      description: t("Description"),
+      url: "https://venlatuomala.com/" + params.locale,
+      siteName:
+        "Portfolio " +
+        (params.locale === "fi" ? "nettisivu" : "website"),
+      locale: { en: "en_US", fi: "fi_FI" }[params.locale],
+      images: [
+        {
+          url: "https://venlatuomala.com/thumbnails/Saara.webp",
+          width: 720,
+          height: 1080,
+        },
+        {
+          url: "https://venlatuomala.com/thumbnails/Engagement1.webp",
+          width: 720,
+          height: 1080,
+        },
+        {
+          url: "https://venlatuomala.com/thumbnails/RedBull.1.webp",
+          width: 720,
+          height: 1080,
+        },
+      ],
+      type: "website",
     },
-  },
-  applicationName: "Venla Tuomala Portfolio",
-  category: "Portfolio",
-  keywords: [
-    "Valokuvaaja",
-    "Mikkeli",
-    "Häävalokuvaaja",
-    "Tapahtumavalokuvaaja",
-  ],
-};
+    title,
+    description: t("Description"),
+    // TODO: figure out how to do this on a router level
+    alternates: {
+      languages: {
+        en: "/en",
+        fi: "/fi",
+      },
+    },
+    category: "Portfolio",
+    keywords: [
+      params.locale === "fi" ? "Valokuvaaja" : "Photographer",
+      "Mikkeli",
+      params.locale === "fi"
+        ? "Ylioppilas kuvaus"
+        : "Graduation photogapher",
+      params.locale === "fi"
+        ? "Häävalokuvaaja"
+        : "Wedding photographer",
+      "Helsinki",
+      "Lahti",
+      "Tapahtumavalokuvaaja",
+    ],
+  } satisfies Metadata;
+}
 
 const i18nNamespaces = [
   "common",
