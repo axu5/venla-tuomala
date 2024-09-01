@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: LocaleParam) {
       locale: { en: "en_US", fi: "fi_FI" }[params.locale],
       images: [
         {
-          url: "https://venlatuomala.com/thumbnails/Saara.webp",
+          url: "https://venlatuomala.com/thumbnails/RedBull.1.webp",
           width: 720,
           height: 1080,
         },
@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: LocaleParam) {
           height: 1080,
         },
         {
-          url: "https://venlatuomala.com/thumbnails/RedBull.1.webp",
+          url: "https://venlatuomala.com/thumbnails/Saara.webp",
           width: 720,
           height: 1080,
         },
